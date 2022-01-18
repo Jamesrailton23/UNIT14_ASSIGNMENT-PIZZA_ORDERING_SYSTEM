@@ -17,13 +17,11 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
         protected void btn_confirm_Click(object sender, EventArgs e)
         {
-            pizza_size();
-            crust_type();
-            dough_type();
-            cheese_type();
+           
+
         }
 
-        protected void pizza_size()
+        protected string pizza_size()
         {
             switch (rbl_pizza_size.SelectedIndex)
             {
@@ -37,10 +35,10 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
                     break;
 
             }
-            
+            return PizzaSize;
         }
 
-        protected void cheese_type()
+        protected string cheese_type()
         {
             switch (rbl_cheese_type.SelectedIndex)
             {
@@ -51,9 +49,10 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
                 case 2: CheeseType = "Chedder";
                     break;
             }
+            return CheeseType;
         }
 
-        protected void dough_type()
+        protected string dough_type()
         {
             switch (rbl_dough_type.SelectedIndex)
             {
@@ -62,9 +61,10 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
                 case 1: DoughType = "Gluten Free";
                     break;
             }
+            return DoughType;
         }
 
-        protected void crust_type()
+        protected string crust_type()
         {
             switch(rbl_crust_type.SelectedIndex)
             {
@@ -75,6 +75,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
                 case 2: CrustType = "Deep Dish";
                     break;
             }
+            return CrustType;
         }
 
     }

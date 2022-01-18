@@ -56,7 +56,7 @@
             <br />
             <br />
             <asp:Button ID="btn_confirm" runat="server" OnClick="btn_confirm_Click" Text="Confirm" />
-            <br />
+&nbsp;<br />
         
         </div>
     </form>
