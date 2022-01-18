@@ -68,7 +68,7 @@
     <Content Include="App_Data\Pizza_order_system_database_log.ldf">
       <DependentUpon>Pizza_order_system_database.mdf</DependentUpon>
     </Content>
-    <Content Include="checkout_page.aspx" />
+    <Content Include="webpages\checkout_page\checkout_page.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -86,11 +86,12 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="webpages\customer_order_page_pizza\custom_order_page_pizza.aspx" />
-    <Content Include="custom_order_page_sides&amp;drinks.aspx" />
-    <Content Include="custom_order_page_toppings.aspx" />
+    <Content Include="webpages\customer_order_page_pizza\custom_order_page_pizza.css" />
+    <Content Include="webpages\custom_order_page_sides_and_drinks\custom_order_page_sides_and_drinks.aspx" />
+    <Content Include="webpages\custom_order_page_toppings\custom_order_page_toppings.aspx" />
     <Content Include="webpages\default\default.aspx" />
-    <Content Include="webpages\default\default.css" />
     <Content Include="Global.asax" />
+    <Content Include="webpages\default\default.css" />
     <Content Include="webpages\new_order_page\new_order_page.aspx" />
     <Content Include="order_complete_page.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -103,11 +104,11 @@
     <Content Include="webpages\new_order_page\new_order_page.css" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="checkout_page.aspx.cs">
+    <Compile Include="webpages\checkout_page\checkout_page.aspx.cs">
       <DependentUpon>checkout_page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="checkout_page.aspx.designer.cs">
+    <Compile Include="webpages\checkout_page\checkout_page.aspx.designer.cs">
       <DependentUpon>checkout_page.aspx</DependentUpon>
     </Compile>
     <Compile Include="webpages\customer_order_page_pizza\custom_order_page_pizza.aspx.cs">
@@ -117,18 +118,18 @@
     <Compile Include="webpages\customer_order_page_pizza\custom_order_page_pizza.aspx.designer.cs">
       <DependentUpon>custom_order_page_pizza.aspx</DependentUpon>
     </Compile>
-    <Compile Include="custom_order_page_sides&amp;drinks.aspx.cs">
-      <DependentUpon>custom_order_page_sides&amp;drinks.aspx</DependentUpon>
+    <Compile Include="webpages\custom_order_page_sides_and_drinks\custom_order_page_sides_and_drinks.aspx.cs">
+      <DependentUpon>custom_order_page_sides_and_drinks.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="custom_order_page_sides&amp;drinks.aspx.designer.cs">
-      <DependentUpon>custom_order_page_sides&amp;drinks.aspx</DependentUpon>
+    <Compile Include="webpages\custom_order_page_sides_and_drinks\custom_order_page_sides_and_drinks.aspx.designer.cs">
+      <DependentUpon>custom_order_page_sides_and_drinks.aspx</DependentUpon>
     </Compile>
-    <Compile Include="custom_order_page_toppings.aspx.cs">
+    <Compile Include="webpages\custom_order_page_toppings\custom_order_page_toppings.aspx.cs">
       <DependentUpon>custom_order_page_toppings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="custom_order_page_toppings.aspx.designer.cs">
+    <Compile Include="webpages\custom_order_page_toppings\custom_order_page_toppings.aspx.designer.cs">
       <DependentUpon>custom_order_page_toppings.aspx</DependentUpon>
     </Compile>
     <Compile Include="webpages\default\default.aspx.cs">

@@ -1,13 +1,7 @@
-﻿body {
-    
-}
-
-.main_title_text{
-    font-size:xx-large;
+﻿.title{
+    font-family:'Microsoft JhengHei';
     text-align:center;
-    font-family:'Microsoft JhengHei'
 }
-.subtitle{
-    text-align:center;
-    font-family:'Microsoft JhengHei'
+.timer{
+    font-family:'Microsoft JhengHei';
 }

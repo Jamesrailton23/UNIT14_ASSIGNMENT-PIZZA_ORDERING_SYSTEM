@@ -15,7 +15,9 @@
             <br />
             <h3 class="main_title">&nbsp;Custom Pizza</h3>
             <br />
-            <asp:ImageButton ID="ibtn_custom_pizza" runat="server" Height="80px" Width="80px" />
+            <center>
+            <asp:ImageButton ID="ibtn_custom_pizza" runat="server" Height="100px" Width="100px" OnClick="ibtn_custom_pizza_Click" />
+             </center>
             <br />
             <br />
             <hr />
@@ -23,13 +25,15 @@
             <br />
             <h3 class="subtitle">&nbsp;&nbsp;Pepporni &nbsp;&nbsp; Cheese &nbsp;&nbsp; Hawaiian&nbsp; &nbsp; Ham</h3>
             <br />
-            <asp:ImageButton ID="ibtn_pizza_Pepporni" runat="server" Height="80px" Width="80px" />
-            &nbsp;
-            <asp:ImageButton ID="ibtn_pizza_Cheese" runat="server" Height="80px" Width="80px" />
-            &nbsp;
-            <asp:ImageButton ID="ibtn_pizza_Hawaiian" runat="server" Height="80px" Width="80px" />
-            &nbsp;
-            <asp:ImageButton ID="ibtn_pizza_Ham" runat="server" Height="80px" Width="80px" />
+            <center>
+            <asp:ImageButton ID="ibtn_pizza_Pepporni" runat="server" Height="100px" Width="100px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:ImageButton ID="ibtn_pizza_Cheese" runat="server" Height="100px" Width="100px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:ImageButton ID="ibtn_pizza_Hawaiian" runat="server" Height="100px" Width="100px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:ImageButton ID="ibtn_pizza_Ham" runat="server" Height="100px" Width="100px" />
+                </center>
             <br />
 
         </div>

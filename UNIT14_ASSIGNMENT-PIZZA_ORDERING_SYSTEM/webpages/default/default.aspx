@@ -11,16 +11,38 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <br />
-            <br />
-            <h1 class="main_title_text">Big Sal's Pizza</h1>
-            <br />
-            <h3 class="subtitle">The best pizza this side of the atlantic</h3>
+            <asp:ScriptManager ID="sm_time" runat="server">
+            </asp:ScriptManager>
+            <asp:UpdatePanel ID="update_panel_timer" runat="server">
+                <ContentTemplate>
+                    &nbsp;
+                    <asp:Label ID="lb_time" runat="server" CssClass="timer"></asp:Label>
+                    <asp:Timer ID="timer_current_time" runat="server" Interval="1">
+                    </asp:Timer>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <h1 class="title">Big Sal's Pizza</h1>
+            &nbsp;<br />
+            <h3 class="title">The best pizza this side of the atlantic</h3>
             <hr />
             <br />
-            <asp:Button ID="btn_customer_login" runat="server" Text="Login" />
+            <br />
+            <br />
+            <br />
+            <br />
+            <center><asp:ImageButton ID="ibtn_start_new_order" runat="server" Height="250px" Width="500px" OnClick="ibtn_start_new_order_Click" />
+&nbsp;</center>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          <center>  <asp:Button ID="btn_customer_login" runat="server" Text="Login" />
 &nbsp;<asp:Button ID="btn_create_account" runat="server" Text="Create Account" />&nbsp;
-            <asp:Button ID="btn_employee_login" runat="server" Text="Employee Login" />
+            <asp:Button ID="btn_employee_login" runat="server" Text="Employee Login" /></center>
             <br />
             <br />
         </div>

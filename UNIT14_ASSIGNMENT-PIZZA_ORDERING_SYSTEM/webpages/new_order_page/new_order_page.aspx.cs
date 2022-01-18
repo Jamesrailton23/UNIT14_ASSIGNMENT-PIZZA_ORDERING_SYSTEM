@@ -13,5 +13,10 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         {
 
         }
+
+        protected void ibtn_custom_pizza_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/webpages/customer_order_page_pizza/custom_order_page_pizza.aspx");
+        }
     }
 }
