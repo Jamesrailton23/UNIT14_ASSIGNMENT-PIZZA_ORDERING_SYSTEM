@@ -85,12 +85,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="custom_order_page_pizza.aspx" />
+    <Content Include="webpages\customer_order_page_pizza\custom_order_page_pizza.aspx" />
     <Content Include="custom_order_page_sides&amp;drinks.aspx" />
     <Content Include="custom_order_page_toppings.aspx" />
-    <Content Include="default.aspx" />
+    <Content Include="webpages\default\default.aspx" />
+    <Content Include="webpages\default\default.css" />
     <Content Include="Global.asax" />
-    <Content Include="new_order_page.aspx" />
+    <Content Include="webpages\new_order_page\new_order_page.aspx" />
     <Content Include="order_complete_page.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -99,6 +100,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Web.config" />
+    <Content Include="webpages\new_order_page\new_order_page.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="checkout_page.aspx.cs">
@@ -108,11 +110,11 @@
     <Compile Include="checkout_page.aspx.designer.cs">
       <DependentUpon>checkout_page.aspx</DependentUpon>
     </Compile>
-    <Compile Include="custom_order_page_pizza.aspx.cs">
+    <Compile Include="webpages\customer_order_page_pizza\custom_order_page_pizza.aspx.cs">
       <DependentUpon>custom_order_page_pizza.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="custom_order_page_pizza.aspx.designer.cs">
+    <Compile Include="webpages\customer_order_page_pizza\custom_order_page_pizza.aspx.designer.cs">
       <DependentUpon>custom_order_page_pizza.aspx</DependentUpon>
     </Compile>
     <Compile Include="custom_order_page_sides&amp;drinks.aspx.cs">
@@ -129,21 +131,21 @@
     <Compile Include="custom_order_page_toppings.aspx.designer.cs">
       <DependentUpon>custom_order_page_toppings.aspx</DependentUpon>
     </Compile>
-    <Compile Include="default.aspx.cs">
+    <Compile Include="webpages\default\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="default.aspx.designer.cs">
+    <Compile Include="webpages\default\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="new_order_page.aspx.cs">
+    <Compile Include="webpages\new_order_page\new_order_page.aspx.cs">
       <DependentUpon>new_order_page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="new_order_page.aspx.designer.cs">
+    <Compile Include="webpages\new_order_page\new_order_page.aspx.designer.cs">
       <DependentUpon>new_order_page.aspx</DependentUpon>
     </Compile>
     <Compile Include="order_complete_page.aspx.cs">
