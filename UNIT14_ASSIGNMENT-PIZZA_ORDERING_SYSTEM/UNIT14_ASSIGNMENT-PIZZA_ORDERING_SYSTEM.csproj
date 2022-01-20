@@ -76,6 +76,16 @@
     <Content Include="App_Data\Pizza_order_system_database_log.ldf">
       <DependentUpon>Pizza_order_system_database.mdf</DependentUpon>
     </Content>
+    <Content Include="pizza_order_system_model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>pizza_order_system_model.edmx</DependentUpon>
+      <LastGenOutput>pizza_order_system_model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="pizza_order_system_model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>pizza_order_system_model.edmx</DependentUpon>
+      <LastGenOutput>pizza_order_system_model.cs</LastGenOutput>
+    </Content>
     <Content Include="webpages\checkout_page\checkout_page.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -93,6 +103,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="webpages\customer_create_account\account_confirm.aspx" />
+    <Content Include="webpages\customer_create_account\customer_create_account.aspx" />
+    <Content Include="webpages\customer_login\customer_login.aspx" />
+    <Content Include="webpages\customer_portal\customer_portal.aspx" />
     <Content Include="webpages\custom_order_page_pizza\custom_order_page_pizza.aspx" />
     <Content Include="webpages\custom_order_page_pizza\custom_order_page_pizza.css" />
     <Content Include="webpages\custom_order_page_sides_and_drinks\custom_order_page_sides_and_drinks.aspx" />
@@ -100,6 +114,9 @@
     <Content Include="webpages\default\default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="webpages\default\default.css" />
+    <Content Include="webpages\employee_login_page\employee_login_page.aspx" />
+    <Content Include="webpages\kitchen_staff_portal\kitchen_staff_portal.aspx" />
+    <Content Include="webpages\manager_portal\manager_portal.aspx" />
     <Content Include="webpages\new_order_page\new_order_page.aspx" />
     <Content Include="webpages\order_complete_page\order_complete_page.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -112,12 +129,85 @@
     <Content Include="webpages\new_order_page\new_order_page.css" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs">
+      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Account.cs">
+      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_order.cs">
+      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kitchen_Staff_Account.cs">
+      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loged_In_User.cs">
+      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Account.cs">
+      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Side.cs">
+      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Topping.cs">
+      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pizza_order_system_model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pizza_order_system_model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pizza_order_system_model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pizza_order_system_model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pizza_order_system_model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Side.cs">
+      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Topping.cs">
+      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="webpages\checkout_page\checkout_page.aspx.cs">
       <DependentUpon>checkout_page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webpages\checkout_page\checkout_page.aspx.designer.cs">
       <DependentUpon>checkout_page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webpages\customer_create_account\account_confirm.aspx.cs">
+      <DependentUpon>account_confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webpages\customer_create_account\account_confirm.aspx.designer.cs">
+      <DependentUpon>account_confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webpages\customer_create_account\customer_create_account.aspx.cs">
+      <DependentUpon>customer_create_account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webpages\customer_create_account\customer_create_account.aspx.designer.cs">
+      <DependentUpon>customer_create_account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webpages\customer_login\customer_login.aspx.cs">
+      <DependentUpon>customer_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webpages\customer_login\customer_login.aspx.designer.cs">
+      <DependentUpon>customer_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webpages\customer_portal\customer_portal.aspx.cs">
+      <DependentUpon>customer_portal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webpages\customer_portal\customer_portal.aspx.designer.cs">
+      <DependentUpon>customer_portal.aspx</DependentUpon>
     </Compile>
     <Compile Include="webpages\custom_order_page_pizza\custom_order_page_pizza.aspx.cs">
       <DependentUpon>custom_order_page_pizza.aspx</DependentUpon>
@@ -149,6 +239,27 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="webpages\employee_login_page\employee_login_page.aspx.cs">
+      <DependentUpon>employee_login_page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webpages\employee_login_page\employee_login_page.aspx.designer.cs">
+      <DependentUpon>employee_login_page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webpages\kitchen_staff_portal\kitchen_staff_portal.aspx.cs">
+      <DependentUpon>kitchen_staff_portal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webpages\kitchen_staff_portal\kitchen_staff_portal.aspx.designer.cs">
+      <DependentUpon>kitchen_staff_portal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webpages\manager_portal\manager_portal.aspx.cs">
+      <DependentUpon>manager_portal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webpages\manager_portal\manager_portal.aspx.designer.cs">
+      <DependentUpon>manager_portal.aspx</DependentUpon>
     </Compile>
     <Compile Include="webpages\new_order_page\new_order_page.aspx.cs">
       <DependentUpon>new_order_page.aspx</DependentUpon>
@@ -190,6 +301,13 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <EntityDeploy Include="pizza_order_system_model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>pizza_order_system_model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="pizza_order_system_model.edmx.diagram">
+      <DependentUpon>pizza_order_system_model.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -199,12 +317,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="webpages\customer portal\" />
-    <Folder Include="webpages\customer_create_account\" />
-    <Folder Include="webpages\customer_login\" />
-    <Folder Include="webpages\employee_login_page\" />
-    <Folder Include="webpages\kitchen_staff_portal\" />
-    <Folder Include="webpages\manager_portal\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

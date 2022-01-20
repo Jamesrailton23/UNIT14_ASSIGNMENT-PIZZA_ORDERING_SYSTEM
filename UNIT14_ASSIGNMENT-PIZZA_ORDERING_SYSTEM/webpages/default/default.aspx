@@ -31,8 +31,8 @@
             <br />
             <br />
             <br />
-          <center>  <asp:Button ID="btn_customer_login" runat="server" Text="Login" />
-&nbsp;<asp:Button ID="btn_create_account" runat="server" Text="Create Account" />&nbsp;
+          <center>  <asp:Button ID="btn_customer_login" runat="server" Text="Login" OnClick="btn_customer_login_Click" />
+&nbsp;<asp:Button ID="btn_create_account" runat="server" Text="Create Account" OnClick="btn_create_account_Click" />&nbsp;
             <asp:Button ID="btn_employee_login" runat="server" Text="Employee Login" /></center>
             <br />
             <br />

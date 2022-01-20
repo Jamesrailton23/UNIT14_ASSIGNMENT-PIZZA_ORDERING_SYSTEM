@@ -1,0 +1,638 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Pizza_order_system_databaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="int" Nullable="false" />
+          <Property Name="Collection_method" Type="varchar" MaxLength="10" />
+          <Property Name="Total_order_cost" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Full_name" Type="varchar" MaxLength="100" />
+          <Property Name="Address_Line_1" Type="varchar" MaxLength="100" />
+          <Property Name="Address_Line_2" Type="varchar" MaxLength="100" />
+          <Property Name="Address_Line_3" Type="varchar" MaxLength="100" />
+          <Property Name="Post_code" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Account-ID-Number" Type="int" />
+          <Property Name="Time Created" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Customer Account">
+          <Key>
+            <PropertyRef Name="Account-ID-Number" />
+          </Key>
+          <Property Name="Account-ID-Number" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone number" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Customer order">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="int" Nullable="false" />
+          <Property Name="Customer_ID" Type="int" />
+          <Property Name="Preset_menu_item" Type="varchar" MaxLength="10" />
+          <Property Name="Pizza_size" Type="nvarchar" MaxLength="50" />
+          <Property Name="Crust_size" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cheese_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dough_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sides_added?" Type="varchar" MaxLength="10" />
+          <Property Name="Toppings_added?" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Kitchen Staff Account">
+          <Key>
+            <PropertyRef Name="Account-ID-Number" />
+          </Key>
+          <Property Name="Account-ID-Number" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date Of Birth" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Loged In Users">
+          <Key>
+            <PropertyRef Name="Account-ID-Number" />
+          </Key>
+          <Property Name="Account-ID-Number" Type="int" Nullable="false" />
+          <Property Name="Login Time" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Manager Account">
+          <Key>
+            <PropertyRef Name="Account-ID-Number" />
+          </Key>
+          <Property Name="Account-ID-Number" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date Of Birth" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Order Side">
+          <Key>
+            <PropertyRef Name="Sides_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="int" Nullable="false" />
+          <Property Name="Sides_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order Topping">
+          <Key>
+            <PropertyRef Name="Topping_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="int" Nullable="false" />
+          <Property Name="Topping_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Side">
+          <Key>
+            <PropertyRef Name="Sides_ID" />
+          </Key>
+          <Property Name="Sides_ID" Type="int" Nullable="false" />
+          <Property Name="Coca Cola" Type="varchar" MaxLength="10" />
+          <Property Name="Pepsi" Type="varchar" MaxLength="10" />
+          <Property Name="Water" Type="varchar" MaxLength="10" />
+          <Property Name="Nacho Bites" Type="varchar" MaxLength="10" />
+          <Property Name="Mozzarella Sticks" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Topping">
+          <Key>
+            <PropertyRef Name="Topping_ID" />
+          </Key>
+          <Property Name="Topping_ID" Type="int" Nullable="false" />
+          <Property Name="Pepperroni" Type="varchar" MaxLength="10" />
+          <Property Name="Green Onions" Type="varchar" MaxLength="10" />
+          <Property Name="Red Onions" Type="varchar" MaxLength="10" />
+          <Property Name="Ancovies" Type="varchar" MaxLength="10" />
+          <Property Name="Mushrooms" Type="varchar" MaxLength="10" />
+          <Property Name="Black olives" Type="varchar" MaxLength="10" />
+          <Property Name="Ham" Type="varchar" MaxLength="10" />
+          <Property Name="Pineapple" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK__Order Sid__Order__278EDA44">
+          <End Role="Customer order" Type="Self.Customer order" Multiplicity="1" />
+          <End Role="Order Side" Type="Self.Order Side" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer order">
+              <PropertyRef Name="Order_ID" />
+            </Principal>
+            <Dependent Role="Order Side">
+              <PropertyRef Name="Order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer order_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Customer order" Type="Self.Customer order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_ID" />
+            </Principal>
+            <Dependent Role="Customer order">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer Account">
+          <End Role="Customer Account" Type="Self.Customer Account" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer Account">
+              <PropertyRef Name="Account-ID-Number" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="Account-ID-Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Loged In Users_Kitchen Staff Account">
+          <End Role="Kitchen Staff Account" Type="Self.Kitchen Staff Account" Multiplicity="1" />
+          <End Role="Loged In Users" Type="Self.Loged In Users" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Kitchen Staff Account">
+              <PropertyRef Name="Account-ID-Number" />
+            </Principal>
+            <Dependent Role="Loged In Users">
+              <PropertyRef Name="Account-ID-Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order Topping_Customer Order">
+          <End Role="Customer order" Type="Self.Customer order" Multiplicity="1" />
+          <End Role="Order Topping" Type="Self.Order Topping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer order">
+              <PropertyRef Name="Order_ID" />
+            </Principal>
+            <Dependent Role="Order Topping">
+              <PropertyRef Name="Order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Side_Order Side">
+          <End Role="Order Side" Type="Self.Order Side" Multiplicity="1" />
+          <End Role="Side" Type="Self.Side" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Order Side">
+              <PropertyRef Name="Sides_ID" />
+            </Principal>
+            <Dependent Role="Side">
+              <PropertyRef Name="Sides_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Topping_Order Topping">
+          <End Role="Order Topping" Type="Self.Order Topping" Multiplicity="1" />
+          <End Role="Topping" Type="Self.Topping" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Order Topping">
+              <PropertyRef Name="Topping_ID" />
+            </Principal>
+            <Dependent Role="Topping">
+              <PropertyRef Name="Topping_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Pizza_order_system_databaseModelStoreContainer">
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer Account" EntityType="Self.Customer Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer order" EntityType="Self.Customer order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kitchen Staff Account" EntityType="Self.Kitchen Staff Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Loged In Users" EntityType="Self.Loged In Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manager Account" EntityType="Self.Manager Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order Side" EntityType="Self.Order Side" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order Topping" EntityType="Self.Order Topping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Side" EntityType="Self.Side" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Topping" EntityType="Self.Topping" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Order Sid__Order__278EDA44" Association="Self.FK__Order Sid__Order__278EDA44">
+            <End Role="Customer order" EntitySet="Customer order" />
+            <End Role="Order Side" EntitySet="Order Side" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer order_Customer" Association="Self.FK_Customer order_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer order" EntitySet="Customer order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer Account" Association="Self.FK_Customer_Customer Account">
+            <End Role="Customer Account" EntitySet="Customer Account" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Loged In Users_Kitchen Staff Account" Association="Self.FK_Loged In Users_Kitchen Staff Account">
+            <End Role="Kitchen Staff Account" EntitySet="Kitchen Staff Account" />
+            <End Role="Loged In Users" EntitySet="Loged In Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order Topping_Customer Order" Association="Self.FK_Order Topping_Customer Order">
+            <End Role="Customer order" EntitySet="Customer order" />
+            <End Role="Order Topping" EntitySet="Order Topping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Side_Order Side" Association="Self.FK_Side_Order Side">
+            <End Role="Order Side" EntitySet="Order Side" />
+            <End Role="Side" EntitySet="Side" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Topping_Order Topping" Association="Self.FK_Topping_Order Topping">
+            <End Role="Order Topping" EntitySet="Order Topping" />
+            <End Role="Topping" EntitySet="Topping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Pizza_order_system_databaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Collection_method" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Total_order_cost" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Full_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address_Line_1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address_Line_2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address_Line_3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Post_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Account_ID_Number" Type="Int32" />
+          <Property Name="Time_Created" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Customer_order" Relationship="Self.FK_Customer_order_Customer" FromRole="Customer" ToRole="Customer_order" />
+          <NavigationProperty Name="Customer_Account" Relationship="Self.FK_Customer_Customer_Account" FromRole="Customer" ToRole="Customer_Account" />
+        </EntityType>
+        <EntityType Name="Customer_Account">
+          <Key>
+            <PropertyRef Name="Account_ID_Number" />
+          </Key>
+          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_Customer_Account" FromRole="Customer_Account" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Customer_order">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="Int32" Nullable="false" />
+          <Property Name="Customer_ID" Type="Int32" />
+          <Property Name="Preset_menu_item" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pizza_size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Crust_size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cheese_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dough_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sides_added_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Toppings_added_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Customer_order_Customer" FromRole="Customer_order" ToRole="Customer" />
+          <NavigationProperty Name="Order_Side" Relationship="Self.FK__Order_Sid__Order__278EDA44" FromRole="Customer_order" ToRole="Order_Side" />
+          <NavigationProperty Name="Order_Topping" Relationship="Self.FK_Order_Topping_Customer_Order" FromRole="Customer_order" ToRole="Order_Topping" />
+        </EntityType>
+        <EntityType Name="Kitchen_Staff_Account">
+          <Key>
+            <PropertyRef Name="Account_ID_Number" />
+          </Key>
+          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Of_Birth" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Loged_In_Users" Relationship="Self.FK_Loged_In_Users_Kitchen_Staff_Account" FromRole="Kitchen_Staff_Account" ToRole="Loged_In_Users" />
+        </EntityType>
+        <EntityType Name="Loged_In_User">
+          <Key>
+            <PropertyRef Name="Account_ID_Number" />
+          </Key>
+          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" />
+          <Property Name="Login_Time" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Kitchen_Staff_Account" Relationship="Self.FK_Loged_In_Users_Kitchen_Staff_Account" FromRole="Loged_In_Users" ToRole="Kitchen_Staff_Account" />
+        </EntityType>
+        <EntityType Name="Manager_Account">
+          <Key>
+            <PropertyRef Name="Account_ID_Number" />
+          </Key>
+          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Of_Birth" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Order_Side">
+          <Key>
+            <PropertyRef Name="Sides_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="Int32" Nullable="false" />
+          <Property Name="Sides_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer_order" Relationship="Self.FK__Order_Sid__Order__278EDA44" FromRole="Order_Side" ToRole="Customer_order" />
+          <NavigationProperty Name="Side" Relationship="Self.FK_Side_Order_Side" FromRole="Order_Side" ToRole="Side" />
+        </EntityType>
+        <EntityType Name="Order_Topping">
+          <Key>
+            <PropertyRef Name="Topping_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="Int32" Nullable="false" />
+          <Property Name="Topping_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer_order" Relationship="Self.FK_Order_Topping_Customer_Order" FromRole="Order_Topping" ToRole="Customer_order" />
+          <NavigationProperty Name="Topping" Relationship="Self.FK_Topping_Order_Topping" FromRole="Order_Topping" ToRole="Topping" />
+        </EntityType>
+        <EntityType Name="Side">
+          <Key>
+            <PropertyRef Name="Sides_ID" />
+          </Key>
+          <Property Name="Sides_ID" Type="Int32" Nullable="false" />
+          <Property Name="Coca_Cola" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pepsi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Water" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Nacho_Bites" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Mozzarella_Sticks" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Order_Side" Relationship="Self.FK_Side_Order_Side" FromRole="Side" ToRole="Order_Side" />
+        </EntityType>
+        <EntityType Name="Topping">
+          <Key>
+            <PropertyRef Name="Topping_ID" />
+          </Key>
+          <Property Name="Topping_ID" Type="Int32" Nullable="false" />
+          <Property Name="Pepperroni" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Green_Onions" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Red_Onions" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Ancovies" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Mushrooms" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Black_olives" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Ham" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pineapple" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Order_Topping" Relationship="Self.FK_Topping_Order_Topping" FromRole="Topping" ToRole="Order_Topping" />
+        </EntityType>
+        <Association Name="FK_Customer_order_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Customer_order" Type="Self.Customer_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_ID" />
+            </Principal>
+            <Dependent Role="Customer_order">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer_Account">
+          <End Role="Customer_Account" Type="Self.Customer_Account" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_Account">
+              <PropertyRef Name="Account_ID_Number" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="Account_ID_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_Sid__Order__278EDA44">
+          <End Role="Customer_order" Type="Self.Customer_order" Multiplicity="1" />
+          <End Role="Order_Side" Type="Self.Order_Side" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_order">
+              <PropertyRef Name="Order_ID" />
+            </Principal>
+            <Dependent Role="Order_Side">
+              <PropertyRef Name="Order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Topping_Customer_Order">
+          <End Role="Customer_order" Type="Self.Customer_order" Multiplicity="1" />
+          <End Role="Order_Topping" Type="Self.Order_Topping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_order">
+              <PropertyRef Name="Order_ID" />
+            </Principal>
+            <Dependent Role="Order_Topping">
+              <PropertyRef Name="Order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Loged_In_Users_Kitchen_Staff_Account">
+          <End Role="Kitchen_Staff_Account" Type="Self.Kitchen_Staff_Account" Multiplicity="1" />
+          <End Role="Loged_In_Users" Type="Self.Loged_In_User" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Kitchen_Staff_Account">
+              <PropertyRef Name="Account_ID_Number" />
+            </Principal>
+            <Dependent Role="Loged_In_Users">
+              <PropertyRef Name="Account_ID_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Side_Order_Side">
+          <End Role="Order_Side" Type="Self.Order_Side" Multiplicity="1" />
+          <End Role="Side" Type="Self.Side" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Order_Side">
+              <PropertyRef Name="Sides_ID" />
+            </Principal>
+            <Dependent Role="Side">
+              <PropertyRef Name="Sides_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Topping_Order_Topping">
+          <End Role="Order_Topping" Type="Self.Order_Topping" Multiplicity="1" />
+          <End Role="Topping" Type="Self.Topping" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Order_Topping">
+              <PropertyRef Name="Topping_ID" />
+            </Principal>
+            <Dependent Role="Topping">
+              <PropertyRef Name="Topping_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Pizza_order_system_databaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Customer_Accounts" EntityType="Self.Customer_Account" />
+          <EntitySet Name="Customer_orders" EntityType="Self.Customer_order" />
+          <EntitySet Name="Kitchen_Staff_Accounts" EntityType="Self.Kitchen_Staff_Account" />
+          <EntitySet Name="Loged_In_Users" EntityType="Self.Loged_In_User" />
+          <EntitySet Name="Manager_Accounts" EntityType="Self.Manager_Account" />
+          <EntitySet Name="Order_Sides" EntityType="Self.Order_Side" />
+          <EntitySet Name="Order_Toppings" EntityType="Self.Order_Topping" />
+          <EntitySet Name="Sides" EntityType="Self.Side" />
+          <EntitySet Name="Toppings" EntityType="Self.Topping" />
+          <AssociationSet Name="FK_Customer_order_Customer" Association="Self.FK_Customer_order_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Customer_order" EntitySet="Customer_orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer_Account" Association="Self.FK_Customer_Customer_Account">
+            <End Role="Customer_Account" EntitySet="Customer_Accounts" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_Sid__Order__278EDA44" Association="Self.FK__Order_Sid__Order__278EDA44">
+            <End Role="Customer_order" EntitySet="Customer_orders" />
+            <End Role="Order_Side" EntitySet="Order_Sides" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Topping_Customer_Order" Association="Self.FK_Order_Topping_Customer_Order">
+            <End Role="Customer_order" EntitySet="Customer_orders" />
+            <End Role="Order_Topping" EntitySet="Order_Toppings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Loged_In_Users_Kitchen_Staff_Account" Association="Self.FK_Loged_In_Users_Kitchen_Staff_Account">
+            <End Role="Kitchen_Staff_Account" EntitySet="Kitchen_Staff_Accounts" />
+            <End Role="Loged_In_Users" EntitySet="Loged_In_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Side_Order_Side" Association="Self.FK_Side_Order_Side">
+            <End Role="Order_Side" EntitySet="Order_Sides" />
+            <End Role="Side" EntitySet="Sides" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Topping_Order_Topping" Association="Self.FK_Topping_Order_Topping">
+            <End Role="Order_Topping" EntitySet="Order_Toppings" />
+            <End Role="Topping" EntitySet="Toppings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Pizza_order_system_databaseModelStoreContainer" CdmEntityContainer="Pizza_order_system_databaseEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Collection_method" ColumnName="Collection_method" />
+                <ScalarProperty Name="Total_order_cost" ColumnName="Total_order_cost" />
+                <ScalarProperty Name="Full_name" ColumnName="Full_name" />
+                <ScalarProperty Name="Address_Line_1" ColumnName="Address_Line_1" />
+                <ScalarProperty Name="Address_Line_2" ColumnName="Address_Line_2" />
+                <ScalarProperty Name="Address_Line_3" ColumnName="Address_Line_3" />
+                <ScalarProperty Name="Post_code" ColumnName="Post_code" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
+                <ScalarProperty Name="Time_Created" ColumnName="Time Created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_Accounts">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Customer_Account">
+              <MappingFragment StoreEntitySet="Customer Account">
+                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone_number" ColumnName="Phone number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_orders">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Customer_order">
+              <MappingFragment StoreEntitySet="Customer order">
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Preset_menu_item" ColumnName="Preset_menu_item" />
+                <ScalarProperty Name="Pizza_size" ColumnName="Pizza_size" />
+                <ScalarProperty Name="Crust_size" ColumnName="Crust_size" />
+                <ScalarProperty Name="Cheese_type" ColumnName="Cheese_type" />
+                <ScalarProperty Name="Dough_type" ColumnName="Dough_type" />
+                <ScalarProperty Name="Sides_added_" ColumnName="Sides_added?" />
+                <ScalarProperty Name="Toppings_added_" ColumnName="Toppings_added?" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kitchen_Staff_Accounts">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Kitchen_Staff_Account">
+              <MappingFragment StoreEntitySet="Kitchen Staff Account">
+                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+                <ScalarProperty Name="Date_Of_Birth" ColumnName="Date Of Birth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Loged_In_Users">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Loged_In_User">
+              <MappingFragment StoreEntitySet="Loged In Users">
+                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
+                <ScalarProperty Name="Login_Time" ColumnName="Login Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manager_Accounts">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Manager_Account">
+              <MappingFragment StoreEntitySet="Manager Account">
+                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+                <ScalarProperty Name="Date_Of_Birth" ColumnName="Date Of Birth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Sides">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Order_Side">
+              <MappingFragment StoreEntitySet="Order Side">
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="Sides_ID" ColumnName="Sides_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Toppings">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Order_Topping">
+              <MappingFragment StoreEntitySet="Order Topping">
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="Topping_ID" ColumnName="Topping_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sides">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Side">
+              <MappingFragment StoreEntitySet="Side">
+                <ScalarProperty Name="Sides_ID" ColumnName="Sides_ID" />
+                <ScalarProperty Name="Coca_Cola" ColumnName="Coca Cola" />
+                <ScalarProperty Name="Pepsi" ColumnName="Pepsi" />
+                <ScalarProperty Name="Water" ColumnName="Water" />
+                <ScalarProperty Name="Nacho_Bites" ColumnName="Nacho Bites" />
+                <ScalarProperty Name="Mozzarella_Sticks" ColumnName="Mozzarella Sticks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Toppings">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Topping">
+              <MappingFragment StoreEntitySet="Topping">
+                <ScalarProperty Name="Topping_ID" ColumnName="Topping_ID" />
+                <ScalarProperty Name="Pepperroni" ColumnName="Pepperroni" />
+                <ScalarProperty Name="Green_Onions" ColumnName="Green Onions" />
+                <ScalarProperty Name="Red_Onions" ColumnName="Red Onions" />
+                <ScalarProperty Name="Ancovies" ColumnName="Ancovies" />
+                <ScalarProperty Name="Mushrooms" ColumnName="Mushrooms" />
+                <ScalarProperty Name="Black_olives" ColumnName="Black olives" />
+                <ScalarProperty Name="Ham" ColumnName="Ham" />
+                <ScalarProperty Name="Pineapple" ColumnName="Pineapple" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
