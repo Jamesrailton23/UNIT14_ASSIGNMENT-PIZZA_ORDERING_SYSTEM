@@ -12,37 +12,26 @@
             <h1>Sides and Drinks</h1>
             <h3>Select your sides and drinks here</h3>
             <br />
-            <h3>Pepsi</h3>
-            <asp:RadioButtonList ID="rbl_pepsi" runat="server" RepeatDirection="Horizontal">       
-                            <asp:ListItem>No</asp:ListItem>
-                            <asp:ListItem>Yes</asp:ListItem>
-                        </asp:RadioButtonList>
-            <h3>Coca Cola</h3>
-            <asp:RadioButtonList ID="rbl_coca_cola" runat="server" RepeatDirection="Horizontal">       
-                            <asp:ListItem>No</asp:ListItem>
-                            <asp:ListItem>Yes</asp:ListItem>
-                        </asp:RadioButtonList>
-                        <h3>Water</h3>
-            <asp:RadioButtonList ID="rbl_water" runat="server" RepeatDirection="Horizontal">       
-                            <asp:ListItem>No</asp:ListItem>
-                            <asp:ListItem>Yes</asp:ListItem>
-                        </asp:RadioButtonList>
-             <h3>Coca Cola</h3>
-            <asp:RadioButtonList ID="rbl_nacho_bites" runat="server" RepeatDirection="Horizontal">       
-                            <asp:ListItem>No</asp:ListItem>
-                            <asp:ListItem>Yes</asp:ListItem>
-                        </asp:RadioButtonList>
-                        <h3>Water</h3>
-            <asp:RadioButtonList ID="rbl_mozzarella_sticks" runat="server" RepeatDirection="Horizontal">       
-                            <asp:ListItem>No</asp:ListItem>
-                            <asp:ListItem>Yes</asp:ListItem>
-                        </asp:RadioButtonList>
-
+            <h3>&nbsp; Pepsi
+                <asp:CheckBox ID="cb_pepsi" runat="server" />
+            </h3>
+                        <h3>&nbsp; Water
+                            <asp:CheckBox ID="cb_water" runat="server" />
+            </h3>
+             <h3>&nbsp; Coca Cola
+                 <asp:CheckBox ID="cb_cocaCola" runat="server" />
+            </h3>
+            <h3>&nbsp; Nacho bites
+                 <asp:CheckBox ID="cb_nachoBites" runat="server" />
+            </h3>
+            <h3>&nbsp; Mozzarella Sticks
+                 <asp:CheckBox ID="cb_mozzarellaSticks" runat="server" />
+            </h3>
             <br />
-            <asp:Button ID="btn_confirm" runat="server" Text="confirm" />
-            <br />
+            <asp:Button ID="btn_confirm" runat="server" Text="confirm" OnClick="btn_confirm_Click" />
+            
 
-        </div>
+        &nbsp;</div>
     </form>
 </body>
 </html>

@@ -17,8 +17,8 @@
            
             <asp:RadioButtonList ID="rbl_pineapple" runat="server" RepeatDirection="Horizontal">
                             <asp:ListItem Selected="True">None</asp:ListItem>
-                            <asp:ListItem>Normal</asp:ListItem>
-                            <asp:ListItem>Extra</asp:ListItem>
+                            <asp:ListItem>Normal (£1)</asp:ListItem>
+                            <asp:ListItem>Extra (£3)</asp:ListItem>
                         </asp:RadioButtonList>
 
             <br />
@@ -31,8 +31,8 @@
                         </asp:RadioButtonList>
                      <br />
             <br />
-            <h3>Pepproni</h3>
-            <asp:RadioButtonList ID="rbl_Pepporni" runat="server" RepeatDirection="Horizontal">
+            <h3>Pepperoni</h3>
+            <asp:RadioButtonList ID="rbl_pepperoni" runat="server" RepeatDirection="Horizontal">
                             <asp:ListItem Selected="True">None</asp:ListItem>
                             <asp:ListItem>Normal</asp:ListItem>
                             <asp:ListItem>Extra</asp:ListItem>
@@ -80,8 +80,8 @@
             <p>
                 &nbsp;</p>
             <p>
-                <asp:Button ID="btn_confirm" runat="server" Text="Confirm" />
-            </p>
+                <asp:Button ID="btn_confirm" runat="server" Text="Confirm" OnClick="btn_confirm_Click" />
+            &nbsp;</p>
         </form>
 
        

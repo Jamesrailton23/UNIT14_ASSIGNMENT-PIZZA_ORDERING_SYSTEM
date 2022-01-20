@@ -11,7 +11,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lb_time.Text = DateTime.Now.ToString();
+            
         }
 
         protected void ibtn_start_new_order_Click(object sender, ImageClickEventArgs e)

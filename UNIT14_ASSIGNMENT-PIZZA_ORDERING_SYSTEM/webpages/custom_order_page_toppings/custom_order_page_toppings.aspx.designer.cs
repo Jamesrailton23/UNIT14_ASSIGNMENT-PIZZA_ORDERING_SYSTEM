@@ -42,13 +42,13 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_ham;
 
         /// <summary>
-        /// rbl_Pepporni control.
+        /// rbl_pepperoni control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbl_Pepporni;
+        protected global::System.Web.UI.WebControls.RadioButtonList rbl_pepperoni;
 
         /// <summary>
         /// rbl_green_onions control.

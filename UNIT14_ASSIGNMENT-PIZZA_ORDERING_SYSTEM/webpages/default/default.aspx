@@ -11,16 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:ScriptManager ID="sm_time" runat="server">
-            </asp:ScriptManager>
-            <asp:UpdatePanel ID="update_panel_timer" runat="server">
-                <ContentTemplate>
-                    &nbsp;
-                    <asp:Label ID="lb_time" runat="server" CssClass="timer"></asp:Label>
-                    <asp:Timer ID="timer_current_time" runat="server" Interval="1">
-                    </asp:Timer>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+            <br />
             <h1 class="title">Big Sal's Pizza</h1>
             &nbsp;<br />
             <h3 class="title">The best pizza this side of the atlantic</h3>

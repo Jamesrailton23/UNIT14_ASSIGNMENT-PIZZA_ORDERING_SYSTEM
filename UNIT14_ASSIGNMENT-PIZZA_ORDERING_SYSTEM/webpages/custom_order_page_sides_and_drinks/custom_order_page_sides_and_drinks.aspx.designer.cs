@@ -24,49 +24,49 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// rbl_pepsi control.
+        /// cb_pepsi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbl_pepsi;
+        protected global::System.Web.UI.WebControls.CheckBox cb_pepsi;
 
         /// <summary>
-        /// rbl_coca_cola control.
+        /// cb_water control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbl_coca_cola;
+        protected global::System.Web.UI.WebControls.CheckBox cb_water;
 
         /// <summary>
-        /// rbl_water control.
+        /// cb_cocaCola control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbl_water;
+        protected global::System.Web.UI.WebControls.CheckBox cb_cocaCola;
 
         /// <summary>
-        /// rbl_nacho_bites control.
+        /// cb_nachoBites control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbl_nacho_bites;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nachoBites;
 
         /// <summary>
-        /// rbl_mozzarella_sticks control.
+        /// cb_mozzarellaSticks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbl_mozzarella_sticks;
+        protected global::System.Web.UI.WebControls.CheckBox cb_mozzarellaSticks;
 
         /// <summary>
         /// btn_confirm control.
