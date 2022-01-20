@@ -113,18 +113,6 @@
           <Property Name="Ham" Type="varchar" MaxLength="10" />
           <Property Name="Pineapple" Type="varchar" MaxLength="10" />
         </EntityType>
-        <Association Name="FK__Order Sid__Order__278EDA44">
-          <End Role="Customer order" Type="Self.Customer order" Multiplicity="1" />
-          <End Role="Order Side" Type="Self.Order Side" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer order">
-              <PropertyRef Name="Order_ID" />
-            </Principal>
-            <Dependent Role="Order Side">
-              <PropertyRef Name="Order_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Customer order_Customer">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Customer order" Type="Self.Customer order" Multiplicity="*" />
@@ -158,6 +146,18 @@
             </Principal>
             <Dependent Role="Loged In Users">
               <PropertyRef Name="Account-ID-Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order Side_Customer order">
+          <End Role="Customer order" Type="Self.Customer order" Multiplicity="1" />
+          <End Role="Order Side" Type="Self.Order Side" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer order">
+              <PropertyRef Name="Order_ID" />
+            </Principal>
+            <Dependent Role="Order Side">
+              <PropertyRef Name="Order_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -208,10 +208,6 @@
           <EntitySet Name="Order Topping" EntityType="Self.Order Topping" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Side" EntityType="Self.Side" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Topping" EntityType="Self.Topping" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Order Sid__Order__278EDA44" Association="Self.FK__Order Sid__Order__278EDA44">
-            <End Role="Customer order" EntitySet="Customer order" />
-            <End Role="Order Side" EntitySet="Order Side" />
-          </AssociationSet>
           <AssociationSet Name="FK_Customer order_Customer" Association="Self.FK_Customer order_Customer">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Customer order" EntitySet="Customer order" />
@@ -223,6 +219,10 @@
           <AssociationSet Name="FK_Loged In Users_Kitchen Staff Account" Association="Self.FK_Loged In Users_Kitchen Staff Account">
             <End Role="Kitchen Staff Account" EntitySet="Kitchen Staff Account" />
             <End Role="Loged In Users" EntitySet="Loged In Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order Side_Customer order" Association="Self.FK_Order Side_Customer order">
+            <End Role="Customer order" EntitySet="Customer order" />
+            <End Role="Order Side" EntitySet="Order Side" />
           </AssociationSet>
           <AssociationSet Name="FK_Order Topping_Customer Order" Association="Self.FK_Order Topping_Customer Order">
             <End Role="Customer order" EntitySet="Customer order" />
@@ -285,7 +285,7 @@
           <Property Name="Sides_added_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Toppings_added_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Customer_order_Customer" FromRole="Customer_order" ToRole="Customer" />
-          <NavigationProperty Name="Order_Side" Relationship="Self.FK__Order_Sid__Order__278EDA44" FromRole="Customer_order" ToRole="Order_Side" />
+          <NavigationProperty Name="Order_Side" Relationship="Self.FK_Order_Side_Customer_order" FromRole="Customer_order" ToRole="Order_Side" />
           <NavigationProperty Name="Order_Topping" Relationship="Self.FK_Order_Topping_Customer_Order" FromRole="Customer_order" ToRole="Order_Topping" />
         </EntityType>
         <EntityType Name="Kitchen_Staff_Account">
@@ -325,7 +325,7 @@
           </Key>
           <Property Name="Order_ID" Type="Int32" Nullable="false" />
           <Property Name="Sides_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Customer_order" Relationship="Self.FK__Order_Sid__Order__278EDA44" FromRole="Order_Side" ToRole="Customer_order" />
+          <NavigationProperty Name="Customer_order" Relationship="Self.FK_Order_Side_Customer_order" FromRole="Order_Side" ToRole="Customer_order" />
           <NavigationProperty Name="Side" Relationship="Self.FK_Side_Order_Side" FromRole="Order_Side" ToRole="Side" />
         </EntityType>
         <EntityType Name="Order_Topping">
@@ -388,7 +388,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Order_Sid__Order__278EDA44">
+        <Association Name="FK_Order_Side_Customer_order">
           <End Role="Customer_order" Type="Self.Customer_order" Multiplicity="1" />
           <End Role="Order_Side" Type="Self.Order_Side" Multiplicity="*" />
           <ReferentialConstraint>
@@ -467,7 +467,7 @@
             <End Role="Customer_Account" EntitySet="Customer_Accounts" />
             <End Role="Customer" EntitySet="Customers" />
           </AssociationSet>
-          <AssociationSet Name="FK__Order_Sid__Order__278EDA44" Association="Self.FK__Order_Sid__Order__278EDA44">
+          <AssociationSet Name="FK_Order_Side_Customer_order" Association="Self.FK_Order_Side_Customer_order">
             <End Role="Customer_order" EntitySet="Customer_orders" />
             <End Role="Order_Side" EntitySet="Order_Sides" />
           </AssociationSet>

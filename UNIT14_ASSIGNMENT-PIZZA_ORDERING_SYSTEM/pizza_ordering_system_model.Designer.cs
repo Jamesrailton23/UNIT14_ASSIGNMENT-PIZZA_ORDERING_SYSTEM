@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\james\source\repos\UNIT14_ASSIGNMENT-PIZZA_ORDERING_SYSTEM\UNIT14_ASSIGNMENT-PIZZA_ORDERING_SYSTEM\pizza_order_system_model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\james\source\repos\UNIT14_ASSIGNMENT-PIZZA_ORDERING_SYSTEM\UNIT14_ASSIGNMENT-PIZZA_ORDERING_SYSTEM\pizza_ordering_system_model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

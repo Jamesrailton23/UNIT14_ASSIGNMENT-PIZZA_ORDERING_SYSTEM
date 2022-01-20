@@ -76,15 +76,15 @@
     <Content Include="App_Data\Pizza_order_system_database_log.ldf">
       <DependentUpon>Pizza_order_system_database.mdf</DependentUpon>
     </Content>
-    <Content Include="pizza_order_system_model.Context.tt">
+    <Content Include="pizza_ordering_system_model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>pizza_order_system_model.edmx</DependentUpon>
-      <LastGenOutput>pizza_order_system_model.Context.cs</LastGenOutput>
+      <DependentUpon>pizza_ordering_system_model.edmx</DependentUpon>
+      <LastGenOutput>pizza_ordering_system_model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="pizza_order_system_model.tt">
+    <Content Include="pizza_ordering_system_model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>pizza_order_system_model.edmx</DependentUpon>
-      <LastGenOutput>pizza_order_system_model.cs</LastGenOutput>
+      <DependentUpon>pizza_ordering_system_model.edmx</DependentUpon>
+      <LastGenOutput>pizza_ordering_system_model.cs</LastGenOutput>
     </Content>
     <Content Include="webpages\checkout_page\checkout_page.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -130,49 +130,49 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs">
-      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer_Account.cs">
-      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer_order.cs">
-      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Kitchen_Staff_Account.cs">
-      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Loged_In_User.cs">
-      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Manager_Account.cs">
-      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Order_Side.cs">
-      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Order_Topping.cs">
-      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
-    <Compile Include="pizza_order_system_model.Context.cs">
+    <Compile Include="pizza_ordering_system_model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>pizza_order_system_model.Context.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="pizza_order_system_model.cs">
+    <Compile Include="pizza_ordering_system_model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
-    <Compile Include="pizza_order_system_model.Designer.cs">
+    <Compile Include="pizza_ordering_system_model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>pizza_order_system_model.edmx</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Side.cs">
-      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Topping.cs">
-      <DependentUpon>pizza_order_system_model.tt</DependentUpon>
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="webpages\checkout_page\checkout_page.aspx.cs">
       <DependentUpon>checkout_page.aspx</DependentUpon>
@@ -301,12 +301,12 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <EntityDeploy Include="pizza_order_system_model.edmx">
+    <EntityDeploy Include="pizza_ordering_system_model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>pizza_order_system_model.Designer.cs</LastGenOutput>
+      <LastGenOutput>pizza_ordering_system_model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="pizza_order_system_model.edmx.diagram">
-      <DependentUpon>pizza_order_system_model.edmx</DependentUpon>
+    <Content Include="pizza_ordering_system_model.edmx.diagram">
+      <DependentUpon>pizza_ordering_system_model.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
