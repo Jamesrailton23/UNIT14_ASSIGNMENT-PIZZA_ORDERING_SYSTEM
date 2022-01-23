@@ -18,6 +18,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
 
         protected void btn_confirm_Click(object sender, EventArgs e)
         {
+            Response.Redirect("~/webpages/checkout_page/checkout_page.aspx");
             sides_and_drink();
         }
         protected void sides_and_drink()

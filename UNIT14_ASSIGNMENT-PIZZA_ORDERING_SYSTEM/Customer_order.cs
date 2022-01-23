@@ -30,6 +30,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public string Dough_type { get; set; }
         public string Sides_added_ { get; set; }
         public string Toppings_added_ { get; set; }
+        public string Username { get; set; }
     
         public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

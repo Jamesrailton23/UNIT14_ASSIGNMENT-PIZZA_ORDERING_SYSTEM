@@ -33,6 +33,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public virtual DbSet<Manager_Account> Manager_Accounts { get; set; }
         public virtual DbSet<Order_Side> Order_Sides { get; set; }
         public virtual DbSet<Order_Topping> Order_Toppings { get; set; }
+        public virtual DbSet<Session> Sessions { get; set; }
         public virtual DbSet<Side> Sides { get; set; }
         public virtual DbSet<Topping> Toppings { get; set; }
     }

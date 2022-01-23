@@ -20,6 +20,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public string Water { get; set; }
         public string Nacho_Bites { get; set; }
         public string Mozzarella_Sticks { get; set; }
+        public string Username { get; set; }
     
         public virtual Order_Side Order_Side { get; set; }
     }

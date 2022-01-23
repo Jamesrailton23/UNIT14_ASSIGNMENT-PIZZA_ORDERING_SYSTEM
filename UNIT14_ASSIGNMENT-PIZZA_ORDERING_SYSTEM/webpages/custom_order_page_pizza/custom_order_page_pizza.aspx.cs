@@ -20,6 +20,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
         protected void btn_confirm_Click(object sender, EventArgs e)
         {
+            Response.Redirect("~/webpages/custom_order_page_toppings/custom_order_page_toppings.aspx");
             first_stage_custom_order();
         }
         protected void first_stage_custom_order()

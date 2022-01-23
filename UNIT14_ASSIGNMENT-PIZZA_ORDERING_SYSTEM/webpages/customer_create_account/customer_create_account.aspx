@@ -13,19 +13,19 @@
             <h3>Create an account here to view the last order you have made, This requires you to insert your account username whenever you check out</h3>
             <br />
             <h3>User Name - 
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_username" runat="server"></asp:TextBox>
             </h3>
             <br />
             <h3>Password - 
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_password" runat="server"></asp:TextBox>
             </h3>
             <br />
             <h3>Email - 
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_email" runat="server"></asp:TextBox>
             </h3>
             <br />
             <h3>Phone Number - 
-                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_phone" runat="server"></asp:TextBox>
             </h3>
             <br />
             <asp:Button ID="btn_create_account" runat="server" OnClick="btn_create_account_Click" Text="Create Account" />

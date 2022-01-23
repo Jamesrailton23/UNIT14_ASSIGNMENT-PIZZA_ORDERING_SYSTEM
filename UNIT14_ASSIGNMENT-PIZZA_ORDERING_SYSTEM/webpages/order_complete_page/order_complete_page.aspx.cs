@@ -13,5 +13,10 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/webpages/checkout_page/default.aspx");
+        }
     }
 }

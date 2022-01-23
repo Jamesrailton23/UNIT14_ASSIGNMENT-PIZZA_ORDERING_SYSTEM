@@ -168,6 +168,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>pizza_ordering_system_model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Session.cs">
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Side.cs">
       <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>

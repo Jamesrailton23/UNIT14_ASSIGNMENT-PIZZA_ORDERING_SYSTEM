@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Customer_ID" />
           </Key>
-          <Property Name="Customer_ID" Type="int" Nullable="false" />
+          <Property Name="Customer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Collection_method" Type="varchar" MaxLength="10" />
           <Property Name="Total_order_cost" Type="decimal" Precision="18" Scale="0" />
           <Property Name="Full_name" Type="varchar" MaxLength="100" />
@@ -18,14 +18,13 @@
           <Property Name="Address_Line_3" Type="varchar" MaxLength="100" />
           <Property Name="Post_code" Type="varchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
-          <Property Name="Account-ID-Number" Type="int" />
-          <Property Name="Time Created" Type="datetime" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Customer Account">
           <Key>
             <PropertyRef Name="Account-ID-Number" />
           </Key>
-          <Property Name="Account-ID-Number" Type="int" Nullable="false" />
+          <Property Name="Account-ID-Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Username" Type="nvarchar" MaxLength="100" />
           <Property Name="Password" Type="nvarchar" MaxLength="100" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
@@ -44,6 +43,7 @@
           <Property Name="Dough_type" Type="nvarchar" MaxLength="50" />
           <Property Name="Sides_added?" Type="varchar" MaxLength="10" />
           <Property Name="Toppings_added?" Type="varchar" MaxLength="10" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Kitchen Staff Account">
           <Key>
@@ -88,6 +88,15 @@
           <Property Name="Order_ID" Type="int" Nullable="false" />
           <Property Name="Topping_ID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="Session_ID" />
+          </Key>
+          <Property Name="Session_ID" Type="int" Nullable="false" />
+          <Property Name="Account-ID-Number" Type="int" />
+          <Property Name="Time_Sign_in" Type="datetime2" Precision="7" />
+          <Property Name="Time_Sign_Out" Type="datetime2" Precision="7" />
+        </EntityType>
         <EntityType Name="Side">
           <Key>
             <PropertyRef Name="Sides_ID" />
@@ -98,6 +107,7 @@
           <Property Name="Water" Type="varchar" MaxLength="10" />
           <Property Name="Nacho Bites" Type="varchar" MaxLength="10" />
           <Property Name="Mozzarella Sticks" Type="varchar" MaxLength="10" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Topping">
           <Key>
@@ -112,6 +122,7 @@
           <Property Name="Black olives" Type="varchar" MaxLength="10" />
           <Property Name="Ham" Type="varchar" MaxLength="10" />
           <Property Name="Pineapple" Type="varchar" MaxLength="10" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <Association Name="FK_Customer order_Customer">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -122,18 +133,6 @@
             </Principal>
             <Dependent Role="Customer order">
               <PropertyRef Name="Customer_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Customer_Customer Account">
-          <End Role="Customer Account" Type="Self.Customer Account" Multiplicity="0..1" />
-          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer Account">
-              <PropertyRef Name="Account-ID-Number" />
-            </Principal>
-            <Dependent Role="Customer">
-              <PropertyRef Name="Account-ID-Number" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -173,6 +172,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Session_Customer Account">
+          <End Role="Customer Account" Type="Self.Customer Account" Multiplicity="0..1" />
+          <End Role="Session" Type="Self.Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer Account">
+              <PropertyRef Name="Account-ID-Number" />
+            </Principal>
+            <Dependent Role="Session">
+              <PropertyRef Name="Account-ID-Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Side_Order Side">
           <End Role="Order Side" Type="Self.Order Side" Multiplicity="1" />
           <End Role="Side" Type="Self.Side" Multiplicity="0..1" />
@@ -206,15 +217,12 @@
           <EntitySet Name="Manager Account" EntityType="Self.Manager Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order Side" EntityType="Self.Order Side" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order Topping" EntityType="Self.Order Topping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Session" EntityType="Self.Session" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Side" EntityType="Self.Side" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Topping" EntityType="Self.Topping" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Customer order_Customer" Association="Self.FK_Customer order_Customer">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Customer order" EntitySet="Customer order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Customer_Customer Account" Association="Self.FK_Customer_Customer Account">
-            <End Role="Customer Account" EntitySet="Customer Account" />
-            <End Role="Customer" EntitySet="Customer" />
           </AssociationSet>
           <AssociationSet Name="FK_Loged In Users_Kitchen Staff Account" Association="Self.FK_Loged In Users_Kitchen Staff Account">
             <End Role="Kitchen Staff Account" EntitySet="Kitchen Staff Account" />
@@ -227,6 +235,10 @@
           <AssociationSet Name="FK_Order Topping_Customer Order" Association="Self.FK_Order Topping_Customer Order">
             <End Role="Customer order" EntitySet="Customer order" />
             <End Role="Order Topping" EntitySet="Order Topping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Session_Customer Account" Association="Self.FK_Session_Customer Account">
+            <End Role="Customer Account" EntitySet="Customer Account" />
+            <End Role="Session" EntitySet="Session" />
           </AssociationSet>
           <AssociationSet Name="FK_Side_Order Side" Association="Self.FK_Side_Order Side">
             <End Role="Order Side" EntitySet="Order Side" />
@@ -246,7 +258,7 @@
           <Key>
             <PropertyRef Name="Customer_ID" />
           </Key>
-          <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Collection_method" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Total_order_cost" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Full_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -255,21 +267,19 @@
           <Property Name="Address_Line_3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Post_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Account_ID_Number" Type="Int32" />
-          <Property Name="Time_Created" Type="DateTime" Precision="3" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Customer_order" Relationship="Self.FK_Customer_order_Customer" FromRole="Customer" ToRole="Customer_order" />
-          <NavigationProperty Name="Customer_Account" Relationship="Self.FK_Customer_Customer_Account" FromRole="Customer" ToRole="Customer_Account" />
         </EntityType>
         <EntityType Name="Customer_Account">
           <Key>
             <PropertyRef Name="Account_ID_Number" />
           </Key>
-          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" />
+          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_Customer_Account" FromRole="Customer_Account" ToRole="Customer" />
+          <NavigationProperty Name="Sessions" Relationship="Self.FK_Session_Customer_Account" FromRole="Customer_Account" ToRole="Session" />
         </EntityType>
         <EntityType Name="Customer_order">
           <Key>
@@ -284,6 +294,7 @@
           <Property Name="Dough_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Sides_added_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Toppings_added_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Customer_order_Customer" FromRole="Customer_order" ToRole="Customer" />
           <NavigationProperty Name="Order_Side" Relationship="Self.FK_Order_Side_Customer_order" FromRole="Customer_order" ToRole="Order_Side" />
           <NavigationProperty Name="Order_Topping" Relationship="Self.FK_Order_Topping_Customer_Order" FromRole="Customer_order" ToRole="Order_Topping" />
@@ -337,6 +348,16 @@
           <NavigationProperty Name="Customer_order" Relationship="Self.FK_Order_Topping_Customer_Order" FromRole="Order_Topping" ToRole="Customer_order" />
           <NavigationProperty Name="Topping" Relationship="Self.FK_Topping_Order_Topping" FromRole="Order_Topping" ToRole="Topping" />
         </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="Session_ID" />
+          </Key>
+          <Property Name="Session_ID" Type="Int32" Nullable="false" />
+          <Property Name="Account_ID_Number" Type="Int32" />
+          <Property Name="Time_Sign_in" Type="DateTime" Precision="7" />
+          <Property Name="Time_Sign_Out" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Customer_Account" Relationship="Self.FK_Session_Customer_Account" FromRole="Session" ToRole="Customer_Account" />
+        </EntityType>
         <EntityType Name="Side">
           <Key>
             <PropertyRef Name="Sides_ID" />
@@ -347,6 +368,7 @@
           <Property Name="Water" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Nacho_Bites" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Mozzarella_Sticks" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Order_Side" Relationship="Self.FK_Side_Order_Side" FromRole="Side" ToRole="Order_Side" />
         </EntityType>
         <EntityType Name="Topping">
@@ -362,6 +384,7 @@
           <Property Name="Black_olives" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Ham" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Pineapple" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Order_Topping" Relationship="Self.FK_Topping_Order_Topping" FromRole="Topping" ToRole="Order_Topping" />
         </EntityType>
         <Association Name="FK_Customer_order_Customer">
@@ -376,14 +399,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Customer_Customer_Account">
+        <Association Name="FK_Session_Customer_Account">
           <End Role="Customer_Account" Type="Self.Customer_Account" Multiplicity="0..1" />
-          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <End Role="Session" Type="Self.Session" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer_Account">
               <PropertyRef Name="Account_ID_Number" />
             </Principal>
-            <Dependent Role="Customer">
+            <Dependent Role="Session">
               <PropertyRef Name="Account_ID_Number" />
             </Dependent>
           </ReferentialConstraint>
@@ -457,15 +480,16 @@
           <EntitySet Name="Manager_Accounts" EntityType="Self.Manager_Account" />
           <EntitySet Name="Order_Sides" EntityType="Self.Order_Side" />
           <EntitySet Name="Order_Toppings" EntityType="Self.Order_Topping" />
+          <EntitySet Name="Sessions" EntityType="Self.Session" />
           <EntitySet Name="Sides" EntityType="Self.Side" />
           <EntitySet Name="Toppings" EntityType="Self.Topping" />
           <AssociationSet Name="FK_Customer_order_Customer" Association="Self.FK_Customer_order_Customer">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Customer_order" EntitySet="Customer_orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_Customer_Customer_Account" Association="Self.FK_Customer_Customer_Account">
+          <AssociationSet Name="FK_Session_Customer_Account" Association="Self.FK_Session_Customer_Account">
             <End Role="Customer_Account" EntitySet="Customer_Accounts" />
-            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Session" EntitySet="Sessions" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Side_Customer_order" Association="Self.FK_Order_Side_Customer_order">
             <End Role="Customer_order" EntitySet="Customer_orders" />
@@ -506,8 +530,7 @@
                 <ScalarProperty Name="Address_Line_3" ColumnName="Address_Line_3" />
                 <ScalarProperty Name="Post_code" ColumnName="Post_code" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
-                <ScalarProperty Name="Time_Created" ColumnName="Time Created" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -534,6 +557,7 @@
                 <ScalarProperty Name="Dough_type" ColumnName="Dough_type" />
                 <ScalarProperty Name="Sides_added_" ColumnName="Sides_added?" />
                 <ScalarProperty Name="Toppings_added_" ColumnName="Toppings_added?" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -585,6 +609,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Sessions">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Session">
+              <MappingFragment StoreEntitySet="Session">
+                <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
+                <ScalarProperty Name="Time_Sign_in" ColumnName="Time_Sign_in" />
+                <ScalarProperty Name="Time_Sign_Out" ColumnName="Time_Sign_Out" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Sides">
             <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Side">
               <MappingFragment StoreEntitySet="Side">
@@ -594,6 +628,7 @@
                 <ScalarProperty Name="Water" ColumnName="Water" />
                 <ScalarProperty Name="Nacho_Bites" ColumnName="Nacho Bites" />
                 <ScalarProperty Name="Mozzarella_Sticks" ColumnName="Mozzarella Sticks" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -609,6 +644,7 @@
                 <ScalarProperty Name="Black_olives" ColumnName="Black olives" />
                 <ScalarProperty Name="Ham" ColumnName="Ham" />
                 <ScalarProperty Name="Pineapple" ColumnName="Pineapple" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -13,5 +13,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         {
 
         }
+
+        protected void btn_checkout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/webpages/order_complete_page/order_complete_page.aspx");
+        }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }

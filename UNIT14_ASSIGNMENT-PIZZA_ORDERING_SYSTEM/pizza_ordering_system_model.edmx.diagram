@@ -4,19 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0ac7189da7ff407d8eac3b63751036b0" Name="Diagram1">
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer_Account" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer_order" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Kitchen_Staff_Account" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Loged_In_User" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Manager_Account" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Order_Side" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Order_Topping" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Side" Width="1.5" PointX="9.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Topping" Width="1.5" PointX="9.75" PointY="4.25" IsExpanded="true" />
+      <Diagram DiagramId="76f2e8a42e87437f930557912131c178" Name="Diagram1">
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer_Account" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer_order" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Kitchen_Staff_Account" Width="1.5" PointX="5.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Loged_In_User" Width="1.5" PointX="8" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Manager_Account" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Order_Side" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Order_Topping" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Session" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Side" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Topping" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
         <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Customer_order_Customer" ManuallyRouted="false" />
-        <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Customer_Customer_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Session_Customer_Account" ManuallyRouted="false" />
         <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Order_Side_Customer_order" ManuallyRouted="false" />
         <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Order_Topping_Customer_Order" ManuallyRouted="false" />
         <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Loged_In_Users_Kitchen_Staff_Account" ManuallyRouted="false" />

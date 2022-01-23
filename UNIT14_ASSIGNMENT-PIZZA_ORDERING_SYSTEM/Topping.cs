@@ -23,6 +23,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public string Black_olives { get; set; }
         public string Ham { get; set; }
         public string Pineapple { get; set; }
+        public string Username { get; set; }
     
         public virtual Order_Topping Order_Topping { get; set; }
     }

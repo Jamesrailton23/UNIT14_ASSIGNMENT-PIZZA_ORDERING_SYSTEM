@@ -12,11 +12,36 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_create_accou
         protected void Page_Load(object sender, EventArgs e)
         {
             
+            
+        }
+        
+        public static void add_new_user(Customer_Account new_user)
+        {
+            var new_customer_account = new Customer_Account();
+            new_customer_account.Username = new_user.Username;
+            new_customer_account.Password = new_user.Password;
+            new_customer_account.Phone_number = new_user.Phone_number;
+
+            Pizza_order_system_databaseEntities pizza_db = new Pizza_order_system_databaseEntities();
+            var dbCustomer = pizza_db.Customer_Accounts;
+            dbCustomer.Add(new_customer_account);
+            pizza_db.SaveChanges();
+
         }
 
         protected void btn_create_account_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/webpages/customer_create_account/account_confirm.aspx");
+            
+
+            var customer = new Customer_Account();
+            customer.Account_ID_Number = 0;
+            customer.Username = tb_username.Text;
+            customer.Password = tb_password.Text;
+            customer.Email = tb_email.Text;
+            customer.Phone_number = tb_phone.Text;
+
+            add_new_user(customer);
+
         }
     }
 }
