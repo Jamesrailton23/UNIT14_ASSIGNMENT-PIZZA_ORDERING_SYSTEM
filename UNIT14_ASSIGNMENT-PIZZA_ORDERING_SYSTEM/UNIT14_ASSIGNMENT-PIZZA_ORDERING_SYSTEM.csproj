@@ -84,7 +84,7 @@
     <Content Include="pizza_ordering_system_model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>pizza_ordering_system_model.edmx</DependentUpon>
-      <LastGenOutput>pizza_ordering_system_model.cs</LastGenOutput>
+      <LastGenOutput>pizza_ordering_system_model1.cs</LastGenOutput>
     </Content>
     <Content Include="webpages\checkout_page\checkout_page.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -103,7 +103,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="webpages\customer_create_account\account_confirm.aspx" />
     <Content Include="webpages\customer_create_account\customer_create_account.aspx" />
     <Content Include="webpages\customer_login\customer_login.aspx" />
     <Content Include="webpages\customer_portal\customer_portal.aspx" />
@@ -135,7 +134,7 @@
     <Compile Include="Customer_Account.cs">
       <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Customer_order.cs">
+    <Compile Include="Customer_Order.cs">
       <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Kitchen_Staff_Account.cs">
@@ -147,34 +146,20 @@
     <Compile Include="Manager_Account.cs">
       <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Order_Side.cs">
-      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Order_Topping.cs">
-      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
-    </Compile>
     <Compile Include="pizza_ordering_system_model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>pizza_ordering_system_model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="pizza_ordering_system_model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
-    </Compile>
+    <Compile Include="pizza_ordering_system_model.cs" />
     <Compile Include="pizza_ordering_system_model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>pizza_ordering_system_model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Session.cs">
-      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Side.cs">
-      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Topping.cs">
+    <Compile Include="pizza_ordering_system_model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="webpages\checkout_page\checkout_page.aspx.cs">
@@ -183,13 +168,6 @@
     </Compile>
     <Compile Include="webpages\checkout_page\checkout_page.aspx.designer.cs">
       <DependentUpon>checkout_page.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webpages\customer_create_account\account_confirm.aspx.cs">
-      <DependentUpon>account_confirm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webpages\customer_create_account\account_confirm.aspx.designer.cs">
-      <DependentUpon>account_confirm.aspx</DependentUpon>
     </Compile>
     <Compile Include="webpages\customer_create_account\customer_create_account.aspx.cs">
       <DependentUpon>customer_create_account.aspx</DependentUpon>

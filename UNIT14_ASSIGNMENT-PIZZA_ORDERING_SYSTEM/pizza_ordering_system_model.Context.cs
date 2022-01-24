@@ -27,14 +27,9 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Customer_Account> Customer_Accounts { get; set; }
-        public virtual DbSet<Customer_order> Customer_orders { get; set; }
+        public virtual DbSet<Customer_Order> Customer_Orders { get; set; }
         public virtual DbSet<Kitchen_Staff_Account> Kitchen_Staff_Accounts { get; set; }
         public virtual DbSet<Loged_In_User> Loged_In_Users { get; set; }
         public virtual DbSet<Manager_Account> Manager_Accounts { get; set; }
-        public virtual DbSet<Order_Side> Order_Sides { get; set; }
-        public virtual DbSet<Order_Topping> Order_Toppings { get; set; }
-        public virtual DbSet<Session> Sessions { get; set; }
-        public virtual DbSet<Side> Sides { get; set; }
-        public virtual DbSet<Topping> Toppings { get; set; }
     }
 }

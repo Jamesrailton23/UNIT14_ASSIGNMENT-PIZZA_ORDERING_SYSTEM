@@ -21,6 +21,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected void btn_confirm_Click(object sender, EventArgs e)
         {
             second_stage_custom_order();
+            Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx");
         }
 
         protected void second_stage_custom_order()

@@ -12,30 +12,29 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer_order
+    public partial class Customer_Order
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer_order()
-        {
-            this.Order_Side = new HashSet<Order_Side>();
-            this.Order_Topping = new HashSet<Order_Topping>();
-        }
-    
+        public int Customer_ID { get; set; }
         public int Order_ID { get; set; }
-        public Nullable<int> Customer_ID { get; set; }
-        public string Preset_menu_item { get; set; }
         public string Pizza_size { get; set; }
         public string Crust_size { get; set; }
         public string Cheese_type { get; set; }
         public string Dough_type { get; set; }
-        public string Sides_added_ { get; set; }
-        public string Toppings_added_ { get; set; }
+        public string Pepperroni { get; set; }
+        public string Green_Onions { get; set; }
+        public string Red_Onions { get; set; }
+        public string Ancovies { get; set; }
+        public string Mushrooms { get; set; }
+        public string Black_olives { get; set; }
+        public string Ham { get; set; }
+        public string Pineapple { get; set; }
+        public string Coca_Cola { get; set; }
+        public string Pepsi { get; set; }
+        public string Water { get; set; }
+        public string Nacho_Bites { get; set; }
+        public string Mozzarella_Sticks { get; set; }
         public string Username { get; set; }
     
         public virtual Customer Customer { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order_Side> Order_Side { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order_Topping> Order_Topping { get; set; }
     }
 }

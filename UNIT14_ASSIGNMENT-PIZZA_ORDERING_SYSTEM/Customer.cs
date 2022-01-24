@@ -17,7 +17,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
-            this.Customer_order = new HashSet<Customer_order>();
+            this.Customer_Order = new HashSet<Customer_Order>();
         }
     
         public int Customer_ID { get; set; }
@@ -29,9 +29,8 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public string Address_Line_3 { get; set; }
         public string Post_code { get; set; }
         public string Email { get; set; }
-        public string Username { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer_order> Customer_order { get; set; }
+        public virtual ICollection<Customer_Order> Customer_Order { get; set; }
     }
 }
