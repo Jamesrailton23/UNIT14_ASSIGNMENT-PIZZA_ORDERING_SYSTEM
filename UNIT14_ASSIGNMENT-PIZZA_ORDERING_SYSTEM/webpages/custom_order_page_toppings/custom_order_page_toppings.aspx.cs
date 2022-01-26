@@ -9,10 +9,11 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 {
     public partial class custom_order_page_toppings : System.Web.UI.Page
     {
-        decimal toppingCost;
+        decimal secondStageCost;
         string Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies;
 
-        
+       
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -21,25 +22,27 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected void btn_confirm_Click(object sender, EventArgs e)
         {
             second_stage_custom_order();
-            Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx");
+            //Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx");
+           
         }
 
         protected void second_stage_custom_order()
         {
+            #region
             switch (rbl_pineapple.SelectedIndex)
             {
                 case 0:
-                    toppingCost += 0.00m;
-                    Pinapple = "No";
+                    secondStageCost += 0.00m;
+                    Pinapple = "None";
                     break;
                 
                 case 1:
-                    toppingCost += 1.00m;
-                    Pinapple = "Yes";
+                    secondStageCost += 1.00m;
+                    Pinapple = "Normal";
                     break ;
                 case 2:
-                    toppingCost += 3.00m;
-                    Pinapple = "Yes (Extra)";
+                    secondStageCost += 3.00m;
+                    Pinapple = "Extra";
                     break;
 
 
@@ -48,118 +51,123 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             switch (rbl_ham.SelectedIndex)
             {
                 case 0:
-                    toppingCost += 0.00m;
-                    Ham = "No";
+                    secondStageCost += 0.00m;
+                    Ham = "None";
                     break;
                 case 1:
-                    toppingCost += 1.00m;
-                    Ham = "Yes";
+                    secondStageCost += 1.00m;
+                    Ham = "Normal";
                     break;
+
                 case 2:
-                    toppingCost += 3.00m;
-                    Ham = "Yes (Extra)";
+                    secondStageCost += 3.00m;
+                    Ham = "Extra";
                     break;
             }
 
             switch (rbl_black_olives.SelectedIndex)
             {
                 case 0:
-                    toppingCost += 0.00m;
-                    BlackOlives = "No";
+                    secondStageCost += 0.00m;
+                    BlackOlives = "None";
                     break;
                 case 1:
-                    toppingCost += 1.00m;
-                    BlackOlives = "Yes";
+                    secondStageCost += 1.00m;
+                    BlackOlives = "Normal";
                     break;
                 case 2:
-                    toppingCost += 3.00m;
-                    BlackOlives = "Yes (Extra)";
+                    secondStageCost += 3.00m;
+                    BlackOlives = "Extra";
                     break;
             }
 
             switch (rbl_green_onions.SelectedIndex)
             {
                 case 0:
-                    GreenOnions += 0.00m;
-                    Ham = "No";
+                    secondStageCost += 0.00m;
+                    GreenOnions = "None";
                     break;
                 case 1:
-                    toppingCost += 1.00m;
-                    GreenOnions = "Yes";
+                    secondStageCost += 1.00m;
+                    GreenOnions = "Normal";
                     break;
                 case 2:
-                    toppingCost += 3.00m;
-                    GreenOnions = "Yes (Extra)";
+                    secondStageCost += 3.00m;
+                    GreenOnions = "Extra";
                     break;
             }
 
             switch (rbl_red_onions.SelectedIndex)
             {
                 case 0:
-                    toppingCost += 0.00m;
-                    RedOnions = "No";
+                    secondStageCost += 0.00m;
+                    RedOnions = "None";
                     break;
                 case 1:
-                    toppingCost += 1.00m;
-                    RedOnions = "Yes";
+                    secondStageCost += 1.00m;
+                    RedOnions = "Normal";
                     break;
                 case 2:
-                    toppingCost += 3.00m;
-                    RedOnions = "Yes (Extra)";
+                    secondStageCost += 3.00m;
+                    RedOnions = "Extra";
                     break;
             }
 
             switch (rbl_pepperoni.SelectedIndex)
             {
                 case 0:
-                    toppingCost += 0.00m;
-                    Pepperoni = "No";
+                    secondStageCost += 0.00m;
+                    Pepperoni = "None";
                     break;
                 case 1:
-                    toppingCost += 1.00m;
-                    Pepperoni = "Yes";
+                    secondStageCost += 1.00m;
+                    Pepperoni = "Normal";
                     break;
                 case 2:
-                    toppingCost += 3.00m;
-                    Pepperoni = "Yes (Extra)";
+                    secondStageCost += 3.00m;
+                    Pepperoni = "Extra";
                     break;
             }
 
             switch (rbl_mushrooms.SelectedIndex)
             {
                 case 0:
-                    toppingCost += 0.00m;
-                    Mushrooms = "No";
+                    secondStageCost += 0.00m;
+                    Mushrooms = "None";
                     break;
                 case 1:
                     Mushrooms += 1.00m;
-                    Ham = "Yes";
+                    Mushrooms = "Normal";
                     break;
                 case 2:
-                    toppingCost += 3.00m;
-                    Mushrooms = "Yes (Extra)";
+                    secondStageCost += 3.00m;
+                    Mushrooms = "Extra";
                     break;
             }
 
             switch (rbl_ancovies.SelectedIndex)
             {
                 case 0:
-                    toppingCost += 0.00m;
-                    Ancovies = "No";
+                    secondStageCost += 0.00m;
+                    Ancovies = "None";
                     break;
                 case 1:
-                    toppingCost += 1.00m;
-                    Ancovies = "Yes";
+                    secondStageCost += 1.00m;
+                    Ancovies = "Normal";
                     break;
                 case 2:
-                    toppingCost += 3.00m;
-                    Ancovies = "Yes (Extra)";
+                    secondStageCost += 3.00m;
+                    Ancovies = "Extra";
                     break;
             }
+            #endregion
 
+            
             
 
         }
-       
+
+        
+
     }
 }

@@ -28,10 +28,17 @@
                  <asp:CheckBox ID="cb_mozzarellaSticks" runat="server" />
             </h3>
             <br />
+            <br />
+            <br />
             <asp:Button ID="btn_confirm" runat="server" Text="confirm" OnClick="btn_confirm_Click" />
             
 
-        &nbsp;</div>
+        &nbsp;<br />
+            <br />
+            <a href="../checkout_page/checkout_page.aspx">checkout_page.aspx</a><br />
+            <br />
+            <br />
+        </div>
     </form>
 </body>
 </html>

@@ -54,7 +54,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_create_accou
 
         protected void tm_to_default_Tick(object sender, EventArgs e)
         {
-            //Response.Redirect("~/webpages/default/default.aspx");
+            Response.Redirect("~/webpages/default/default.aspx");
         }
     }
 }

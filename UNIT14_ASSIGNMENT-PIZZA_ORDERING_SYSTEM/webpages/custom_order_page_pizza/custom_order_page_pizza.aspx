@@ -47,9 +47,8 @@
             
         <br />
         <asp:Button ID="btn_confirm" runat="server" Text="Confirm" OnClick="btn_confirm_Click" />
-            
+        <a href="../custom_order_page_toppings/custom_order_page_toppings.aspx">../custom_order_page_toppings/custom_order_page_toppings.aspx</a>
     &nbsp;
-        <asp:Label ID="Label1" runat="server"></asp:Label>
-&nbsp;</form>
+        &nbsp;</form>
 </body>
 </html>

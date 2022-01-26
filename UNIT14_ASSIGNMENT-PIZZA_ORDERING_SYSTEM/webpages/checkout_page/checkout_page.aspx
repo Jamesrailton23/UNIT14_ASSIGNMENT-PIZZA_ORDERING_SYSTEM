@@ -54,6 +54,13 @@
         <br />
         <br />
         <br />
+        <asp:Label ID="lb_0" runat="server"></asp:Label>
+        &nbsp;-
+        <asp:Label ID="lb_1" runat="server"></asp:Label>
+        &nbsp;-
+        <asp:Label ID="lb_2" runat="server"></asp:Label>
+        &nbsp;-
+        <asp:Label ID="lb_3" runat="server"></asp:Label>
         <br />
         <br />
         <br />

@@ -16,12 +16,14 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
         protected void btn_checkout_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/webpages/order_complete_page/order_complete_page.aspx");
+            lb_0.Text = (string)Session["crustType"];
+            lb_1.Text = (string)Session["doughType"];
+            lb_2.Text = (string)Session["cheeseType"];
+            decimal cost = (decimal)Session["firstCost"];
+            lb_3.Text = cost.ToString();
+            
         }
 
-        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-        {
-
-        }
+        
     }
 }
