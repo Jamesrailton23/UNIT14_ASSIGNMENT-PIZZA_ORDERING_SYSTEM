@@ -25,7 +25,7 @@
             <br />
             <h3>Ham</h3>
             <asp:RadioButtonList ID="rbl_ham" runat="server" RepeatDirection="Horizontal">
-                <asp:ListItem>None</asp:ListItem>
+                <asp:ListItem Selected="True">None</asp:ListItem>
                 <asp:ListItem>Normal</asp:ListItem>
                 <asp:ListItem>Extra</asp:ListItem>
             </asp:RadioButtonList>
@@ -79,7 +79,7 @@
                         </asp:RadioButtonList>    
                 <br />
                 &nbsp;<asp:Button ID="btn_confirm" runat="server" Text="Confirm" OnClick="btn_confirm_Click" />
-            &nbsp;<a href="../custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx">custom_order_page_sides_and_drinks.aspx</a><br />
+            <br />
         </form>
 
        

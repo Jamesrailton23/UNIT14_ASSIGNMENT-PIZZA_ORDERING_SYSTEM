@@ -34,10 +34,6 @@
             
 
         &nbsp;<br />
-            <br />
-            <a href="../checkout_page/checkout_page.aspx">checkout_page.aspx</a><br />
-            <br />
-            <br />
         </div>
     </form>
 </body>

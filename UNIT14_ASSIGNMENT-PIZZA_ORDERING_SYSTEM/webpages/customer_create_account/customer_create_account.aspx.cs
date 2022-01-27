@@ -35,7 +35,6 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_create_accou
             
             //to add customer to DB using textbox
             var customer = new Customer_Account();
-            customer.Account_ID_Number = 0;
             customer.Username = tb_username.Text;
             customer.Password = tb_password.Text;
             customer.Email = tb_email.Text;

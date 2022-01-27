@@ -10,9 +10,9 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     public partial class custom_order_page_toppings : System.Web.UI.Page
     {
         decimal secondStageCost;
-        string Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies;
+        string Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies; 
 
-       
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +22,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected void btn_confirm_Click(object sender, EventArgs e)
         {
             second_stage_custom_order();
-            //Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx");
+            Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx", false);
            
         }
 
@@ -160,9 +160,18 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
                     Ancovies = "Extra";
                     break;
             }
-            #endregion
-
-            
+            #endregion 
+           
+            //session varibles
+            Session["Pinapple"] = (string)Pepperoni;
+            Session["Ham"] = (string)Ham;
+            Session["BlackOlives"] = (string)BlackOlives;
+            Session["GreenOnions"] = (string)GreenOnions;
+            Session["RedOnions"] = (string)RedOnions;
+            Session["Pepproni"] = (string)Pepperoni;
+            Session["Mushrooms"] = (string)Mushrooms;
+            Session["Ancovies"] = (string)Ancovies;
+            Session["secondStageCost"] = (decimal)secondStageCost;
             
 
         }

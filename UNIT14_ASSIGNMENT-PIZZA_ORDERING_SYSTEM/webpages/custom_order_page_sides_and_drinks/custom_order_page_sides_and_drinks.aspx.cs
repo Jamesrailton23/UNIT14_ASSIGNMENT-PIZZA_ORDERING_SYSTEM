@@ -18,7 +18,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
 
         protected void btn_confirm_Click(object sender, EventArgs e)
         {
-           // Response.Redirect("~/webpages/checkout_page/checkout_page.aspx");
+            Response.Redirect("~/webpages/checkout_page/checkout_page.aspx", false);
             sides_and_drink();
         }
         protected void sides_and_drink()
@@ -34,6 +34,14 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
             water = (cb_water.Checked) ? "Yes" : "No";
             nachoBites = (cb_nachoBites.Checked) ? "yes" : "no";
             mozzarellaSicks = (cb_mozzarellaSticks.Checked) ? "yes" : "no";
+
+            // session varibles
+            Session["cocaCola"] = (string)cocaCola;
+            Session["pepsi"] =(string)pepsi;
+            Session["water"] = (string)water;
+            Session["nachoBites"] = (string)nachoBites;
+            Session["mozzarellaSicks"] = (string)mozzarellaSicks;
+            Session["thirdStageCost"] = (decimal)thirdStageCost;
 
 
         }

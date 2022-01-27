@@ -14,23 +14,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     
     public partial class Customer
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
-        {
-            this.Customer_Order = new HashSet<Customer_Order>();
-        }
-    
-        public int Customer_ID { get; set; }
+        public int CustomerID { get; set; }
         public string Collection_method { get; set; }
         public Nullable<decimal> Total_order_cost { get; set; }
-        public string Full_name { get; set; }
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
         public string Address_Line_1 { get; set; }
         public string Address_Line_2 { get; set; }
         public string Address_Line_3 { get; set; }
         public string Post_code { get; set; }
         public string Email { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer_Order> Customer_Order { get; set; }
     }
 }

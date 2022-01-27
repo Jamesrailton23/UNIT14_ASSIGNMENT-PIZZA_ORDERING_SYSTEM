@@ -10,7 +10,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     public partial class custom_order_page_pizza : System.Web.UI.Page
     {
         decimal firstStageCost;
-         string pizzaSize, cheeseType, crustType, doughType;
+        string pizzaSize, cheeseType, crustType, doughType;
         
         
         protected void Page_Load(object sender, EventArgs e)
@@ -20,7 +20,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
         protected void btn_confirm_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("~/webpages/custom_order_page_toppings/custom_order_page_toppings.aspx");
+            Response.Redirect("~/webpages/custom_order_page_toppings/custom_order_page_toppings.aspx", false);
             first_stage_custom_order();
         }
         protected void first_stage_custom_order()
@@ -30,21 +30,21 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             {
                 case 0: 
                         firstStageCost += 2.00m;
-                        pizzaSize += "Personal (2 Slices)";
+                        pizzaSize = "Personal (2 Slices)";
                
                     break;
                 case 1: firstStageCost += 4.00m;
-                         pizzaSize += "Duo (4 slices)";
+                         pizzaSize = "Duo (4 slices)";
                    
                     break;
                 case 2:
                     firstStageCost += 8.00m;
-                    pizzaSize += "13 Inch";
+                    pizzaSize = "13 Inch";
                   
                     break;
                 case 3:
                     firstStageCost += 10.00m;
-                    pizzaSize += "16 Inch";
+                    pizzaSize = "16 Inch";
                    
                     break;
             }
@@ -52,11 +52,11 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             {
                 case 0:
                     firstStageCost += 3.00m;
-                    doughType += "Normal";
+                    doughType = "Normal";
                     break;
                 case 1:
                     firstStageCost += 3.00m;
-                     doughType += "Gluten Free";
+                     doughType = "Gluten Free";
                     break;
 
             }
@@ -65,15 +65,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             {
                 case 0:
                     firstStageCost += 3.00m;
-                    crustType += "Normal";
+                    crustType = "Normal";
                     break;
                 case 1:
                     firstStageCost += 5.00m;
-                    crustType += "Stuffed";
+                    crustType = "Stuffed";
                     break;
                 case 2:
                     firstStageCost += 7.00m;
-                    crustType += "Deep Dish";
+                    crustType = "Deep Dish";
                     break;
 
             }
@@ -94,12 +94,12 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
                     break;
                
             }
-
+            //session varibles
             Session["doughType"] = (string)doughType;
             Session["cheeseType"] = (string)cheeseType;
-            Session["firstCost"] = (decimal)firstStageCost;
             Session["crustType"] = (string)crustType;
-
+            Session["pizzaSize"] = (string)pizzaSize;
+            Session["firstStageCost"] = (decimal)firstStageCost;
 
         }
          

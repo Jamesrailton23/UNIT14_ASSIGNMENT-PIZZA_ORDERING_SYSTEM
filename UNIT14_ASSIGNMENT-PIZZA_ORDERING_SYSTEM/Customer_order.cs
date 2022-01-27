@@ -14,18 +14,18 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     
     public partial class Customer_Order
     {
-        public int Customer_ID { get; set; }
-        public int Order_ID { get; set; }
-        public string Pizza_size { get; set; }
-        public string Crust_size { get; set; }
-        public string Cheese_type { get; set; }
-        public string Dough_type { get; set; }
+        public int CustomerID { get; set; }
+        public int OrderID { get; set; }
+        public string Pizza_Size { get; set; }
+        public string Crust_Type { get; set; }
+        public string Cheese_Type { get; set; }
+        public string Dough_Type { get; set; }
         public string Pepperroni { get; set; }
         public string Green_Onions { get; set; }
         public string Red_Onions { get; set; }
         public string Ancovies { get; set; }
         public string Mushrooms { get; set; }
-        public string Black_olives { get; set; }
+        public string Black_Olives { get; set; }
         public string Ham { get; set; }
         public string Pineapple { get; set; }
         public string Coca_Cola { get; set; }
@@ -34,7 +34,5 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public string Nacho_Bites { get; set; }
         public string Mozzarella_Sticks { get; set; }
         public string Username { get; set; }
-    
-        public virtual Customer Customer { get; set; }
     }
 }
