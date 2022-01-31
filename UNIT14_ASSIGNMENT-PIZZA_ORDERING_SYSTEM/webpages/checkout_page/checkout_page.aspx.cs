@@ -10,7 +10,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     public partial class checkout_page : System.Web.UI.Page
     {
         decimal costStage1, costStage2, costStage3, finalCost;
-        string  pizzaSize, cheeseType, doughType, crustType, Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies, cocaCola, pepsi, water, nachoBites, mozzarellaSicks;
+        string  pizzaSize, cheeseType, doughType, crustType, Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies, cocaCola, pepsi, water, nachoBites, mozzarellaSicks, PresetPizza;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,6 +23,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             {
                 add_new_customer();
                 add_new_order();
+                Response.Redirect("~/webpages/order_complete_page/order_complete_page.aspx", false);
             }
             else
             {
@@ -34,6 +35,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public static void customer_order(Customer_Order new_order)
         {
             var order = new Customer_Order();
+            
             
             //Stage1
             order.Pizza_Size = new_order.Pizza_Size;
@@ -58,8 +60,10 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             order.Nacho_Bites = new_order.Nacho_Bites;
             order.Mozzarella_Sticks = new_order.Mozzarella_Sticks;
 
-            //Username
+            //Other
             order.Username = new_order.Username;
+            order.Pizza_From_Menu = new_order.Pizza_From_Menu;
+            order.Time_Created = new_order.Time_Created;
 
             //Sql
             Pizza_order_system_databaseEntities order_pizzaDB = new Pizza_order_system_databaseEntities();
@@ -74,12 +78,13 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
             var add_order = new Customer_Order();
 
+            
             //stage1
             pizzaSize = (string)Session["pizzaSize"];
             cheeseType = (string)Session["cheeseType"];
             crustType = (string)Session["crustType"];
             doughType = (string)Session["doughType"];
-            //__________________________________________
+            //_____________________________________________________________
             add_order.Pizza_Size = pizzaSize;
             add_order.Cheese_Type = cheeseType;
             add_order.Crust_Type = crustType;
@@ -94,7 +99,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Pepperoni = (string)Session["Pepproni"];
             Mushrooms = (string)Session["Mushrooms"];
             Ancovies = (string)Session["Ancovies"];
-            //______________________________________________
+            //_____________________________________________________________
             add_order.Pineapple = Pinapple;
             add_order.Ham = Ham;
             add_order.Black_Olives = BlackOlives;
@@ -110,15 +115,18 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             water = (string)Session["water"];
             nachoBites = (string)Session["nachoBites"];
             mozzarellaSicks = (string)Session["mozzarellaSicks"];
-            //_____________________________________________________
+            //_____________________________________________________________
             add_order.Coca_Cola = cocaCola;
             add_order.Pepsi = pepsi;
             add_order.Water = water;
             add_order.Nacho_Bites = nachoBites;
             add_order.Mozzarella_Sticks = mozzarellaSicks;
 
-            //Username
+            //Other
             add_order.Username = tb_account_username.Text.Trim();
+            add_order.Time_Created = DateTime.Now;
+            PresetPizza = (string)Session["PresetPizza"];
+            add_order.Pizza_From_Menu = PresetPizza;
 
             customer_order(add_order);
 

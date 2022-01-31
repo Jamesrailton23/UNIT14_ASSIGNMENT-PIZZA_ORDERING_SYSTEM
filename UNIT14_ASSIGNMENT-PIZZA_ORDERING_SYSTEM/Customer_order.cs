@@ -16,6 +16,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     {
         public int CustomerID { get; set; }
         public int OrderID { get; set; }
+        public string Pizza_From_Menu { get; set; }
         public string Pizza_Size { get; set; }
         public string Crust_Type { get; set; }
         public string Cheese_Type { get; set; }
@@ -34,5 +35,6 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public string Nacho_Bites { get; set; }
         public string Mozzarella_Sticks { get; set; }
         public string Username { get; set; }
+        public Nullable<System.DateTime> Time_Created { get; set; }
     }
 }

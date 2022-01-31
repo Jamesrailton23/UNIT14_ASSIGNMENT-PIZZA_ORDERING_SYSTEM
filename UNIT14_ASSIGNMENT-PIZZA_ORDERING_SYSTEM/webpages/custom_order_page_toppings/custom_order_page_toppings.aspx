@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Cusomise Toppings</title>
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
 </head>
     <body>
@@ -12,7 +12,9 @@
             <h1 class="text-center">Cusomise Toppings</h1>
             <h3 class="text-center"> Add Diffrent toppings to your pizza</h3>
         
-            
+            <br />
+            <hr />
+            <br />
             <h3>Pineapple</h3>
            
             <asp:RadioButtonList ID="rbl_pineapple" runat="server" RepeatDirection="Horizontal">
@@ -77,6 +79,8 @@
                             <asp:ListItem>Normal</asp:ListItem>
                             <asp:ListItem>Extra</asp:ListItem>
                         </asp:RadioButtonList>    
+                <br />
+                <hr />
                 <br />
                 &nbsp;<asp:Button ID="btn_confirm" runat="server" Text="Confirm" OnClick="btn_confirm_Click" />
             <br />

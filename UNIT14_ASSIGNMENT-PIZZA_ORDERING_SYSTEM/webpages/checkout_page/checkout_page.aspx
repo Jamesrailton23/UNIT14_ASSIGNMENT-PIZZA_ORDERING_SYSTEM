@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Basket And Checkout</title>
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
@@ -13,25 +13,46 @@
        
         <br />
         <br />
-        <h1>Checkout</h1>
-        <h3>Please checkout for your order</h3>
-        Your basket<br />
+        <h1>&nbsp; Basket &amp; Checkout</h1>
+        <hr />
+        <br />
+       
+        <h3 >&nbsp; Your basket :</h3>
+        <br />
+        &nbsp; Pizza Size -<br />
+        <br />
+&nbsp;Crust Type -
         <br />
         <br />
+&nbsp;Dough Type -<br />
+        <br />
+&nbsp;Toppings -
         <br />
         <br />
+&nbsp;Sides and Drinks -
+        <br />
+        &nbsp;<br />
+        <br />
+        &nbsp;Stage 1 Cost =<br />
+&nbsp;Stage 2 Cost =<br />
+&nbsp;Stage 3 Cost =<br />
+        <br />
+&nbsp;Vat =<br />
+        <br /><h3>
+&nbsp;TOTAL COST =
+        </h3><hr />
         <br />
         <br />
-&nbsp;&nbsp;<h3>&nbsp; Customer Account Username</h3>
+        <h3>&nbsp; Customer Account Username (Enter Username to save order to your Account)</h3>
         &nbsp;
         <asp:TextBox ID="tb_account_username" runat="server"></asp:TextBox>
         <br />
         <br />
         <br />
         <h3>&nbsp; Collection Method</h3>
-        <h3>&nbsp;<asp:RadioButtonList ID="rbl_collection_method" runat="server" RepeatDirection="Horizontal">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:RadioButtonList ID="rbl_collection_method" runat="server" RepeatDirection="Horizontal">
             <asp:ListItem Selected="True">Collect</asp:ListItem>
-            <asp:ListItem>Delivery</asp:ListItem>
+            <asp:ListItem>Delivery (+ £3.00)</asp:ListItem>
         </asp:RadioButtonList>
             </h3>
         <br />
@@ -57,13 +78,13 @@
             <asp:TextBox ID="tb_email" runat="server"></asp:TextBox>
         </h3>
         <br />
-&nbsp;&nbsp;&nbsp;
+        <hr />
         <br />
         <br />
-        <h3>&nbsp;I Confirm That My Order And Information Is Correct -
-            <asp:CheckBox ID="cb_confirm" runat="server" Text="Confirm" />
+        <h3>&nbsp;I Confirm That My Order And Information Is Correct&nbsp; -&nbsp; <asp:CheckBox ID="cb_confirm" runat="server" Text="Confirm" />
         </h3>
         <p>&nbsp;</p>
+        &nbsp;
         <asp:Button ID="btn_checkout" runat="server" Text="Checkout" OnClick="btn_checkout_Click" />
         <br />
 

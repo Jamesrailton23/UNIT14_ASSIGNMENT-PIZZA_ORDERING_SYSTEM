@@ -4,14 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="84970a470bf94cb098a25ac81a972fb7" Name="Diagram1" ZoomLevel="73">
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer_Account" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Kitchen_Staff_Account" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Loged_In_User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Loged_In_Users_Kitchen_Staff_Account" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Manager_Account" Width="1.5" PointX="7.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer" Width="1.5" PointX="3.125" PointY="3.125" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer_Order" Width="1.5" PointX="0.75" PointY="4.75" />
+      <Diagram DiagramId="f68a66e2a46e43b98c783efbb3b5f9ed" Name="Diagram1">
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer_Order" Width="1.5" PointX="0.5" PointY="3.75" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer_Account" Width="1.5" PointX="7" PointY="3.75" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Kitchen_Staff_Account" Width="1.5" PointX="7" PointY="8.5" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Manager_Account" Width="1.5" PointX="7" PointY="6" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Session" Width="1.5" PointX="4.875" PointY="3.75" />
+        <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Session_Customer_Account" />
+        <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Session_Kitchen_Staff_Account" />
+        <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Session_Manager_Account" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

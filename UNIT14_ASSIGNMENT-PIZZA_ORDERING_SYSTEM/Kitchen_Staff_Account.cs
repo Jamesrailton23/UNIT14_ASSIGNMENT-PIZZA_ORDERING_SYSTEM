@@ -14,6 +14,12 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     
     public partial class Kitchen_Staff_Account
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Kitchen_Staff_Account()
+        {
+            this.Sessions = new HashSet<Session>();
+        }
+    
         public int Account_ID_Number { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
@@ -21,6 +27,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public string Phone_Number { get; set; }
         public Nullable<System.DateTime> Date_Of_Birth { get; set; }
     
-        public virtual Loged_In_User Loged_In_Users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Session> Sessions { get; set; }
     }
 }

@@ -42,13 +42,13 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.ImageButton ibtn_pizza_Pepporni;
 
         /// <summary>
-        /// ibtn_pizza_Cheese control.
+        /// ibtn_pizza_Margherita control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ibtn_pizza_Cheese;
+        protected global::System.Web.UI.WebControls.ImageButton ibtn_pizza_Margherita;
 
         /// <summary>
         /// ibtn_pizza_Hawaiian control.
@@ -60,12 +60,12 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.ImageButton ibtn_pizza_Hawaiian;
 
         /// <summary>
-        /// ibtn_pizza_Ham control.
+        /// ibtn_pizza_hamAndMushroom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ibtn_pizza_Ham;
+        protected global::System.Web.UI.WebControls.ImageButton ibtn_pizza_hamAndMushroom;
     }
 }

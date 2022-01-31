@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Customise Pizza</title>
      <link href="../../Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
@@ -18,8 +18,8 @@
             <asp:RadioButtonList ID="rbl_pizza_size" runat="server">
                             <asp:ListItem>Personal (2 Slices) (£2)</asp:ListItem>
                             <asp:ListItem>Duo (4 Slices) (£4)</asp:ListItem>
-                            <asp:ListItem>13" (£8)</asp:ListItem>
-                            <asp:ListItem>16" (£10)</asp:ListItem>
+                            <asp:ListItem>10&quot; (&#163;8)</asp:ListItem>
+                            <asp:ListItem>13&quot; (&#163;10)</asp:ListItem>
                         </asp:RadioButtonList>
                      <br />
             <br />

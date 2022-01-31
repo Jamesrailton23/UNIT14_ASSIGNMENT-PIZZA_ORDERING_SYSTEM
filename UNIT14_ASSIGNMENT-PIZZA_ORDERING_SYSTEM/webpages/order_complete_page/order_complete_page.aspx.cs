@@ -11,12 +11,34 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["doughType"] = "";
+            Session["cheeseType"] = "";
+            Session["crustType"] = "";
+            Session["pizzaSize"] = "";
+            Session["firstStageCost"] = "";
+
+            Session["Pinapple"] = "";
+            Session["Ham"] = "";
+            Session["BlackOlives"] = "";
+            Session["GreenOnions"] = "";
+            Session["RedOnions"] = "";
+            Session["Pepproni"] = "";
+            Session["Mushrooms"] = "";
+            Session["Ancovies"] = "";
+            Session["secondStageCost"] = "";
+
+            Session["cocaCola"] = "";
+            Session["pepsi"] = "";
+            Session["water"] = "";
+            Session["nachoBites"] = "";
+            Session["mozzarellaSicks"] = "";
+            Session["thirdStageCost"] = "";
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btn_home_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/webpages/default/default.aspx");
+            Response.Redirect("~/webpages/default/default.aspx",false);
         }
     }
 }

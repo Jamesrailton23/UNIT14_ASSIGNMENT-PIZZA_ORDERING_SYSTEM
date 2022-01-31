@@ -25,11 +25,11 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customer_Account> Customer_Accounts { get; set; }
-        public virtual DbSet<Kitchen_Staff_Account> Kitchen_Staff_Accounts { get; set; }
-        public virtual DbSet<Loged_In_User> Loged_In_Users { get; set; }
-        public virtual DbSet<Manager_Account> Manager_Accounts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Customer_Order> Customer_Orders { get; set; }
+        public virtual DbSet<Customer_Account> Customer_Accounts { get; set; }
+        public virtual DbSet<Kitchen_Staff_Account> Kitchen_Staff_Accounts { get; set; }
+        public virtual DbSet<Manager_Account> Manager_Accounts { get; set; }
+        public virtual DbSet<Session> Sessions { get; set; }
     }
 }

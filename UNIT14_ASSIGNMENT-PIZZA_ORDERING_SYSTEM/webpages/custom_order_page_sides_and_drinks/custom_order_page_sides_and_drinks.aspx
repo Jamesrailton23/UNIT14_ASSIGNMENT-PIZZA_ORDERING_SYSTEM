@@ -4,12 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Customise Sides and Drinks</title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <h1>Sides and Drinks</h1>
+            <h1>Customise Sides and Drinks</h1>
             <h3>Select your sides and drinks here</h3>
             <br />
             <h3>&nbsp; Pepsi

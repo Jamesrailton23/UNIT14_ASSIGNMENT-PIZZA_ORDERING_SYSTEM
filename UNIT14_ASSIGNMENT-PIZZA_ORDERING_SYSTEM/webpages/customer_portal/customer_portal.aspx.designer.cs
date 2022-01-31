@@ -24,6 +24,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_portal
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// btn_logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_logout;
+
+        /// <summary>
         /// lb_customer_name control.
         /// </summary>
         /// <remarks>
@@ -33,57 +42,21 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_portal
         protected global::System.Web.UI.WebControls.Label lb_customer_name;
 
         /// <summary>
-        /// gv_order_history_pizza control.
+        /// gv_order control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_order_history_pizza;
+        protected global::System.Web.UI.WebControls.GridView gv_order;
 
         /// <summary>
-        /// gv_order_history_toppings control.
+        /// sql_CustomerOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_order_history_toppings;
-
-        /// <summary>
-        /// gv_order_history_sides control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_order_history_sides;
-
-        /// <summary>
-        /// SqlDataSource_pizza control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_pizza;
-
-        /// <summary>
-        /// SqlDataSource_topping control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_topping;
-
-        /// <summary>
-        /// SqlDataSource_sides control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_sides;
+        protected global::System.Web.UI.WebControls.SqlDataSource sql_CustomerOrder;
     }
 }

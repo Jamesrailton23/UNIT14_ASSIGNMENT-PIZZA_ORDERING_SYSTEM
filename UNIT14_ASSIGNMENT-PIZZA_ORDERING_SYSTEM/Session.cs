@@ -16,9 +16,12 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     {
         public int Session_ID { get; set; }
         public Nullable<int> Account_ID_Number { get; set; }
-        public Nullable<System.DateTime> Time_Sign_in { get; set; }
-        public Nullable<System.DateTime> Time_Sign_Out { get; set; }
+        public Nullable<System.DateTime> TimeOfLogin { get; set; }
+        public Nullable<System.DateTime> TimeOfLogOut { get; set; }
+        public string Access_Level { get; set; }
     
         public virtual Customer_Account Customer_Account { get; set; }
+        public virtual Kitchen_Staff_Account Kitchen_Staff_Account { get; set; }
+        public virtual Manager_Account Manager_Account { get; set; }
     }
 }

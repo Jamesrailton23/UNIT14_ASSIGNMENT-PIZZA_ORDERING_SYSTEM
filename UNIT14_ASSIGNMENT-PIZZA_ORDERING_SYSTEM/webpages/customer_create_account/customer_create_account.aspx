@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Create Account</title>
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
     <script src="../../Scripts/bootstrap.bundle.js"></script>
 </head>

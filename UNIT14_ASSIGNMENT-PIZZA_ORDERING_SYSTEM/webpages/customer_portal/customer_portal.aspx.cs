@@ -11,9 +11,22 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_portal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lb_customer_name.Text = (string)Session["Username"];
+            
         }
 
-       
+        protected void btn_logout_Click(object sender, EventArgs e)
+        {
+            Session["LoggedInCustomer"] = "NO";
+            Session["Account-ID-Number"] = "";
+            Session["Username"] = "";
+            Response.Redirect("~/webpages/customer_login/customer_login.aspx",false);
+
+            
+
+
+
+
+        }
     }
 }
