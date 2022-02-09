@@ -11,8 +11,8 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     {
         decimal costStage1, costStage2, costStage3, finalCost, vat;
         string  pizzaSize, cheeseType, doughType, crustType, Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies, cocaCola, pepsi, water, nachoBites, mozzarellaSicks, PresetPizza;
-
-       
+        bool LoggedIn;
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,7 +39,8 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             costStage1 = (decimal)Session["firstStageCost"];
             costStage2 = (decimal)Session["secondStageCost"];
             costStage3 = (decimal)Session["thirdStageCost"];
-            #endregion
+            
+            
             finalCost = costStage1 + costStage2 + costStage3;
 
             //first
@@ -47,26 +48,26 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             lb_cheese.Text = cheeseType;
             lb_crust.Text = crustType;
             lb_dough.Text = doughType;
-            lb_firstCost.Text = String.Format("{0:C}", costStage1);
+
 
             //second
-           lb_ancovies.Text = (Ancovies == "") ? Ancovies = "None" : Ancovies;
-           lb_blackOlives.Text = (BlackOlives == "") ? BlackOlives = "None" : BlackOlives;
-           lb_greenOnions.Text = (GreenOnions == "") ? GreenOnions = "None" : GreenOnions;
-           lb_ham.Text = (Ham == "") ? Ham = "None" : Ham;
-           lb_mushrooms.Text = (Mushrooms == "") ? Mushrooms = "None" : Mushrooms;
-           lb_redOnions.Text = (RedOnions == "") ? RedOnions = "None" : RedOnions;
-           lb_pineapple.Text = (Pinapple == "") ? Pinapple = "None" : Pinapple;
-           lb_pepporni.Text = (Pepperoni == "") ? Pepperoni = "None" : Pepperoni;
-           lb_secondCost.Text = String.Format("{0:C}", costStage2);
+            lb_ancovies.Text = Ancovies;
+            lb_blackOlives.Text = BlackOlives;
+            lb_greenOnions.Text = GreenOnions;
+            lb_ham.Text = Ham;
+            lb_mushrooms.Text = Mushrooms;
+            lb_redOnions.Text = RedOnions;
+            lb_pineapple.Text = Pinapple;
+            lb_pepporni.Text = Pepperoni;
 
-           //third
-           lb_pepsi.Text = (pepsi == "") ? pepsi = "None" : pepsi;
-           lb_cocaCola.Text = (cocaCola == "") ? cocaCola = "None" : cocaCola;
-           lb_water.Text = (water == "") ? water = "None" : water;
-           lb_mozzarellaSticks.Text = (mozzarellaSicks == "") ? mozzarellaSicks = "None" : mozzarellaSicks;
-           lb_nachoBites.Text = (nachoBites == "") ? nachoBites = "None" : nachoBites;
-           lb_thirdCost.Text = String.Format("{0:C}", costStage3);
+
+            //third
+            lb_pepsi.Text = pepsi;
+            lb_cocaCola.Text = cocaCola;
+            lb_water.Text = water;
+            lb_mozzarellaSticks.Text = mozzarellaSicks;
+            lb_nachoBites.Text = nachoBites;
+           
 
             //final cost
             lb_cost1.Text = String.Format("{0:C}", costStage1);
@@ -75,12 +76,21 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             vat = (finalCost * 25) / 100;
             lb_vat.Text = String.Format("{0:C}", vat);
             lb_total.Text = String.Format("{0:C}", finalCost);
-                
+            #endregion
+
+            LoggedIn = (bool)Session["loggedIn"]; 
+            if(LoggedIn == true)
+            {
+                btn_login.Enabled = false;
+            }
            
 
 
         }
-
+        protected void btn_login_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/webpages/checkout_page/checkout_customer_login.aspx", false);
+        }
         protected void btn_checkout_Click(object sender, EventArgs e)
         {
             if (cb_confirm.Checked && tb_firstName != null && tb_lastName != null && tb_line1 != null && tb_line2 != null && tb_phone != null && tb_postCode != null)
@@ -187,7 +197,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             add_order.Mozzarella_Sticks = mozzarellaSicks;
 
             //Other
-            add_order.Username = tb_account_username.Text.Trim();
+            add_order.Username = (string)Session["username"];
             add_order.Time_Created = DateTime.Now;
             PresetPizza = (string)Session["PresetPizza"];
             add_order.Pizza_From_Menu = PresetPizza;
@@ -211,6 +221,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             customer.Address_Line_3 = new_customer.Address_Line_3;
             customer.Post_code = new_customer.Post_code;
             customer.Email = new_customer.Email;
+            customer.Phone_Number = new_customer.Phone_Number;
             
             //Sql
             Pizza_order_system_databaseEntities customer_pizzaDB = new Pizza_order_system_databaseEntities();
@@ -231,6 +242,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             add_customer.Address_Line_3 = tb_line3.Text.Trim();
             add_customer.Post_code = tb_postCode.Text.Trim();
             add_customer.Email = tb_email.Text.Trim();
+            add_customer.Phone_Number = tb_phone.Text.Trim();
             
            
            

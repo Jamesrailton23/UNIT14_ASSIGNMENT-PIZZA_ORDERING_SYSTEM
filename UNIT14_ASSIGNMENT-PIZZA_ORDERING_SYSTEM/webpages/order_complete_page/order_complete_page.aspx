@@ -12,8 +12,8 @@
     <form id="form1" runat="server">
         <div>
             <br />
-            <h3 class="text-center">&nbsp; Thank Your For Your Order</h3>
-            <h3 class="text-center">&nbsp;For the colletion of your order, please go to the address shown below</h3>
+            <h1 class="text-center">&nbsp; Thank Your For Your Order</h1>
+            <h2 class="text-center">&nbsp;For the colletion of your order, please go to the address shown below</h2>
             <br />
             <hr />
             <br />

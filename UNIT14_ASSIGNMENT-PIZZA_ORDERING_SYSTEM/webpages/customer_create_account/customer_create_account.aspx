@@ -6,32 +6,37 @@
 <head runat="server">
     <title>Create Account</title>
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
-    <script src="../../Scripts/bootstrap.bundle.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-          <h1>Create Your Account</h1>
-            <h3>Create an account here to view the last order you have made, This requires you to insert your account username whenever you check out</h3>
+          <h1>&nbsp;</h1>
+            <h1 class="text-center">Create Your Account</h1>
+            <br />
+            <hr />
+            <br />
+            <h3>&nbsp; Create an account here to view the last order you have made, This requires you to insert your account username whenever you check out</h3>
             <br />
             <h3>&nbsp; User Name - 
-                <asp:TextBox ID="tb_username" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_username" runat="server" MaxLength="100"></asp:TextBox>
             </h3>
             <br />
             <h3>&nbsp; Password - 
-                <asp:TextBox ID="tb_password" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_password" runat="server" MaxLength="100"></asp:TextBox>
             </h3>
             <br />
             <h3>&nbsp; Email - 
-                <asp:TextBox ID="tb_email" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_email" runat="server" MaxLength="100"></asp:TextBox>
             </h3>
             <br />
             <h3>&nbsp; Phone Number - 
-                <asp:TextBox ID="tb_phone" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_phone" runat="server" MaxLength="50"></asp:TextBox>
             </h3>
             <br />
             &nbsp;
-            <asp:Button ID="btn_create_account" runat="server" OnClick="btn_create_account_Click" Text="Create Account" />
+            <center>
+            <asp:Button ID="btn_create_account" runat="server" OnClick="btn_create_account_Click" Text="Create Account" Height="50px" Width="150px" />
+            </center>
             <br />
             <br />
             <div class="container mt-3">

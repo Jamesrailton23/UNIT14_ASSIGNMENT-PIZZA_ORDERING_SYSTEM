@@ -60,15 +60,6 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.Label lb_dough;
 
         /// <summary>
-        /// lb_firstCost control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_firstCost;
-
-        /// <summary>
         /// lb_ham control.
         /// </summary>
         /// <remarks>
@@ -141,15 +132,6 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.Label lb_ancovies;
 
         /// <summary>
-        /// lb_secondCost control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_secondCost;
-
-        /// <summary>
         /// lb_cocaCola control.
         /// </summary>
         /// <remarks>
@@ -193,15 +175,6 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lb_mozzarellaSticks;
-
-        /// <summary>
-        /// lb_thirdCost control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_thirdCost;
 
         /// <summary>
         /// lb_cost1 control.
@@ -249,13 +222,13 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.Label lb_total;
 
         /// <summary>
-        /// tb_account_username control.
+        /// btn_login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_account_username;
+        protected global::System.Web.UI.WebControls.Button btn_login;
 
         /// <summary>
         /// tb_firstName control.

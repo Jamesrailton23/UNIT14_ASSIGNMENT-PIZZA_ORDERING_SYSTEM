@@ -137,7 +137,7 @@
                         </ContentTemplate>
             </asp:UpdatePanel>
             <center>
-                &nbsp;<asp:Button ID="btn_confirm" runat="server" Text="Continue" OnClick="btn_confirm_Click" CssClass="btn-dark" Height="50px" Width="150px" /></center>
+                &nbsp;<asp:Button ID="btn_continue" runat="server" Text="Continue" OnClick="btn_continue_Click" CssClass="btn-dark" Height="50px" Width="150px" /></center>
             <br />
             <br />
             <br />

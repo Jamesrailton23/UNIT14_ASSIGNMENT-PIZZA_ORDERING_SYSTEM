@@ -34,6 +34,9 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Session["mozzarellaSicks"] = "";
             Session["thirdStageCost"] = "";
 
+            Session["LoggedIn"] = "";
+            Session["Username"] = "";
+
         }
 
         protected void btn_home_Click(object sender, EventArgs e)

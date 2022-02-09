@@ -32,17 +32,19 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             basket();
         }
 
+        protected void btn_continue_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/webpages/custom_order_page_toppings/custom_order_page_toppings.aspx", false);
+            first_stage_custom_order();
+        }
+
         protected void rbl_cheese_type_SelectedIndexChanged(object sender, EventArgs e)
         {
             basket();
         }
         #endregion
 
-        protected void btn_confirm_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/webpages/custom_order_page_toppings/custom_order_page_toppings.aspx", false);
-            first_stage_custom_order();
-        }
+        
         protected void basket()
         {
             switch (rbl_pizza_size.SelectedIndex)

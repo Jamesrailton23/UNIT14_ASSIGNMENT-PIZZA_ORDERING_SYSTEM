@@ -11,16 +11,18 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
     {
         decimal thirdStageCost;
         string cocaCola, pepsi, water, nachoBites, mozzarellaSicks;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
-        protected void btn_confirm_Click(object sender, EventArgs e)
+        protected void btn_continue_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/webpages/checkout_page/checkout_page.aspx", false);
             sides_and_drink();
         }
+
         protected void sides_and_drink()
         {
             thirdStageCost += (cb_cocaCola.Checked) ? 3.00m : 0.00m;

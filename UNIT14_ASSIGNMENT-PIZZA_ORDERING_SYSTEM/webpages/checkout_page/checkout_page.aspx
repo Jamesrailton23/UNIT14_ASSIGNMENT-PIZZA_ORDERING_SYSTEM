@@ -44,10 +44,7 @@
         <asp:Label ID="lb_dough" runat="server"></asp:Label>
         <br />
         <br />
-        &nbsp;Stage 1 Cost =
-        <asp:Label ID="lb_firstCost" runat="server"></asp:Label>
-        <br />
-        <br />
+        &nbsp;<br />
         <br />
         <h3>&nbsp; <span class="text-decoration-underline">Stage 2 (Toppings) :</span></h3>
 &nbsp; Ham -
@@ -82,11 +79,8 @@
         <asp:Label ID="lb_ancovies" runat="server"></asp:Label>
         <br />
         <br />
-&nbsp;Stage 2 Cost =
-        <asp:Label ID="lb_secondCost" runat="server"></asp:Label>
         <br />
         <br />
-&nbsp;<br />
         <h3>&nbsp; <span class="text-decoration-underline">Stage 3 (Sides and Drinks) :</span></h3>
         <p>
 &nbsp; Coca Cola -
@@ -108,20 +102,18 @@
 &nbsp; Mozzarella Sticks -
             <asp:Label ID="lb_mozzarellaSticks" runat="server"></asp:Label>
         </p>
-        <p>
-            &nbsp;Stage 3 Cost = &nbsp;<asp:Label ID="lb_thirdCost" runat="server"></asp:Label>
-        </p>
         <br />
-        &nbsp;<h3>&nbsp; <span class="text-decoration-underline">Costs :</span></h3>
-        &nbsp;Stage 1 Cost =
+        <br />
+        <h3>&nbsp; <span class="text-decoration-underline">Cost Breakdown :</span></h3>
+        &nbsp;Stage 1 (Pizza) Cost =
         <asp:Label ID="lb_cost1" runat="server"></asp:Label>
         <br />
         <br />
-&nbsp;Stage 2 Cost =
+&nbsp;Stage 2 (Toppings) Cost =
         <asp:Label ID="lb_cost2" runat="server"></asp:Label>
         <br />
         <br />
-&nbsp;Stage 3 Cost =
+&nbsp;Stage 3 (Sides And Drinks) Cost =
         <asp:Label ID="lb_cost3" runat="server"></asp:Label>
         <br />
         <br />
@@ -135,9 +127,9 @@
             <asp:Label ID="lb_total" runat="server"></asp:Label>
         </h3><hr />
         <br />
-        <h3>&nbsp; <strong>Customer Account Username (Enter Username to save order to your Account) :</strong></h3>
+        <h3>&nbsp; <strong>Customer Account login (Enter Username to save order to your Account) :</strong></h3>
         &nbsp;
-        <asp:TextBox ID="tb_account_username" runat="server"></asp:TextBox>
+        <asp:Button ID="btn_login" runat="server" OnClick="btn_login_Click" Text="Login" />
         <br />
         <br />
         <hr />
@@ -145,30 +137,30 @@
         <h3><strong>&nbsp; </strong><span class="text-decoration-underline">Enter Your Name</span></h3>
         <br />
         <h3>&nbsp; First Name * -
-            <asp:TextBox ID="tb_firstName" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tb_firstName" runat="server" MaxLength="100"></asp:TextBox>
         </h3>
-        <h3>&nbsp; Last Name * - <asp:TextBox ID="tb_lastName" runat="server"></asp:TextBox>
+        <h3>&nbsp; Last Name * - <asp:TextBox ID="tb_lastName" runat="server" MaxLength="100"></asp:TextBox>
         </h3>
         <br />
         <br />
         <h3>&nbsp; <span class="text-decoration-underline">Enter Your Address</span></h3>
         <br />
-        <h3>&nbsp; Address Line 1 * - <asp:TextBox ID="tb_line1" runat="server"></asp:TextBox>
+        <h3>&nbsp; Address Line 1 * - <asp:TextBox ID="tb_line1" runat="server" MaxLength="100"></asp:TextBox>
         </h3>
-        <h3>&nbsp; Address Line 2 * - <asp:TextBox ID="tb_line2" runat="server"></asp:TextBox>
+        <h3>&nbsp; Address Line 2 * - <asp:TextBox ID="tb_line2" runat="server" MaxLength="100"></asp:TextBox>
         </h3>
-        <h3>&nbsp; Address Line 3 (Optional) - <asp:TextBox ID="tb_line3" runat="server"></asp:TextBox>
+        <h3>&nbsp; Address Line 3 (Optional) - <asp:TextBox ID="tb_line3" runat="server" MaxLength="100"></asp:TextBox>
         </h3>
-        <h3>&nbsp; Post Code * - <asp:TextBox ID="tb_postCode" runat="server"></asp:TextBox>
+        <h3>&nbsp; Post Code * - <asp:TextBox ID="tb_postCode" runat="server" MaxLength="50"></asp:TextBox>
         </h3>
         <br />
         <br />
         <h3>&nbsp;<span class="text-decoration-underline">Enter Your Phone Number And Email</span></h3>
         <br />
-        <h3>&nbsp; Phone Number * - <asp:TextBox ID="tb_phone" runat="server"></asp:TextBox>
+        <h3>&nbsp; Phone Number * - <asp:TextBox ID="tb_phone" runat="server" MaxLength="50"></asp:TextBox>
         </h3>
         <h3>&nbsp; Email * -
-            <asp:TextBox ID="tb_email" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tb_email" runat="server" MaxLength="100"></asp:TextBox>
         </h3>
         <br />
         <hr />

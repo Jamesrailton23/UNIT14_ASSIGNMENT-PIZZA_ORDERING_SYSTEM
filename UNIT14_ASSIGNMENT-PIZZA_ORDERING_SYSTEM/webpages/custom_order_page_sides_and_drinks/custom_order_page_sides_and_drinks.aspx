@@ -10,8 +10,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <h1>Customise Sides and Drinks</h1>
-            <h3>Select your sides and drinks here</h3>
+            <h1 id="t">Customise Sides and Drinks</h1>
+            <h3 id="">Select your sides and drinks here</h3>
             <br />
             <h3>&nbsp; Pepsi
                 <asp:CheckBox ID="cb_pepsi" runat="server" />
@@ -29,10 +29,39 @@
                  <asp:CheckBox ID="cb_mozzarellaSticks" runat="server" />
             </h3>
             <br />
+            <hr />
             <br />
             <br />
-            <asp:Button ID="btn_confirm" runat="server" Text="confirm" OnClick="btn_confirm_Click" />
-            
+            <h3>&nbsp; Your Basket:</h3>
+            <br />
+            &nbsp;Pepsi -
+            <asp:Label ID="lb_pepsi" runat="server"></asp:Label>
+            <br />
+            <br />
+&nbsp;Water -
+            <asp:Label ID="lb_water" runat="server"></asp:Label>
+            <br />
+            <br />
+&nbsp;Coca Cola -
+            <asp:Label ID="lb_cocaCola" runat="server"></asp:Label>
+            <br />
+            <br />
+&nbsp;Nacho Bites -
+            <asp:Label ID="lb_nachoBites" runat="server"></asp:Label>
+            <br />
+            <br />
+&nbsp;Mozzarella Sticks -
+            <asp:Label ID="lb_mozzarellaSticks" runat="server"></asp:Label>
+            <br />
+            <br />
+&nbsp;Stage 3 Cost =
+            <asp:Label ID="lb_cost3" runat="server"></asp:Label>
+            <br />
+            <br />
+            <br />
+            <center>
+            <asp:Button ID="btn_continue" runat="server" Text="continue" OnClick="btn_continue_Click" Height="50px" Width="150px" />
+            </center>
 
         &nbsp;<br />
         </div>

@@ -5,11 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Customer Portal</title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <br />
+            <h1 class="text-center">Your Portal</h1>
+            <br />
             <asp:Button ID="btn_logout" runat="server" OnClick="btn_logout_Click" Text="LOGOUT" />
+            <br />
             <br />
             <h3>&nbsp; Hello
                 <asp:Label ID="lb_customer_name" runat="server"></asp:Label>

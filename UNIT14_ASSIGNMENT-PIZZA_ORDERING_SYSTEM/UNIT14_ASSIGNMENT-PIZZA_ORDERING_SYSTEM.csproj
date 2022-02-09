@@ -86,6 +86,7 @@
       <DependentUpon>pizza_ordering_system_model.edmx</DependentUpon>
       <LastGenOutput>pizza_ordering_system_model.cs</LastGenOutput>
     </Content>
+    <Content Include="webpages\checkout_page\checkout_customer_login.aspx" />
     <Content Include="webpages\checkout_page\checkout_page.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -112,8 +113,8 @@
     <Content Include="webpages\default\default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="webpages\default\starorder.png" />
-    <Content Include="webpages\employee portals\kitchen_staff_portal.aspx" />
-    <Content Include="webpages\employee portals\manager_portal.aspx" />
+    <Content Include="webpages\employee_portals\kitchen_staff_portal.aspx" />
+    <Content Include="webpages\employee_portals\manager_portal.aspx" />
     <Content Include="webpages\employee_login_page\employee_login_page.aspx" />
     <Content Include="webpages\new_order_page\customPizza.jpg" />
     <Content Include="webpages\new_order_page\hawaiianPizza.jpg" />
@@ -129,7 +130,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Web.config" />
-    <Content Include="webpages\new_order_page\new_order_page.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs">
@@ -142,6 +142,9 @@
       <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer_Session.cs">
+      <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Session.cs">
       <DependentUpon>pizza_ordering_system_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Kitchen_Staff_Account.cs">
@@ -164,6 +167,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>pizza_ordering_system_model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="webpages\checkout_page\checkout_customer_login.aspx.cs">
+      <DependentUpon>checkout_customer_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webpages\checkout_page\checkout_customer_login.aspx.designer.cs">
+      <DependentUpon>checkout_customer_login.aspx</DependentUpon>
     </Compile>
     <Compile Include="webpages\checkout_page\checkout_page.aspx.cs">
       <DependentUpon>checkout_page.aspx</DependentUpon>
@@ -224,18 +234,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="webpages\employee portals\kitchen_staff_portal.aspx.cs">
+    <Compile Include="webpages\employee_portals\kitchen_staff_portal.aspx.cs">
       <DependentUpon>kitchen_staff_portal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="webpages\employee portals\kitchen_staff_portal.aspx.designer.cs">
+    <Compile Include="webpages\employee_portals\kitchen_staff_portal.aspx.designer.cs">
       <DependentUpon>kitchen_staff_portal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webpages\employee portals\manager_portal.aspx.cs">
+    <Compile Include="webpages\employee_portals\manager_portal.aspx.cs">
       <DependentUpon>manager_portal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="webpages\employee portals\manager_portal.aspx.designer.cs">
+    <Compile Include="webpages\employee_portals\manager_portal.aspx.designer.cs">
       <DependentUpon>manager_portal.aspx</DependentUpon>
     </Compile>
     <Compile Include="webpages\employee_login_page\employee_login_page.aspx.cs">

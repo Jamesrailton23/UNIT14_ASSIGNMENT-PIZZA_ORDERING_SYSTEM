@@ -25,7 +25,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_login
                
                 if(tb_password.Text.Trim() == user.Password && tb_username.Text.Trim() == user.Username)
                 {
-                    Session["LoggedIn"] = "YES";
+                    Session["LoggedIn"] = true;
                     Session["AccountIDNumber"] = user.Account_ID_Number;
                     Session["Username"] = user.Username;
                     Session["LoginTime"] = DateTime.Now;

@@ -14,7 +14,6 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     
     public partial class Customer_Order
     {
-        public int CustomerID { get; set; }
         public int OrderID { get; set; }
         public string Pizza_From_Menu { get; set; }
         public string Pizza_Size { get; set; }

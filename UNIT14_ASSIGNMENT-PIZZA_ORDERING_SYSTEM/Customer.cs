@@ -23,5 +23,6 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public string Address_Line_3 { get; set; }
         public string Post_code { get; set; }
         public string Email { get; set; }
+        public string Phone_Number { get; set; }
     }
 }

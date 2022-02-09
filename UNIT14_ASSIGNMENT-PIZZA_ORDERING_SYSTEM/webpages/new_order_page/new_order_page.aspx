@@ -5,15 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="new_order_page.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />  
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <br />     
-            <h1 class="main_title">&nbsp;Select a Pizza</h1>
+            <h1 class="text-center">&nbsp;Select a Pizza</h1>
             <hr />
-            <h3 class="main_title">&nbsp;Custom Pizza</h3>
+            <h3 class="text-center">&nbsp;Custom Pizza</h3>
             <br />
             <center>
             <asp:ImageButton ID="ibtn_custom_pizza" runat="server" Height="166px" Width="194px" OnClick="ibtn_custom_pizza_Click" ImageUrl="~/webpages/new_order_page/customPizza.jpg" />
@@ -23,7 +23,7 @@
             <hr />
             <br />
             <br />
-            <h3 class="subtitle">&nbsp;&nbsp;Pepporni&nbsp;&nbsp;&nbsp; Margherita&nbsp; Hawaiian&nbsp; &nbsp; Ham &amp; Mushroom</h3>
+            <h3 class="text-center">&nbsp;&nbsp;Pepporni&nbsp;&nbsp;&nbsp; Margherita&nbsp; Hawaiian&nbsp; &nbsp; Ham &amp; Mushroom</h3>
             <br />
             <center>
             <asp:ImageButton ID="ibtn_pizza_Pepporni" runat="server" Height="100px" Width="100px" OnClick="ibtn_pizza_Pepporni_Click" ImageUrl="~/webpages/new_order_page/pepporniPizza.jpg" />

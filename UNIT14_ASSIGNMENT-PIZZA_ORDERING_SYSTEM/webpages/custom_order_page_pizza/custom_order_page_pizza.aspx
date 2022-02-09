@@ -57,7 +57,7 @@
         <br />
         <hr />
         <br />
-        <h3>&nbsp; Your basket </h3>
+        <h3>&nbsp; Your basket :</h3>
         <br />
                 &nbsp; Pizza Size -
         <asp:Label ID="lb_size" runat="server"></asp:Label>
@@ -80,7 +80,7 @@
         <br />
                  </ContentTemplate>
         </asp:UpdatePanel>
-        &nbsp;<asp:Button ID="btn_confirm" runat="server" Text="Continue" OnClick="btn_confirm_Click" />
+        &nbsp;<asp:Button ID="btn_continue" runat="server" Text="Continue" OnClick="btn_continue_Click" />
         &nbsp;&nbsp;</form>
                 
 </body>

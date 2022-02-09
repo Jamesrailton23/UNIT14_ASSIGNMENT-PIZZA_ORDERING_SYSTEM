@@ -14,9 +14,13 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+    
         }
-
+        protected void btn_continue_Click(object sender, EventArgs e)
+        {
+            second_stage_custom_order();
+            Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx", false);
+        }
         #region
         protected void rbl_green_onions_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -59,12 +63,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         }
 
         #endregion
-        protected void btn_confirm_Click(object sender, EventArgs e)
-        {
-            second_stage_custom_order();
-            Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx", false);
-           
-        }
+       
 
         protected void basket()
         {
@@ -351,6 +350,8 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Session["Mushrooms"] = (string)Mushrooms;
             Session["Ancovies"] = (string)Ancovies;
             Session["secondStageCost"] = (decimal)secondStageCost;
+            
+           
             
 
         }
