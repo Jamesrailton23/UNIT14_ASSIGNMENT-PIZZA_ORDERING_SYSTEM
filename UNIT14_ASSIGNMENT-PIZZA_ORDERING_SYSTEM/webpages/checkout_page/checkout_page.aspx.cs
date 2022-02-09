@@ -9,12 +9,76 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 {
     public partial class checkout_page : System.Web.UI.Page
     {
-        decimal costStage1, costStage2, costStage3, finalCost;
+        decimal costStage1, costStage2, costStage3, finalCost, vat;
         string  pizzaSize, cheeseType, doughType, crustType, Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies, cocaCola, pepsi, water, nachoBites, mozzarellaSicks, PresetPizza;
+
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            #region
+            //varibles
+            pizzaSize = (string)Session["pizzaSize"];
+            cheeseType = (string)Session["cheeseType"];
+            crustType = (string)Session["crustType"];
+            doughType = (string)Session["doughType"];
+            Pinapple = (string)Session["Pinapple"];
+            Ham = (string)Session["Ham"];
+            BlackOlives = (string)Session["BlackOlives"];
+            GreenOnions = (string)Session["GreenOnions"];
+            RedOnions = (string)Session["RedOnions"];
+            Pepperoni = (string)Session["Pepproni"];
+            Mushrooms = (string)Session["Mushrooms"];
+            Ancovies = (string)Session["Ancovies"];
+            cocaCola = (string)Session["cocaCola"];
+            pepsi = (string)Session["pepsi"];
+            water = (string)Session["water"];
+            nachoBites = (string)Session["nachoBites"];
+            mozzarellaSicks = (string)Session["mozzarellaSicks"];
+            PresetPizza = (string)Session["PresetPizza"];
+            costStage1 = (decimal)Session["firstStageCost"];
+            costStage2 = (decimal)Session["secondStageCost"];
+            costStage3 = (decimal)Session["thirdStageCost"];
+            #endregion
+            finalCost = costStage1 + costStage2 + costStage3;
+
+            //first
+            lb_size.Text = pizzaSize;
+            lb_cheese.Text = cheeseType;
+            lb_crust.Text = crustType;
+            lb_dough.Text = doughType;
+            lb_firstCost.Text = String.Format("{0:C}", costStage1);
+
+            //second
+           lb_ancovies.Text = (Ancovies == "") ? Ancovies = "None" : Ancovies;
+           lb_blackOlives.Text = (BlackOlives == "") ? BlackOlives = "None" : BlackOlives;
+           lb_greenOnions.Text = (GreenOnions == "") ? GreenOnions = "None" : GreenOnions;
+           lb_ham.Text = (Ham == "") ? Ham = "None" : Ham;
+           lb_mushrooms.Text = (Mushrooms == "") ? Mushrooms = "None" : Mushrooms;
+           lb_redOnions.Text = (RedOnions == "") ? RedOnions = "None" : RedOnions;
+           lb_pineapple.Text = (Pinapple == "") ? Pinapple = "None" : Pinapple;
+           lb_pepporni.Text = (Pepperoni == "") ? Pepperoni = "None" : Pepperoni;
+           lb_secondCost.Text = String.Format("{0:C}", costStage2);
+
+           //third
+           lb_pepsi.Text = (pepsi == "") ? pepsi = "None" : pepsi;
+           lb_cocaCola.Text = (cocaCola == "") ? cocaCola = "None" : cocaCola;
+           lb_water.Text = (water == "") ? water = "None" : water;
+           lb_mozzarellaSticks.Text = (mozzarellaSicks == "") ? mozzarellaSicks = "None" : mozzarellaSicks;
+           lb_nachoBites.Text = (nachoBites == "") ? nachoBites = "None" : nachoBites;
+           lb_thirdCost.Text = String.Format("{0:C}", costStage3);
+
+            //final cost
+            lb_cost1.Text = String.Format("{0:C}", costStage1);
+            lb_cost2.Text = String.Format("{0:C}", costStage2);
+            lb_cost3.Text = String.Format("{0:C}", costStage3);
+            vat = (finalCost * 25) / 100;
+            lb_vat.Text = String.Format("{0:C}", vat);
+            lb_total.Text = String.Format("{0:C}", finalCost);
+                
+           
+
+
         }
 
         protected void btn_checkout_Click(object sender, EventArgs e)
@@ -27,7 +91,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             }
             else
             {
-
+                Response.Write("<script language=javascript>alert('AN ERROR HAS OCCURED!!, please insert information into all required Fields.')</script>");
             }
 
         }
@@ -135,9 +199,9 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public static void customer(Customer new_customer)
         {
             var customer = new Customer();
-            //cost and collection method
+            //cost
             customer.Total_order_cost = new_customer.Total_order_cost;
-            customer.Collection_method = new_customer.Collection_method;
+            
             
             //customer details
             customer.First_Name = new_customer.First_Name;
@@ -168,13 +232,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             add_customer.Post_code = tb_postCode.Text.Trim();
             add_customer.Email = tb_email.Text.Trim();
             
-            switch (rbl_collection_method.SelectedIndex)
-            {
-                case 0: add_customer.Collection_method = "Collection";
-                    break;
-                case 1: add_customer.Collection_method = "Delivery";
-                    break;
-            }
+           
            
             //Order Cost
             costStage1 = (decimal)Session["firstStageCost"];

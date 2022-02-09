@@ -17,9 +17,12 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
         protected void ibtn_custom_pizza_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("/~/webpages/checkout_page/checkout_page.aspx",false);
+            Response.Redirect("~/webpages/custom_order_page_pizza/custom_order_page_pizza.aspx",false);
         }
-
+        protected void btn_back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/webpages/default/default.aspx");
+        }
         protected void ibtn_pizza_Pepporni_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx",false);
@@ -98,6 +101,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Session["secondStageCost"] = (decimal)secondStageCost;
         }
 
+       
         protected void ibtn_pizza_Margherita_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx", false);

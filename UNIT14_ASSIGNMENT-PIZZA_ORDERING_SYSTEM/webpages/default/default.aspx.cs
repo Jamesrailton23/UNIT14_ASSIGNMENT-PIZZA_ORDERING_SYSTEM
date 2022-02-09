@@ -28,5 +28,10 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         {
             Response.Redirect("~/webpages/customer_login/customer_login.aspx");
         }
+
+        protected void btn_employee_login_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/webpages/employee_login_page/employee_login_page.aspx");
+        }
     }
 }

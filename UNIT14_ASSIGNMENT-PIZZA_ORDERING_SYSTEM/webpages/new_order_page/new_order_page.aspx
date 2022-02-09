@@ -33,6 +33,10 @@
             <asp:ImageButton ID="ibtn_pizza_Hawaiian" runat="server" Height="100px" Width="100px" OnClick="ibtn_pizza_Hawaiian_Click" ImageUrl="~/webpages/new_order_page/hawaiianPizza.jpg" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:ImageButton ID="ibtn_pizza_hamAndMushroom" runat="server" Height="100px" Width="100px" OnClick="ibtn_pizza_Ham_Click" ImageUrl="~/webpages/new_order_page/mushroomandham.png" />
+                <br />
+                <br />
+                <br />
+                <asp:Button ID="btn_back" runat="server" OnClick="btn_back_Click" Text="Return Back" />
                 </center>
             <br />
 

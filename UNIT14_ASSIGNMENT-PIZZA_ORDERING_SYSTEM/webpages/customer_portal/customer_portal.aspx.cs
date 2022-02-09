@@ -11,22 +11,34 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_portal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lb_customer_name.Text = (string)Session["Username"];
+            
+            if (!Page.IsPostBack)
+            {
+                lb_customer_name.Text = (string)Session["Username"];
+                Pizza_order_system_databaseEntities db = new Pizza_order_system_databaseEntities();
+                var dbSession = db.Customer_Sessions;
+                var newSession = new Customer_Session();
+                newSession.Session_ID = Guid.NewGuid();
+                newSession.TimeOfLogin = (DateTime)Session["LoginTime"];
+                int accountNumber =  (int)Session["AccountIDNumber"];
+                newSession.Account_ID_Number = accountNumber;
+                   
+                db.Customer_Sessions.Add(newSession);
+                db.SaveChanges();
+                
+            }
             
         }
 
         protected void btn_logout_Click(object sender, EventArgs e)
         {
-            Session["LoggedInCustomer"] = "NO";
-            Session["Account-ID-Number"] = "";
-            Session["Username"] = "";
-            Response.Redirect("~/webpages/customer_login/customer_login.aspx",false);
-
             
 
-
-
-
+            Session["LoggedIn"] = "NO";
+            Session["AccountIDNumber"] = "";
+            Session["Username"] = "";
+            Session["LoginTime"] = "";
+            Response.Redirect("~/webpages/customer_login/customer_login.aspx",false);
         }
     }
 }

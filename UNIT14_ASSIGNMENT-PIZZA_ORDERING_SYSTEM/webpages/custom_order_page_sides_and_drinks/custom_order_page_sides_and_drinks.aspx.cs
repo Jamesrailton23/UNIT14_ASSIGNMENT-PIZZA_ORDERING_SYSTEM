@@ -29,11 +29,11 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
             thirdStageCost += (cb_nachoBites.Checked) ? 5.00m : 0.00m;
             thirdStageCost += (cb_mozzarellaSticks.Checked) ? 4.50m : 0.00m;
 
-            cocaCola = (cb_cocaCola.Checked) ? "Yes" : "No";
-            pepsi = (cb_pepsi.Checked) ? "Yes" : "No";
-            water = (cb_water.Checked) ? "Yes" : "No";
-            nachoBites = (cb_nachoBites.Checked) ? "yes" : "no";
-            mozzarellaSicks = (cb_mozzarellaSticks.Checked) ? "yes" : "no";
+            cocaCola = (cb_cocaCola.Checked) ? "Yes" : "";
+            pepsi = (cb_pepsi.Checked) ? "Yes" : "";
+            water = (cb_water.Checked) ? "Yes" : "";
+            nachoBites = (cb_nachoBites.Checked) ? "yes" : "";
+            mozzarellaSicks = (cb_mozzarellaSticks.Checked) ? "yes" : "";
 
             // session varibles
             Session["cocaCola"] = (string)cocaCola;

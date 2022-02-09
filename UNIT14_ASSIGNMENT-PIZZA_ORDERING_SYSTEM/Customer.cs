@@ -15,7 +15,6 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     public partial class Customer
     {
         public int CustomerID { get; set; }
-        public string Collection_method { get; set; }
         public Nullable<decimal> Total_order_cost { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }

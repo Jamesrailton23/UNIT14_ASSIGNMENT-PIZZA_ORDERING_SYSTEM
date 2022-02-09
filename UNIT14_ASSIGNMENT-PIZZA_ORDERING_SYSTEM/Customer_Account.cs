@@ -17,7 +17,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer_Account()
         {
-            this.Sessions = new HashSet<Session>();
+            this.Customer_Session = new HashSet<Customer_Session>();
         }
     
         public int Account_ID_Number { get; set; }
@@ -27,6 +27,6 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public string Phone_number { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Session> Sessions { get; set; }
+        public virtual ICollection<Customer_Session> Customer_Session { get; set; }
     }
 }

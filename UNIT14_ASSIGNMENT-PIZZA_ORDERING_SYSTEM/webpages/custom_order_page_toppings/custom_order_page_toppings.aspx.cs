@@ -10,15 +10,55 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     public partial class custom_order_page_toppings : System.Web.UI.Page
     {
         decimal secondStageCost;
-        string Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies; 
-
-        
+        string Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
+        #region
+        protected void rbl_green_onions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            basket();
+        }
+
+        protected void rbl_red_onions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            basket();
+        }
+
+        protected void rbl_anchovies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            basket();
+        }
+
+        protected void rbl_mushrooms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            basket();
+        }
+
+        protected void rbl_black_olives_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            basket();
+        }
+
+        protected void rbl_pepperoni_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            basket();
+        }
+
+        protected void rbl_ham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            basket();
+        }
+
+        protected void rbl_pineapple_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            basket();
+        }
+
+        #endregion
         protected void btn_confirm_Click(object sender, EventArgs e)
         {
             second_stage_custom_order();
@@ -26,14 +66,153 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
            
         }
 
+        protected void basket()
+        {
+            
+            switch (rbl_pineapple.SelectedIndex)
+            {
+                case 0:
+                    secondStageCost += 0.00m;
+                    lb_pineapple.Text = Pinapple = "";
+                    break;
+
+                case 1:
+                    secondStageCost += 1.00m;
+                    lb_pineapple.Text = "Normal";
+                    break;
+                case 2:
+                    secondStageCost += 3.00m;
+                    lb_pineapple.Text = "Extra";
+                    break;
+
+
+            }
+
+            switch (rbl_ham.SelectedIndex)
+            {
+                case 0:
+                    secondStageCost += 0.00m;
+                    lb_ham.Text = Ham = "";
+                    break;
+                case 1:
+                    secondStageCost += 1.00m;
+                    lb_ham.Text = "Normal";
+                    break;
+
+                case 2:
+                    secondStageCost += 3.00m;
+                    lb_ham.Text = "Extra";
+                    break;
+            }
+
+            switch (rbl_black_olives.SelectedIndex)
+            {
+                case 0:
+                    secondStageCost += 0.00m;
+                    lb_blackolives.Text = BlackOlives = "";
+                    break;
+                case 1:
+                    secondStageCost += 1.00m;
+                    lb_blackolives.Text = "Normal";
+                    break;
+                case 2:
+                    secondStageCost += 3.00m;
+                    lb_blackolives.Text = "Extra";
+                    break;
+            }
+
+            switch (rbl_green_onions.SelectedIndex)
+            {
+                case 0:
+                    secondStageCost += 0.00m;
+                    lb_greenOnions.Text = "";
+                    break;
+                case 1:
+                    secondStageCost += 1.00m;
+                    lb_greenOnions.Text = "Normal";
+                    break;
+                case 2:
+                    secondStageCost += 3.00m;
+                    lb_greenOnions.Text = "Extra";
+                    break;
+            }
+
+            switch (rbl_red_onions.SelectedIndex)
+            {
+                case 0:
+                    secondStageCost += 0.00m;
+                    lb_redOnions.Text = "";
+                    break;
+                case 1:
+                    secondStageCost += 1.00m;
+                    lb_redOnions.Text = "Normal";
+                    break;
+                case 2:
+                    secondStageCost += 3.00m;
+                    lb_redOnions.Text =  "Extra";
+                    break;
+            }
+            
+            switch (rbl_pepperoni.SelectedIndex)
+            {
+                case 0:
+                    secondStageCost += 0.00m;
+                    lb_pepporni.Text = "";
+                    break;
+                case 1:
+                    secondStageCost += 1.00m;
+                    lb_pepporni.Text = "Normal";
+                    break;
+                case 2:
+                    secondStageCost += 3.00m;
+                    lb_pepporni.Text = "Extra";
+                    break;
+            }
+
+            switch (rbl_mushrooms.SelectedIndex)
+            {
+                case 0:
+                    secondStageCost += 0.00m;
+                    lb_mushrooms.Text = "";
+                    break;
+                case 1:
+                    secondStageCost += 1.00m;
+                    lb_mushrooms.Text = "Normal";
+                    break;
+                case 2:
+                    secondStageCost += 3.00m;
+                    lb_mushrooms.Text = "Extra";
+                    break;
+            }
+
+            switch (rbl_anchovies.SelectedIndex)
+            {
+                case 0:
+                    secondStageCost += 0.00m;
+                    lb_anchovies.Text = "";
+                    break;
+                case 1:
+                    secondStageCost += 1.00m;
+                    lb_anchovies.Text = "Normal";
+                    break;
+                case 2:
+                    secondStageCost += 3.00m;
+                    lb_anchovies.Text = "Extra";
+                    break;
+            }
+            lb_cost2.Text = String.Format("{0:C}", secondStageCost);
+            
+        }
+
         protected void second_stage_custom_order()
         {
+            
             #region
             switch (rbl_pineapple.SelectedIndex)
             {
                 case 0:
                     secondStageCost += 0.00m;
-                    Pinapple = "None";
+                    Pinapple = "";
                     break;
                 
                 case 1:
@@ -52,7 +231,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             {
                 case 0:
                     secondStageCost += 0.00m;
-                    Ham = "None";
+                    Ham = "";
                     break;
                 case 1:
                     secondStageCost += 1.00m;
@@ -69,7 +248,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             {
                 case 0:
                     secondStageCost += 0.00m;
-                    BlackOlives = "None";
+                    BlackOlives = "";
                     break;
                 case 1:
                     secondStageCost += 1.00m;
@@ -85,7 +264,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             {
                 case 0:
                     secondStageCost += 0.00m;
-                    GreenOnions = "None";
+                    GreenOnions = "";
                     break;
                 case 1:
                     secondStageCost += 1.00m;
@@ -101,7 +280,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             {
                 case 0:
                     secondStageCost += 0.00m;
-                    RedOnions = "None";
+                    RedOnions = "";
                     break;
                 case 1:
                     secondStageCost += 1.00m;
@@ -117,7 +296,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             {
                 case 0:
                     secondStageCost += 0.00m;
-                    Pepperoni = "None";
+                    Pepperoni = "";
                     break;
                 case 1:
                     secondStageCost += 1.00m;
@@ -133,7 +312,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             {
                 case 0:
                     secondStageCost += 0.00m;
-                    Mushrooms = "None";
+                    Mushrooms = "";
                     break;
                 case 1:
                     Mushrooms += 1.00m;
@@ -145,11 +324,11 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
                     break;
             }
 
-            switch (rbl_ancovies.SelectedIndex)
+            switch (rbl_anchovies.SelectedIndex)
             {
                 case 0:
                     secondStageCost += 0.00m;
-                    Ancovies = "None";
+                    Ancovies = "";
                     break;
                 case 1:
                     secondStageCost += 1.00m;
@@ -163,7 +342,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             #endregion 
            
             //session varibles
-            Session["Pinapple"] = (string)Pepperoni;
+            Session["Pinapple"] = (string)Pinapple;
             Session["Ham"] = (string)Ham;
             Session["BlackOlives"] = (string)BlackOlives;
             Session["GreenOnions"] = (string)GreenOnions;

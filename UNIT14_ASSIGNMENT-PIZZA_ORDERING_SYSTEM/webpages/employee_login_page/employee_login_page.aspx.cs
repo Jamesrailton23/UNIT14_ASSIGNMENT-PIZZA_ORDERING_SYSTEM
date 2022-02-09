@@ -24,20 +24,26 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.employee_login_page
             {
                 if(tb_username.Text.Trim() == manager.Username && tb_password.Text.Trim() == manager.Password)
                 {
+                    /*
                     Session["LoggedIn"] = "YES";
                     Session["AccountIDNumber"] = manager.Account_ID_Number;
                     Session["Username"] = manager.Username;
                     Session["AcessLevel"] = "Manager";
+                    */
+                    Response.Redirect("~/webpages/employee portals/manager_portal.aspx");
                 }
             }
             foreach (var kitchen_Staff in kitchenStaff)
             {
                 if (tb_username.Text.Trim() == kitchen_Staff.Username && tb_password.Text.Trim() == kitchen_Staff.Password)
                 {
+                    /*
                     Session["LoggedIn"] = "YES";
                     Session["AccountIDNumber"] = kitchen_Staff.Account_ID_Number;
                     Session["Username"] = kitchen_Staff.Username;
                     Session["AcessLevel"] = "Kitchen Staff";
+                    */
+                    Response.Redirect("~/webpages/employee portals/kitchen_staff_portal.aspx",false);
                 }
             }
 
