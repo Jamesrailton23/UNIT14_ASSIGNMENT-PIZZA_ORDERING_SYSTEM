@@ -96,6 +96,24 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.employee_portals
         protected global::System.Web.UI.WebControls.SqlDataSource sql_employeeSessions;
 
         /// <summary>
+        /// tb_firstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_firstName;
+
+        /// <summary>
+        /// tb_lastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_lastName;
+
+        /// <summary>
         /// tb_username control.
         /// </summary>
         /// <remarks>

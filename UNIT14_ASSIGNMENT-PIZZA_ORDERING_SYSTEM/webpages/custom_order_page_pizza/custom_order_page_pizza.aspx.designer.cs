@@ -42,6 +42,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.UpdatePanel up_stage1;
 
         /// <summary>
+        /// im_size control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_size;
+
+        /// <summary>
         /// rbl_pizza_size control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_pizza_size;
+
+        /// <summary>
+        /// im_dough control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_dough;
 
         /// <summary>
         /// rbl_dough_type control.
@@ -60,6 +78,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_dough_type;
 
         /// <summary>
+        /// im_crust control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_crust;
+
+        /// <summary>
         /// rbl_crust_type control.
         /// </summary>
         /// <remarks>
@@ -67,6 +94,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_crust_type;
+
+        /// <summary>
+        /// im_cheese control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_cheese;
 
         /// <summary>
         /// rbl_cheese_type control.

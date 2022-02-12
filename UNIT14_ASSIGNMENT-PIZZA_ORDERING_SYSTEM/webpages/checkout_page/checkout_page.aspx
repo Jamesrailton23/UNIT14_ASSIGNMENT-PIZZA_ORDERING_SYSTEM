@@ -21,7 +21,7 @@
        
         <br />
         <br />
-        <h1>&nbsp; Basket &amp; Checkout</h1>
+        <h1 class="text-center">&nbsp; Basket &amp; Checkout</h1>
         <hr />
         <br />
        
@@ -102,6 +102,10 @@
 &nbsp; Mozzarella Sticks -
             <asp:Label ID="lb_mozzarellaSticks" runat="server"></asp:Label>
         </p>
+        <p>
+&nbsp; Cookies (Chocalate Chip) -
+            <asp:Label ID="lb_cookies" runat="server"></asp:Label>
+        </p>
         <br />
         <br />
         <h3>&nbsp; <span class="text-decoration-underline">Cost Breakdown :</span></h3>
@@ -127,10 +131,17 @@
             <asp:Label ID="lb_total" runat="server"></asp:Label>
         </h3><hr />
         <br />
-        <h3>&nbsp; <strong>Customer Account login (Enter Username to save order to your Account) :</strong></h3>
+        <div class="text-center">
+        <h3>&nbsp; <strong>Customer Account login </strong></h3>
+            <p> <strong>(Sign into your account to save your order)</strong></p>
         &nbsp;
-        <asp:Button ID="btn_login" runat="server" OnClick="btn_login_Click" Text="Login" />
+        <asp:Button ID="btn_login" runat="server" OnClick="btn_login_Click" Text="Login" CssClass="btn-dark" Height="50px" Width="150px" />
         <br />
+        <br />
+&nbsp;&nbsp;
+        <asp:Label ID="lb_signin" runat="server" CssClass="alert-success"></asp:Label>
+            </div>
+
         <br />
         <hr />
         <br />
@@ -166,12 +177,12 @@
         <hr />
         <br />
         <br />
-        <h3>&nbsp;I Confirm That My Order And Information Is Correct&nbsp; -&nbsp; <asp:CheckBox ID="cb_confirm" runat="server" Text="Confirm" />
+        <h3 class="text-center">&nbsp;I Confirm That My Order And Information Is Correct&nbsp; -&nbsp; <asp:CheckBox ID="cb_confirm" runat="server" Text="Confirm" />
         </h3>
-        <p>&nbsp;</p>
+        <h3 class="text-center"><asp:Label ID="lb_errorMessage" runat="server" CssClass="alert-danger" Font-Bold="True"></asp:Label></h3>
         &nbsp;
         <center>
-        <asp:Button ID="btn_checkout" runat="server" Text="Checkout" OnClick="btn_checkout_Click" />
+        <asp:Button ID="btn_checkout" runat="server" Text="Checkout" OnClick="btn_checkout_Click" Height="50px" Width="150px" CssClass="btn-dark" />
             </center>
         <br />
         <br />

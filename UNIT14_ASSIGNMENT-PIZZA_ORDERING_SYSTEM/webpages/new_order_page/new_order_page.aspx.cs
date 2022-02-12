@@ -37,15 +37,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             
 
             //SecondStage
-             secondStageCost = 1.50m;
-            Session["Pinapple"] = "None";
+            secondStageCost = 1.50m;
+            Session["Pinapple"] = "";
             Session["Ham"] = "Normal";
-            Session["BlackOlives"] = "None";
-            Session["GreenOnions"] = "None";
-            Session["RedOnions"] = "None";
+            Session["BlackOlives"] = "";
+            Session["GreenOnions"] = "";
+            Session["RedOnions"] = "";
             Session["Pepproni"] = "Normal";
-            Session["Mushrooms"] = "None";
-            Session["Ancovies"] = "None";
+            Session["Mushrooms"] = "";
+            Session["Ancovies"] = "";
             Session["secondStageCost"] = (decimal)secondStageCost;
         }
 
@@ -67,12 +67,12 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             secondStageCost = 2.50m;
             Session["Pinapple"] = "Normal";
             Session["Ham"] = "Normal";
-            Session["BlackOlives"] = "None";
-            Session["GreenOnions"] = "None";
-            Session["RedOnions"] = "None";
-            Session["Pepproni"] = "None";
+            Session["BlackOlives"] = "";
+            Session["GreenOnions"] = "";
+            Session["RedOnions"] = "";
+            Session["Pepproni"] = "";
             Session["Mushrooms"] = "Normal";
-            Session["Ancovies"] = "None";
+            Session["Ancovies"] = "";
             Session["secondStageCost"] = (decimal)secondStageCost;
         }
 
@@ -90,14 +90,14 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
             //SecondStage
             secondStageCost = 1.50m;
-            Session["Pinapple"] = "None";
+            Session["Pinapple"] = "";
             Session["Ham"] = "Extra";
-            Session["BlackOlives"] = "None";
-            Session["GreenOnions"] = "None";
-            Session["RedOnions"] = "None";
-            Session["Pepproni"] = "None";
+            Session["BlackOlives"] = "";
+            Session["GreenOnions"] = "";
+            Session["RedOnions"] = "";
+            Session["Pepproni"] = "";
             Session["Mushrooms"] = "Normal";
-            Session["Ancovies"] = "None";
+            Session["Ancovies"] = "";
             Session["secondStageCost"] = (decimal)secondStageCost;
         }
 
@@ -116,14 +116,14 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
             //SecondStage
             secondStageCost = 0.75m;
-            Session["Pinapple"] = "None";
-            Session["Ham"] = "None";
-            Session["BlackOlives"] = "None";
-            Session["GreenOnions"] = "None";
-            Session["RedOnions"] = "None";
-            Session["Pepproni"] = "None";
-            Session["Mushrooms"] = "None";
-            Session["Ancovies"] = "None";
+            Session["Pinapple"] = "";
+            Session["Ham"] = "";
+            Session["BlackOlives"] = "";
+            Session["GreenOnions"] = "";
+            Session["RedOnions"] = "";
+            Session["Pepproni"] = "";
+            Session["Mushrooms"] = "";
+            Session["Ancovies"] = "";
             Session["secondStageCost"] = (decimal)secondStageCost;
         }
 

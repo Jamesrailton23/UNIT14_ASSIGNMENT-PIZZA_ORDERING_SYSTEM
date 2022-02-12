@@ -21,6 +21,8 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         }
     
         public int Account_ID_Number { get; set; }
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }

@@ -17,15 +17,23 @@
             <br />
             <h3>&nbsp; Create an account here to view the last order you have made, This requires you to insert your account username whenever you check out</h3>
             <br />
+            <h3>&nbsp; First Name - 
+                <asp:TextBox ID="tb_firstName" runat="server" MaxLength="100"></asp:TextBox>
+            </h3>
+            <br />
+            <h3>&nbsp; Last Name - 
+                <asp:TextBox ID="tb_lastName" runat="server" MaxLength="100"></asp:TextBox>
+            </h3>
+            <br />
             <h3>&nbsp; User Name - 
                 <asp:TextBox ID="tb_username" runat="server" MaxLength="100"></asp:TextBox>
             </h3>
             <br />
-            <h3>&nbsp; Password - 
+            <h3>&nbsp;&nbsp; Password - 
                 <asp:TextBox ID="tb_password" runat="server" MaxLength="100"></asp:TextBox>
             </h3>
             <br />
-            <h3>&nbsp; Email - 
+            <h3>&nbsp;&nbsp; Email - 
                 <asp:TextBox ID="tb_email" runat="server" MaxLength="100"></asp:TextBox>
             </h3>
             <br />

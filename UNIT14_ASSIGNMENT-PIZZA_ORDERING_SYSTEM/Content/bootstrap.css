@@ -114,6 +114,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: calc(1.325rem + 0.9vw);
+    margin-left: 0px;
 }
 @media (min-width: 1200px) {
   h2, .h2 {
@@ -341,10 +342,12 @@ button,
 select,
 optgroup,
 textarea {
-  margin: 0px 0 0 0;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0px;
 }
 
 button,

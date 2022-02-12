@@ -6,10 +6,16 @@
 <head runat="server">
     <title>Cusomise Toppings</title>
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
 </head>
     <body>
         <form id="form1" runat="server">
-            <h1 class="text-center">Cusomise Toppings</h1>
+            <h1 class="auto-style1">Cusomise Toppings</h1>
             <h3 class="text-center"> Add Diffrent toppings to your pizza</h3>
         
             <asp:ScriptManager ID="sm_stage2" runat="server">
@@ -20,9 +26,13 @@
             <asp:UpdatePanel ID="up_stage2" runat="server">
                 <ContentTemplate>
                     <br />
-                    <h3>&nbsp; Pineapple</h3>
+                    <h3>&nbsp; <span class="text-decoration-underline">Pineapple</span></h3>
             
-            <asp:RadioButtonList ID="rbl_pineapple" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_pineapple_SelectedIndexChanged">
+                    <p>
+                        &nbsp;<asp:Image ID="im_pineapple" runat="server" Height="75px" Width="120px" />
+                    </p>
+            
+            <asp:RadioButtonList ID="rbl_pineapple" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_pineapple_SelectedIndexChanged" CellPadding="10">
                             <asp:ListItem Selected="True">None</asp:ListItem>
                             <asp:ListItem>Normal (£1.00)</asp:ListItem>
                             <asp:ListItem>Extra (£3.00)</asp:ListItem>
@@ -32,8 +42,11 @@
 
             <br />
             <br />
-            <h3>&nbsp; Ham</h3>
-            <asp:RadioButtonList ID="rbl_ham" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_ham_SelectedIndexChanged">
+            <h3>&nbsp; <span class="text-decoration-underline">Ham</span></h3>
+                    <p>
+                        <asp:Image ID="im_ham" runat="server" Height="75px" Width="120px" />
+                    </p>
+            <asp:RadioButtonList ID="rbl_ham" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_ham_SelectedIndexChanged" CellPadding="10">
                 <asp:ListItem Selected="True">None</asp:ListItem>
                 <asp:ListItem>Normal (£1.00</asp:ListItem>
                 <asp:ListItem>Extra (£3.00)</asp:ListItem>
@@ -41,8 +54,11 @@
                      <br />
                      <br />
             <br />
-            <h3>&nbsp; Pepperoni</h3>
-            <asp:RadioButtonList ID="rbl_pepperoni" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_pepperoni_SelectedIndexChanged">
+            <h3>&nbsp; <span class="text-decoration-underline">Pepperoni</span></h3>
+                    <p>
+                        <asp:Image ID="im_pepporni" runat="server" Height="75px" Width="120px" />
+                    </p>
+            <asp:RadioButtonList ID="rbl_pepperoni" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_pepperoni_SelectedIndexChanged" CellPadding="10">
                             <asp:ListItem Selected="True">None</asp:ListItem>
                             <asp:ListItem>Normal (£1.00)</asp:ListItem>
                             <asp:ListItem>Extra (£3.00)</asp:ListItem>
@@ -50,8 +66,11 @@
                      <br />
                      <br />
             <br />
-            <h3>&nbsp; Green Onions</h3>
-            <asp:RadioButtonList ID="rbl_green_onions" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_green_onions_SelectedIndexChanged">
+            <h3>&nbsp; <span class="text-decoration-underline">Green Onions</span></h3>
+                    <p>
+                        <asp:Image ID="im_greenOnions" runat="server" Height="75px" Width="120px" />
+                    </p>
+            <asp:RadioButtonList ID="rbl_green_onions" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_green_onions_SelectedIndexChanged" CellPadding="10">
                             <asp:ListItem Selected="True">None</asp:ListItem>
                             <asp:ListItem>Normal (£1.00)</asp:ListItem>
                             <asp:ListItem>Extra (£3.00)</asp:ListItem>
@@ -59,8 +78,11 @@
                      <br />
                      <br />
             <br />
-            <h3>&nbsp; Red Onions</h3>
-            <asp:RadioButtonList ID="rbl_red_onions" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_red_onions_SelectedIndexChanged">
+            <h3>&nbsp; <span class="text-decoration-underline">Red Onions</span></h3>
+                    <p>
+                        <asp:Image ID="im_redOnions" runat="server" Height="75px" Width="120px" />
+                    </p>
+            <asp:RadioButtonList ID="rbl_red_onions" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_red_onions_SelectedIndexChanged" CellPadding="10">
                             <asp:ListItem Selected="True">None</asp:ListItem>
                             <asp:ListItem>Normal (£1.00)</asp:ListItem>
                             <asp:ListItem>Extra (£3.00)</asp:ListItem>
@@ -68,8 +90,11 @@
                      <br />
                      <br />
             <br />
-            <h3>&nbsp; Anchovies</h3>
-            <asp:RadioButtonList ID="rbl_anchovies" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_anchovies_SelectedIndexChanged">
+            <h3>&nbsp; <span class="text-decoration-underline">Anchovies</span></h3>
+                    <p>
+                        <asp:Image ID="im_anchovies" runat="server" Height="75px" Width="120px" />
+                    </p>
+            <asp:RadioButtonList ID="rbl_anchovies" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_anchovies_SelectedIndexChanged" CellPadding="10">
                             <asp:ListItem Selected="True">None</asp:ListItem>
                             <asp:ListItem>Normal (£1.00)</asp:ListItem>
                             <asp:ListItem>Extra (£1.00)</asp:ListItem>
@@ -77,8 +102,11 @@
                      <br />
                      <br />
             <br />
-            <h3>&nbsp; Mushrooms</h3>
-            <asp:RadioButtonList ID="rbl_mushrooms" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_mushrooms_SelectedIndexChanged">
+            <h3>&nbsp; <span class="text-decoration-underline">Mushrooms</span></h3>
+                    <p>
+                        <asp:Image ID="im_mushrooms" runat="server" Height="75px" Width="120px" />
+                    </p>
+            <asp:RadioButtonList ID="rbl_mushrooms" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_mushrooms_SelectedIndexChanged" CellPadding="10">
                             <asp:ListItem Selected="True">None</asp:ListItem>
                             <asp:ListItem>Normal (£1.00)</asp:ListItem>
                             <asp:ListItem>Extra (£3.00)</asp:ListItem>
@@ -86,8 +114,11 @@
                      <br />
                      <br />
             <br />
-            <h3>&nbsp; Black Olives</h3>
-            <asp:RadioButtonList ID="rbl_black_olives" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_black_olives_SelectedIndexChanged">
+            <h3>&nbsp; <span class="text-decoration-underline">Black Olives</span></h3>
+                    <p>
+                        <asp:Image ID="im_blackOlives" runat="server" Height="75px" Width="120px" />
+                    </p>
+            <asp:RadioButtonList ID="rbl_black_olives" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="btn" OnSelectedIndexChanged="rbl_black_olives_SelectedIndexChanged" CellPadding="10">
                             <asp:ListItem Selected="True">None</asp:ListItem>
                             <asp:ListItem>Normal (£1.00)</asp:ListItem>
                             <asp:ListItem>Extra (£3.00)</asp:ListItem>
@@ -96,7 +127,7 @@
                 <br />
                 <hr />
                 <br />
-&nbsp;<h3>&nbsp; Your Basket :</h3>
+&nbsp;<h3>&nbsp; <span class="text-decoration-underline">Your Basket</span></h3>
             <br />
 &nbsp; Pineapple -
             <asp:Label ID="lb_pineapple" runat="server"></asp:Label>

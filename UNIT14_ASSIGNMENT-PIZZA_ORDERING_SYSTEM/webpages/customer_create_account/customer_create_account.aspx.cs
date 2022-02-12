@@ -19,6 +19,8 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_create_accou
         {
             //to add customer to DB
             var new_customer_account = new Customer_Account();
+            new_customer_account.First_Name = new_user.First_Name;
+            new_customer_account.Last_Name = new_user.Last_Name;
             new_customer_account.Username = new_user.Username;
             new_customer_account.Email = new_user.Email;
             new_customer_account.Password = new_user.Password;
@@ -35,10 +37,12 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_create_accou
             
             //to add customer to DB using textbox
             var customer = new Customer_Account();
-            customer.Username = tb_username.Text;
-            customer.Password = tb_password.Text;
-            customer.Email = tb_email.Text;
-            customer.Phone_number = tb_phone.Text;
+            customer.First_Name = tb_firstName.Text.Trim();
+            customer.Last_Name = tb_lastName.Text.Trim();
+            customer.Username = tb_username.Text.Trim();
+            customer.Password = tb_password.Text.Trim();
+            customer.Email = tb_email.Text.Trim();
+            customer.Phone_number = tb_phone.Text.Trim();
             add_new_user(customer);
 
             //to take back to home page & to stop other inputs
@@ -46,14 +50,17 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_create_accou
             tb_password.Enabled = false;
             tb_phone.Enabled = false;
             tb_username.Enabled = false;
-            tm_to_default.Enabled = true;
+            tb_firstName.Enabled = false;
+            tb_lastName.Enabled = false;
+            
+
 
 
         }
 
         protected void tm_to_default_Tick(object sender, EventArgs e)
         {
-            Response.Redirect("~/webpages/default/default.aspx");
+            Response.Redirect("~/webpages/default/default.aspx",false);
         }
     }
 }

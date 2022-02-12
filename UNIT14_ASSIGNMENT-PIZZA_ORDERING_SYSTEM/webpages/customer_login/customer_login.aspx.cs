@@ -11,7 +11,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_login
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["loggedIn"] = false;
         }
 
         protected void btn_login_Click(object sender, EventArgs e)
@@ -21,8 +21,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_login
             var dbSession = db.Customer_Sessions;
 
             foreach(var user in activeUsers)
-            {
-               
+            {         
                 if(tb_password.Text.Trim() == user.Password && tb_username.Text.Trim() == user.Username)
                 {
                     Session["LoggedIn"] = true;
@@ -31,8 +30,20 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_login
                     Session["LoginTime"] = DateTime.Now;
                     Response.Redirect("~/webpages/customer_portal/customer_portal.aspx",false);
                 }
+                else
+                {               
+                    lb_errorMessage.Text = "ERROR!!, Incorrect Username Or Password";
+                }
             }
 
+        }
+
+        protected void btn_home_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/webpages/default/default.aspx",false);
+            Session["loggedIn"] = false;
+            Session["AccountIDNumber"] = "";
+            Session["Username"] = "";
         }
     }
 }

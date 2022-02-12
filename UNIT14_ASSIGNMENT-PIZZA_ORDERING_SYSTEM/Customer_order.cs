@@ -20,7 +20,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public string Crust_Type { get; set; }
         public string Cheese_Type { get; set; }
         public string Dough_Type { get; set; }
-        public string Pepperroni { get; set; }
+        public string Pepperoni { get; set; }
         public string Green_Onions { get; set; }
         public string Red_Onions { get; set; }
         public string Ancovies { get; set; }
@@ -32,6 +32,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         public string Pepsi { get; set; }
         public string Water { get; set; }
         public string Nacho_Bites { get; set; }
+        public string Cookies { get; set; }
         public string Mozzarella_Sticks { get; set; }
         public string Username { get; set; }
         public Nullable<System.DateTime> Time_Created { get; set; }

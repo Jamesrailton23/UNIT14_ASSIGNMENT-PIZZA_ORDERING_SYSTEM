@@ -6,8 +6,6 @@
 <head runat="server">
     <title>Big Sal's Pizza Co</title>
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
-
-    
     <style type="text/css">
         .auto-style1 {
             text-align: center;
@@ -17,15 +15,22 @@
 
     
 </head>
-<body>
+<body onload="startTime()">
     <form id="form1" runat="server">
         <div>
             <br />
             <h1 class="auto-style1">Big Sal's Pizza Co</h1>
-            <em>
-            <br class="text-decoration-underline" />
-            </em>
             <h3 class="auto-style1"><em>The best pizza this side of the atlantic: EST 2021</em></h3>
+            <br />
+            <center>
+            <div id="clockdate">   
+                <div class="clockdate-wrapper">     
+                   <div id="clock"></div>     
+                   <div id="date"></div>   
+               </div> 
+           </div> 
+           </center>
+            <br />
             <hr />
             <br />
             <br />
@@ -53,5 +58,6 @@
             <br />
         </div>
     </form>
+    <script src="default.js"></script>
 </body>
 </html>

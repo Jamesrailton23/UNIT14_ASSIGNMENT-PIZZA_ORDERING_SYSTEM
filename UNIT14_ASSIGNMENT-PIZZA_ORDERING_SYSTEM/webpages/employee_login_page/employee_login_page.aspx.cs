@@ -11,7 +11,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.employee_login_page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["loggedIn"] = false;
         }
 
         protected void btn_login_Click(object sender, EventArgs e)
@@ -34,17 +34,26 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.employee_login_page
             foreach (var kitchen_Staff in kitchenStaff)
             {
                 if (tb_username.Text.Trim() == kitchen_Staff.Username && tb_password.Text.Trim() == kitchen_Staff.Password)
-                {
-                    
+                {             
                     Session["LoggedIn"] = true;
                     Session["AccountIDNumber"] = kitchen_Staff.Account_ID_Number;
                     Session["Username"] = kitchen_Staff.Username;
                     Session["LoginTime"] = DateTime.Now;                    
                     Response.Redirect("~/webpages/employee_portals/kitchen_staff_portal.aspx",false);
                 }
+                else
+                {
+                    lb_errorMessage.Text = "ERROR!!, Incorrect Username Or Password";
+                }
             }
+        }
 
-
+        protected void btn_home_Click(object sender, EventArgs e)
+        {
+             Response.Redirect("~/webpages/default/default.aspx",false);
+             Session["loggedIn"] = false;
+             Session["AccountIDNumber"] = "";
+             Session["Username"] = "";
         }
     }
 }

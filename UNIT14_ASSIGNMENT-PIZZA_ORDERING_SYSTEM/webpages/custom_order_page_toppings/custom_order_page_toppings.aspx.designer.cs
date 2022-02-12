@@ -42,6 +42,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.UpdatePanel up_stage2;
 
         /// <summary>
+        /// im_pineapple control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_pineapple;
+
+        /// <summary>
         /// rbl_pineapple control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_pineapple;
+
+        /// <summary>
+        /// im_ham control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_ham;
 
         /// <summary>
         /// rbl_ham control.
@@ -60,6 +78,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_ham;
 
         /// <summary>
+        /// im_pepporni control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_pepporni;
+
+        /// <summary>
         /// rbl_pepperoni control.
         /// </summary>
         /// <remarks>
@@ -67,6 +94,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_pepperoni;
+
+        /// <summary>
+        /// im_greenOnions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_greenOnions;
 
         /// <summary>
         /// rbl_green_onions control.
@@ -78,6 +114,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_green_onions;
 
         /// <summary>
+        /// im_redOnions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_redOnions;
+
+        /// <summary>
         /// rbl_red_onions control.
         /// </summary>
         /// <remarks>
@@ -85,6 +130,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_red_onions;
+
+        /// <summary>
+        /// im_anchovies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_anchovies;
 
         /// <summary>
         /// rbl_anchovies control.
@@ -96,6 +150,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_anchovies;
 
         /// <summary>
+        /// im_mushrooms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_mushrooms;
+
+        /// <summary>
         /// rbl_mushrooms control.
         /// </summary>
         /// <remarks>
@@ -103,6 +166,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_mushrooms;
+
+        /// <summary>
+        /// im_blackOlives control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_blackOlives;
 
         /// <summary>
         /// rbl_black_olives control.

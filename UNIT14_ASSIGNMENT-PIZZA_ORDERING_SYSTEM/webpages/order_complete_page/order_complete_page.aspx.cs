@@ -15,7 +15,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Session["cheeseType"] = "";
             Session["crustType"] = "";
             Session["pizzaSize"] = "";
-            Session["firstStageCost"] = "";
+            Session["firstStageCost"] = 0.00;
 
             Session["Pinapple"] = "";
             Session["Ham"] = "";
@@ -25,16 +25,16 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Session["Pepproni"] = "";
             Session["Mushrooms"] = "";
             Session["Ancovies"] = "";
-            Session["secondStageCost"] = "";
+            Session["secondStageCost"] = 0.00;
 
             Session["cocaCola"] = "";
             Session["pepsi"] = "";
             Session["water"] = "";
             Session["nachoBites"] = "";
             Session["mozzarellaSicks"] = "";
-            Session["thirdStageCost"] = "";
+            Session["thirdStageCost"] = 0.00;
 
-            Session["LoggedIn"] = "";
+            Session["LoggedIn"] = false;
             Session["Username"] = "";
 
         }

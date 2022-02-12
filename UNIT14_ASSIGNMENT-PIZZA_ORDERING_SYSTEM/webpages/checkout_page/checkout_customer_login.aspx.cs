@@ -11,7 +11,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.checkout_page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void btn_login_Click(object sender, EventArgs e)
@@ -31,7 +31,19 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.checkout_page
                     Session["loggedIn"] = true;  
                     
                 }
+                else
+                {
+                    lb_errorMessage.Text = "ERROR!!, Incorrect Username Or Password";
+                }
             }
+        }
+
+        protected void btn_goBack_Click(object sender, EventArgs e)
+        {
+             Response.Redirect("~/webpages/checkout_page/checkout_page.aspx",false);
+             Session["loggedIn"] = false;
+             Session["AccountIDNumber"] = "";
+             Session["Username"] = "";
         }
     }
 }

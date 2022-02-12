@@ -108,10 +108,15 @@
     <Content Include="webpages\customer_login\customer_login.aspx" />
     <Content Include="webpages\customer_portal\customer_portal.aspx" />
     <Content Include="webpages\custom_order_page_pizza\custom_order_page_pizza.aspx" />
+    <Content Include="webpages\custom_order_page_pizza\different-cheeses.jpg" />
+    <Content Include="webpages\custom_order_page_pizza\Different-Types-of-Pizza-Crust.png" />
+    <Content Include="webpages\custom_order_page_pizza\pizza-dough.jpg" />
+    <Content Include="webpages\custom_order_page_pizza\size.jpg" />
     <Content Include="webpages\custom_order_page_sides_and_drinks\custom_order_page_sides_and_drinks.aspx" />
     <Content Include="webpages\custom_order_page_toppings\custom_order_page_toppings.aspx" />
     <Content Include="webpages\default\default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="webpages\default\default.js" />
     <Content Include="webpages\default\starorder.png" />
     <Content Include="webpages\employee_portals\kitchen_staff_portal.aspx" />
     <Content Include="webpages\employee_portals\manager_portal.aspx" />

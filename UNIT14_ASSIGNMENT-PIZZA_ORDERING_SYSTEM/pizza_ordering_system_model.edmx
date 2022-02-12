@@ -25,6 +25,8 @@
             <PropertyRef Name="Account-ID-Number" />
           </Key>
           <Property Name="Account-ID-Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="First Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Last Name" Type="nvarchar" MaxLength="100" />
           <Property Name="Username" Type="nvarchar" MaxLength="100" />
           <Property Name="Password" Type="nvarchar" MaxLength="100" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
@@ -40,7 +42,7 @@
           <Property Name="Crust Type" Type="nvarchar" MaxLength="50" />
           <Property Name="Cheese Type" Type="nvarchar" MaxLength="50" />
           <Property Name="Dough Type" Type="nvarchar" MaxLength="50" />
-          <Property Name="Pepperroni" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pepperoni" Type="nvarchar" MaxLength="50" />
           <Property Name="Green Onions" Type="nvarchar" MaxLength="50" />
           <Property Name="Red Onions" Type="nvarchar" MaxLength="50" />
           <Property Name="Ancovies" Type="nvarchar" MaxLength="50" />
@@ -52,6 +54,7 @@
           <Property Name="Pepsi" Type="nvarchar" MaxLength="50" />
           <Property Name="Water" Type="nvarchar" MaxLength="50" />
           <Property Name="Nacho Bites" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cookies" Type="nvarchar" MaxLength="50" />
           <Property Name="Mozzarella Sticks" Type="nvarchar" MaxLength="50" />
           <Property Name="Username" Type="nvarchar" MaxLength="100" />
           <Property Name="Time Created" Type="datetime2" Precision="7" />
@@ -70,6 +73,7 @@
           </Key>
           <Property Name="Session_ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Account-ID-Number" Type="int" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" />
           <Property Name="Time-Of-Login" Type="datetime2" Precision="7" />
         </EntityType>
         <EntityType Name="Kitchen Staff Account">
@@ -77,22 +81,24 @@
             <PropertyRef Name="Account-ID-Number" />
           </Key>
           <Property Name="Account-ID-Number" Type="int" Nullable="false" />
+          <Property Name="First Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Last Name" Type="nvarchar" MaxLength="100" />
           <Property Name="Username" Type="nvarchar" MaxLength="100" />
           <Property Name="Password" Type="nvarchar" MaxLength="100" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="Phone Number" Type="nvarchar" MaxLength="50" />
-          <Property Name="Date Of Birth" Type="datetime" />
         </EntityType>
         <EntityType Name="Manager Account">
           <Key>
             <PropertyRef Name="Account-ID-Number" />
           </Key>
           <Property Name="Account-ID-Number" Type="int" Nullable="false" />
+          <Property Name="First Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Last Name" Type="nvarchar" MaxLength="100" />
           <Property Name="Username" Type="nvarchar" MaxLength="100" />
           <Property Name="Password" Type="nvarchar" MaxLength="100" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="Phone Number" Type="nvarchar" MaxLength="50" />
-          <Property Name="Date Of Birth" Type="datetime" />
         </EntityType>
         <Association Name="FK_Customer Session_Customer Account">
           <End Role="Customer Account" Type="Self.Customer Account" Multiplicity="0..1" />
@@ -142,19 +148,19 @@
         <EntityContainer Name="Pizza_order_system_databaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Pizza_order_system_databaseModel.Customer" />
           <EntitySet Name="Customer_Accounts" EntityType="Pizza_order_system_databaseModel.Customer_Account" />
-          <EntitySet Name="Manager_Accounts" EntityType="Pizza_order_system_databaseModel.Manager_Account" />
           <EntitySet Name="Customer_Sessions" EntityType="Pizza_order_system_databaseModel.Customer_Session" />
           <AssociationSet Name="FK_Customer_Session_Customer_Account" Association="Pizza_order_system_databaseModel.FK_Customer_Session_Customer_Account">
             <End Role="Customer_Account" EntitySet="Customer_Accounts" />
             <End Role="Customer_Session" EntitySet="Customer_Sessions" />
           </AssociationSet>
-          <EntitySet Name="Kitchen_Staff_Accounts" EntityType="Pizza_order_system_databaseModel.Kitchen_Staff_Account" />
+          <EntitySet Name="Manager_Accounts" EntityType="Pizza_order_system_databaseModel.Manager_Account" />
+          <EntitySet Name="Customer_Orders" EntityType="Pizza_order_system_databaseModel.Customer_Order" />
           <EntitySet Name="Employee_Sessions" EntityType="Pizza_order_system_databaseModel.Employee_Session" />
+          <EntitySet Name="Kitchen_Staff_Accounts" EntityType="Pizza_order_system_databaseModel.Kitchen_Staff_Account" />
           <AssociationSet Name="FK_Employee_Session_KitchenStaffAccount" Association="Pizza_order_system_databaseModel.FK_Employee_Session_KitchenStaffAccount">
             <End Role="Kitchen_Staff_Account" EntitySet="Kitchen_Staff_Accounts" />
             <End Role="Employee_Session" EntitySet="Employee_Sessions" />
           </AssociationSet>
-          <EntitySet Name="Customer_Orders" EntityType="Pizza_order_system_databaseModel.Customer_Order" />
           </EntityContainer>
         <EntityType Name="Customer">
           <Key>
@@ -176,22 +182,13 @@
             <PropertyRef Name="Account_ID_Number" />
           </Key>
           <Property Name="Account_ID_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Customer_Session" Relationship="Pizza_order_system_databaseModel.FK_Customer_Session_Customer_Account" FromRole="Customer_Account" ToRole="Customer_Session" />
-          </EntityType>
-        <EntityType Name="Manager_Account">
-          <Key>
-            <PropertyRef Name="Account_ID_Number" />
-          </Key>
-          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Phone_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Date_Of_Birth" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Customer_Session">
           <Key>
@@ -214,17 +211,44 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Kitchen_Staff_Account">
+        <EntityType Name="Manager_Account">
           <Key>
             <PropertyRef Name="Account_ID_Number" />
           </Key>
           <Property Name="Account_ID_Number" Type="Int32" Nullable="false" />
+          <Property Name="First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Phone_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Date_Of_Birth" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Employee_Session" Relationship="Pizza_order_system_databaseModel.FK_Employee_Session_KitchenStaffAccount" FromRole="Kitchen_Staff_Account" ToRole="Employee_Session" />
+        </EntityType>
+        <EntityType Name="Customer_Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pizza_From_Menu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pizza_Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Crust_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cheese_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dough_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pepperoni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Green_Onions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Red_Onions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ancovies" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mushrooms" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Black_Olives" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pineapple" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Coca_Cola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pepsi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Water" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nacho_Bites" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cookies" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mozzarella_Sticks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Time_Created" Type="DateTime" Precision="7" />
         </EntityType>
         <EntityType Name="Employee_Session">
           <Key>
@@ -232,8 +256,22 @@
           </Key>
           <Property Name="Session_ID" Type="Guid" Nullable="false" />
           <Property Name="Account_ID_Number" Type="Int32" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Time_Of_Login" Type="DateTime" Precision="7" />
           <NavigationProperty Name="Kitchen_Staff_Account" Relationship="Pizza_order_system_databaseModel.FK_Employee_Session_KitchenStaffAccount" FromRole="Employee_Session" ToRole="Kitchen_Staff_Account" />
+        </EntityType>
+        <EntityType Name="Kitchen_Staff_Account">
+          <Key>
+            <PropertyRef Name="Account_ID_Number" />
+          </Key>
+          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" />
+          <Property Name="First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee_Session" Relationship="Pizza_order_system_databaseModel.FK_Employee_Session_KitchenStaffAccount" FromRole="Kitchen_Staff_Account" ToRole="Employee_Session" />
         </EntityType>
         <Association Name="FK_Employee_Session_KitchenStaffAccount">
           <End Type="Pizza_order_system_databaseModel.Kitchen_Staff_Account" Role="Kitchen_Staff_Account" Multiplicity="0..1" />
@@ -247,32 +285,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Customer_Order">
-          <Key>
-            <PropertyRef Name="OrderID" />
-          </Key>
-          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Pizza_From_Menu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pizza_Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Crust_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Cheese_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Dough_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pepperroni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Green_Onions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Red_Onions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Ancovies" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Mushrooms" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Black_Olives" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Ham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pineapple" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Coca_Cola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pepsi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Water" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Nacho_Bites" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Mozzarella_Sticks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Time_Created" Type="DateTime" Precision="7" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -302,18 +314,8 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Manager_Accounts">
-            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Manager_Account">
-              <MappingFragment StoreEntitySet="Manager Account">
-                <ScalarProperty Name="Date_Of_Birth" ColumnName="Date Of Birth" />
-                <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First Name" />
                 <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -327,24 +329,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Kitchen_Staff_Accounts">
-            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Kitchen_Staff_Account">
-              <MappingFragment StoreEntitySet="Kitchen Staff Account">
-                <ScalarProperty Name="Date_Of_Birth" ColumnName="Date Of Birth" />
+          <EntitySetMapping Name="Manager_Accounts">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Manager_Account">
+              <MappingFragment StoreEntitySet="Manager Account">
                 <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First Name" />
                 <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Employee_Sessions">
-            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Employee_Session">
-              <MappingFragment StoreEntitySet="Employee Session">
-                <ScalarProperty Name="Time_Of_Login" ColumnName="Time-Of-Login" />
-                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
-                <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -354,6 +348,7 @@
                 <ScalarProperty Name="Time_Created" ColumnName="Time Created" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Mozzarella_Sticks" ColumnName="Mozzarella Sticks" />
+                <ScalarProperty Name="Cookies" ColumnName="Cookies" />
                 <ScalarProperty Name="Nacho_Bites" ColumnName="Nacho Bites" />
                 <ScalarProperty Name="Water" ColumnName="Water" />
                 <ScalarProperty Name="Pepsi" ColumnName="Pepsi" />
@@ -365,13 +360,36 @@
                 <ScalarProperty Name="Ancovies" ColumnName="Ancovies" />
                 <ScalarProperty Name="Red_Onions" ColumnName="Red Onions" />
                 <ScalarProperty Name="Green_Onions" ColumnName="Green Onions" />
-                <ScalarProperty Name="Pepperroni" ColumnName="Pepperroni" />
+                <ScalarProperty Name="Pepperoni" ColumnName="Pepperoni" />
                 <ScalarProperty Name="Dough_Type" ColumnName="Dough Type" />
                 <ScalarProperty Name="Cheese_Type" ColumnName="Cheese Type" />
                 <ScalarProperty Name="Crust_Type" ColumnName="Crust Type" />
                 <ScalarProperty Name="Pizza_Size" ColumnName="Pizza Size" />
                 <ScalarProperty Name="Pizza_From_Menu" ColumnName="Pizza From Menu" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Sessions">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Employee_Session">
+              <MappingFragment StoreEntitySet="Employee Session">
+                <ScalarProperty Name="Time_Of_Login" ColumnName="Time-Of-Login" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
+                <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kitchen_Staff_Accounts">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Kitchen_Staff_Account">
+              <MappingFragment StoreEntitySet="Kitchen Staff Account">
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First Name" />
+                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

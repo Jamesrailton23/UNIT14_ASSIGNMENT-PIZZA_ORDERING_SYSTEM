@@ -10,7 +10,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     public partial class checkout_page : System.Web.UI.Page
     {
         decimal costStage1, costStage2, costStage3, finalCost, vat;
-        string  pizzaSize, cheeseType, doughType, crustType, Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies, cocaCola, pepsi, water, nachoBites, mozzarellaSicks, PresetPizza;
+        string pizzaSize, cheeseType, doughType, crustType, Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies, cocaCola, pepsi, water, nachoBites, mozzarellaSicks, cookies, PresetPizza, Username;
         bool LoggedIn;
         
 
@@ -35,6 +35,8 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             water = (string)Session["water"];
             nachoBites = (string)Session["nachoBites"];
             mozzarellaSicks = (string)Session["mozzarellaSicks"];
+            cookies = (string)Session["cookies"];
+
             PresetPizza = (string)Session["PresetPizza"];
             costStage1 = (decimal)Session["firstStageCost"];
             costStage2 = (decimal)Session["secondStageCost"];
@@ -67,6 +69,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             lb_water.Text = water;
             lb_mozzarellaSticks.Text = mozzarellaSicks;
             lb_nachoBites.Text = nachoBites;
+            lb_cookies.Text = cookies;
            
 
             //final cost
@@ -78,10 +81,12 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             lb_total.Text = String.Format("{0:C}", finalCost);
             #endregion
 
-            LoggedIn = (bool)Session["loggedIn"]; 
+            LoggedIn = (bool)Session["loggedIn"];
+            Username = (string)Session["Username"];
             if(LoggedIn == true)
             {
                 btn_login.Enabled = false;
+                lb_signin.Text = String.Format("SIGN IN SUCESSFULL!!, HELLO {0}", Username);
             }
            
 
@@ -101,7 +106,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             }
             else
             {
-                Response.Write("<script language=javascript>alert('AN ERROR HAS OCCURED!!, please insert information into all required Fields.')</script>");
+                lb_errorMessage.Text = "ERROR!!, Incorrect Username Or Password";
             }
 
         }
@@ -123,7 +128,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             order.Black_Olives = new_order.Black_Olives;
             order.Green_Onions = new_order.Green_Onions;
             order.Red_Onions = new_order.Red_Onions;
-            order.Pepperroni = new_order.Pepperroni;
+            order.Pepperoni = new_order.Pepperoni;
             order.Mushrooms = new_order.Mushrooms;
             order.Ancovies = new_order.Ancovies;
 
@@ -133,6 +138,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             order.Water = new_order.Water;
             order.Nacho_Bites = new_order.Nacho_Bites;
             order.Mozzarella_Sticks = new_order.Mozzarella_Sticks;
+            order.Cookies = new_order.Cookies;
 
             //Other
             order.Username = new_order.Username;
@@ -179,7 +185,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             add_order.Black_Olives = BlackOlives;
             add_order.Green_Onions = GreenOnions;
             add_order.Red_Onions = RedOnions;
-            add_order.Pepperroni = Pepperoni;
+            add_order.Pepperoni = Pepperoni;
             add_order.Mushrooms = Mushrooms;
             add_order.Ancovies = Ancovies;
 
@@ -189,12 +195,14 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             water = (string)Session["water"];
             nachoBites = (string)Session["nachoBites"];
             mozzarellaSicks = (string)Session["mozzarellaSicks"];
+            cookies = (string)Session["cookies"];
             //_____________________________________________________________
             add_order.Coca_Cola = cocaCola;
             add_order.Pepsi = pepsi;
             add_order.Water = water;
             add_order.Nacho_Bites = nachoBites;
             add_order.Mozzarella_Sticks = mozzarellaSicks;
+            add_order.Cookies = cookies;
 
             //Other
             add_order.Username = (string)Session["username"];
