@@ -42,6 +42,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
         protected global::System.Web.UI.UpdatePanel up_sides;
 
         /// <summary>
+        /// im_nachobites control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_nachobites;
+
+        /// <summary>
         /// cb_nachoBites control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_nachoBites;
+
+        /// <summary>
+        /// im_mozzarella control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_mozzarella;
 
         /// <summary>
         /// cb_mozzarellaSticks control.
@@ -60,6 +78,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
         protected global::System.Web.UI.WebControls.CheckBox cb_mozzarellaSticks;
 
         /// <summary>
+        /// im_cookies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_cookies;
+
+        /// <summary>
         /// cb_cookies control.
         /// </summary>
         /// <remarks>
@@ -67,6 +94,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_cookies;
+
+        /// <summary>
+        /// im_pespsi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_pespsi;
 
         /// <summary>
         /// cb_pepsi control.
@@ -78,6 +114,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
         protected global::System.Web.UI.WebControls.CheckBox cb_pepsi;
 
         /// <summary>
+        /// im_water control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_water;
+
+        /// <summary>
         /// cb_water control.
         /// </summary>
         /// <remarks>
@@ -85,6 +130,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.custom_order_page_sid
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_water;
+
+        /// <summary>
+        /// im_cocacola control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_cocacola;
 
         /// <summary>
         /// cb_cocaCola control.

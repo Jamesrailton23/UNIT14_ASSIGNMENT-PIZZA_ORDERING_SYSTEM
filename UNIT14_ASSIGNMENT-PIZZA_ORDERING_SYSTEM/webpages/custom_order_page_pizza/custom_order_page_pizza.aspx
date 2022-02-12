@@ -23,6 +23,7 @@
         <ContentTemplate>
                 <h2>&nbsp; <span class="text-decoration-underline">Pizza Size</span></h2>
                 <p>
+                    &nbsp;
                     <asp:Image ID="im_size" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_pizza/size.jpg" Width="190px" />
                 </p>
                 <asp:RadioButtonList ID="rbl_pizza_size" runat="server" AutoPostBack="True" OnSelectedIndexChanged="rbl_pizza_size_SelectedIndexChanged" CellPadding="10" CssClass=".RadioButtonWidth">
@@ -31,39 +32,43 @@
                     <asp:ListItem>10&quot; (£8.50)</asp:ListItem>
                     <asp:ListItem>13&quot; (£10.75)</asp:ListItem>
                 </asp:RadioButtonList>
-             <br />
+            <br />
             <br />
             <h2>&nbsp;<span class="text-decoration-underline">Dough Type</span></h2>
                 <p>
+                    &nbsp;
                     <asp:Image ID="im_dough" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_pizza/pizza-dough.jpg" Width="190px" />
                 </p>
             <asp:RadioButtonList ID="rbl_dough_type" runat="server" AutoPostBack="True" OnSelectedIndexChanged="rbl_dough_type_SelectedIndexChanged" CellPadding="10">
                             <asp:ListItem>Normal (£3.10)</asp:ListItem>
                             <asp:ListItem>Gluten Free (£3.20)</asp:ListItem>
                         </asp:RadioButtonList>
-             <br />
+            <br />
             <br />
             <h2>&nbsp;<span class="text-decoration-underline">Crust Type</span></h2>
                 <p>
-                    <asp:Image ID="im_crust" runat="server" Height="100px" Width="190px" />
+                    &nbsp;
+                    <asp:Image ID="im_crust" runat="server" Height="100px" Width="190px" ImageUrl="~/webpages/custom_order_page_pizza/Different-Types-of-Pizza-Crust.png" />
                 </p>
             <asp:RadioButtonList ID="rbl_crust_type" runat="server" AutoPostBack="True" OnSelectedIndexChanged="rbl_crust_type_SelectedIndexChanged" CellPadding="10">
                             <asp:ListItem>Normal Crust (£3.10)</asp:ListItem>
                             <asp:ListItem>Stuffed Crust (£5.55)</asp:ListItem>
                             <asp:ListItem>Deep Dish (£7.47)</asp:ListItem>
                         </asp:RadioButtonList>
-             <br />
+            <br />
             <br />
             <h2>&nbsp;<span class="text-decoration-underline">Cheese Type</span></h2>
                 <p>
+                    &nbsp;
                     <asp:Image ID="im_cheese" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_pizza/different-cheeses.jpg" Width="190px" />
                 </p>
             <asp:RadioButtonList ID="rbl_cheese_type" runat="server" AutoPostBack="True" OnSelectedIndexChanged="rbl_cheese_type_SelectedIndexChanged" CellPadding="10">
                             <asp:ListItem>American (£3.00)</asp:ListItem>
                             <asp:ListItem>Chedder (£3.00)</asp:ListItem>
                             <asp:ListItem>Mozzarella (£3.00)</asp:ListItem>
-                        </asp:RadioButtonList>           
-        <br />
+                        </asp:RadioButtonList>
+                <br />
+            <br />
         <hr />
         <br /> 
         <h2>&nbsp; <span class="text-decoration-underline">Your basket </span> </h2>
