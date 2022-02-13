@@ -149,6 +149,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Web.config" />
+    <Content Include="webpages\order_complete_page\order_complete_page.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs">

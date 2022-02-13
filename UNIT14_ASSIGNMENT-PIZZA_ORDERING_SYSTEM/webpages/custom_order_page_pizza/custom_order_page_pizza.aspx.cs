@@ -9,8 +9,9 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 {
     public partial class custom_order_page_pizza : System.Web.UI.Page
     {
-        decimal firstStageCost;
+        
         string pizzaSize, cheeseType, crustType, doughType;
+        decimal firstStageCost;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -46,7 +47,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
         
         protected void basket()
-        {
+        {         
             switch (rbl_pizza_size.SelectedIndex)
             {
                 case 0:
@@ -126,7 +127,6 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
         protected void first_stage_custom_order()
         {
-            
             switch (rbl_pizza_size.SelectedIndex)
             {
                 case 0: 
@@ -136,8 +136,8 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
                     
                 case 1: 
                         firstStageCost += 4.50m;
-                         pizzaSize = "Duo (4 slices)";
-                         break;
+                        pizzaSize = "Duo (4 slices)";
+                        break;
                     
                 case 2:
                         firstStageCost += 8.50m;
@@ -167,38 +167,38 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             switch (rbl_crust_type.SelectedIndex)
             {
                 case 0:
-                      firstStageCost += 3.50m;
-                      crustType = "Normal";
-                      break;
+                        firstStageCost += 3.50m;
+                        crustType = "Normal";
+                        break;
 
                 case 1:
-                      firstStageCost += 5.55m;
-                      crustType = "Stuffed";
-                      break;
+                        firstStageCost += 5.55m;
+                        crustType = "Stuffed";
+                        break;
 
                 case 2:
-                      firstStageCost += 7.47m;
-                      crustType = "Deep Dish";
-                      break;
+                        firstStageCost += 7.47m;
+                        crustType = "Deep Dish";
+                        break;
 
             }
 
             switch (rbl_cheese_type.SelectedIndex)
             {
                 case 0:
-                      firstStageCost += 3.00m;
-                      cheeseType = "American";                   
-                      break;
+                        firstStageCost += 3.00m;
+                        cheeseType = "American";                   
+                        break;
 
                 case 1:
-                      firstStageCost += 3.00m;
-                      cheeseType = "Chedder";
-                      break;
+                        firstStageCost += 3.00m;
+                        cheeseType = "Chedder";
+                        break;
 
                 case 2:
-                      firstStageCost += 3.00m;
-                      cheeseType = "Mozzarella";
-                      break;
+                        firstStageCost += 3.00m;
+                        cheeseType = "Mozzarella";
+                        break;
                
             }
             //session varibles

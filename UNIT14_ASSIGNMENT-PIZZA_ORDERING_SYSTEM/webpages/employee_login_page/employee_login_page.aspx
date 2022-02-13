@@ -26,7 +26,7 @@
                 <br />
                 <br />
                 <br />
-                <asp:Button ID="btn_login" runat="server" Text="Login" OnClick="btn_login_Click" CssClass="btn-dark" Height="50px" Width="150px" />
+                <asp:Button ID="btn_login" runat="server" Text="Login" OnClick="btn_login_Click" CssClass="btn btn-dark" Height="50px" Width="150px" />
                 <br />
                 <br />
                 <br />                        
@@ -38,7 +38,7 @@
 
                 <div>
                    <center>
-                       <asp:Button ID="btn_home" runat="server" OnClick="btn_home_Click" Text="Return Home" CssClass="btn-outline-dark" />
+                       <asp:Button ID="btn_home" runat="server" OnClick="btn_home_Click" Text="Return Home" CssClass="btn btn-outline-dark" />
                    </center> 
             </div>
 

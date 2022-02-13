@@ -11,8 +11,8 @@
         <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Customer_Session_Customer_Account" />
         <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Manager_Account" Width="1.5" PointX="0.5" PointY="9.25" />
         <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Customer_Order" Width="1.5" PointX="0.5" PointY="3.75" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Employee_Session" Width="1.5" PointX="6.625" PointY="3.875" />
-        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Kitchen_Staff_Account" Width="1.5" PointX="4.375" PointY="3.875" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Employee_Session" Width="1.5" PointX="6.625" PointY="4" />
+        <EntityTypeShape EntityType="Pizza_order_system_databaseModel.Kitchen_Staff_Account" Width="1.5" PointX="4.375" PointY="3.75" />
         <AssociationConnector Association="Pizza_order_system_databaseModel.FK_Employee_Session_KitchenStaffAccount" />
         </Diagram>
     </edmx:Diagrams>

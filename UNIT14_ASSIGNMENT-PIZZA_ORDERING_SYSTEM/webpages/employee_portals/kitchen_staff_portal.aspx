@@ -6,19 +6,28 @@
 <head runat="server">
     <title>Kitchen Staff Portal</title>
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap-reboot.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <h1 class="text-center">Your Portal</h1>
-            <asp:Button ID="btn_logout" runat="server" OnClick="btn_logout_Click" Text="LOGOUT" />
+            <h1 class="auto-style1">Your Portal</h1>
+            <center><asp:Button ID="btn_logout" runat="server" OnClick="btn_logout_Click" Text="LOGOUT" /></center>
             <br />
-            <h3>&nbsp; Hello
+            <hr />
+            <br />
+            <h3 class="text-center">&nbsp; Hello
                 <asp:Label ID="lb_employee_name" runat="server"></asp:Label>
             </h3>
             <br />
-            <h2>Current Orders</h2>
-                <asp:GridView ID="gv_orders" runat="server" AutoGenerateColumns="False" DataKeyNames="OrderID" DataSourceID="sql_orders" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+            <h2>&nbsp; <span class="text-decoration-underline">Current Orders</span></h2>
+                <asp:GridView ID="gv_orders" runat="server" AutoGenerateColumns="False" DataKeyNames="OrderID" DataSourceID="sql_orders" CssClass="table table-bordered table-dark">
                     <Columns>
                         <asp:BoundField DataField="Time_Created" HeaderText="Time Created" SortExpression="Time_Created" />
                         <asp:BoundField DataField="OrderID" HeaderText="Order ID" SortExpression="OrderID" InsertVisible="False" ReadOnly="True" />
@@ -42,15 +51,6 @@
                         <asp:BoundField DataField="Cookies" HeaderText="Cookies (Chocolate Chip)" SortExpression="Cookies" />
                         <asp:BoundField DataField="Mozzarella_Sticks" HeaderText="Mozzarella Sticks" SortExpression="Mozzarella_Sticks" />
                     </Columns>
-                    <FooterStyle BackColor="#CCCCCC" />
-                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-                    <RowStyle BackColor="White" />
-                    <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                    <SortedAscendingHeaderStyle BackColor="#808080" />
-                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                    <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
               
               <asp:SqlDataSource ID="sql_orders" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Time Created] AS Time_Created, [OrderID], [Pizza From Menu] AS Pizza_From_Menu, [Pizza Size] AS Pizza_Size, [Crust Type] AS Crust_Type, [Cheese Type] AS Cheese_Type, [Dough Type] AS Dough_Type, [Pepperoni], [Green Onions] AS Green_Onions, [Red Onions] AS Red_Onions, [Ancovies], [Mushrooms], [Black Olives] AS Black_Olives, [Ham], [Pineapple], [Coca Cola] AS Coca_Cola, [Pepsi], [Water], [Nacho Bites] AS Nacho_Bites, [Cookies], [Mozzarella Sticks] AS Mozzarella_Sticks FROM [Customer Order]">
@@ -58,9 +58,12 @@
               
               
               <br />
-              <h2>Customers</h2>
+           
+
+              <br />
+              <h2>&nbsp; <span class="text-decoration-underline">Customers</span></h2>
               
-                  <asp:GridView ID="gv_customers" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerID" DataSourceID="sql_customers" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+                  <asp:GridView ID="gv_customers" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerID" DataSourceID="sql_customers" CssClass="table table-bordered table-dark">
                       <Columns>
                           <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" InsertVisible="False" ReadOnly="True" SortExpression="CustomerID" />
                           <asp:BoundField DataField="Total order cost" HeaderText="Total order cost" SortExpression="Total order cost" />
@@ -73,21 +76,20 @@
                           <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                           <asp:BoundField DataField="Phone Number" HeaderText="Phone Number" SortExpression="Phone Number" />
                       </Columns>
-                      <FooterStyle BackColor="#CCCCCC" />
-                      <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-                      <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-                      <RowStyle BackColor="White" />
-                      <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-                      <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                      <SortedAscendingHeaderStyle BackColor="#808080" />
-                      <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                      <SortedDescendingHeaderStyle BackColor="#383838" />
                   </asp:GridView>
               
               
               <asp:SqlDataSource ID="sql_customers" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>
               <br />
+              <hr />
               <br />
+             <h2 class="auto-style1">Delete Order / Customer</h2>
+            <center><p>Order / Customer Number -
+                <asp:TextBox ID="tb_delete" runat="server"></asp:TextBox>
+                </p>
+                <p>
+                    <asp:Button ID="btn_deleteOrder" runat="server" Text="Delete" Height="50px" Width="150px" />
+                </p>
 &nbsp;
              
               

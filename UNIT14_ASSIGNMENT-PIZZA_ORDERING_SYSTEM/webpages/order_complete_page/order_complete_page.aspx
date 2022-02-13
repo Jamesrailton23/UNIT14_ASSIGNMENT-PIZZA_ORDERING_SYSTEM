@@ -5,8 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin="">
+    </script>
+    <link href="order_complete_page.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,10 +26,26 @@
             <h2 class="text-center">&nbsp;For the colletion of your order, please go to the address shown below</h2>
             <br />
             <hr />
+            
             <br />
-            <center>
-            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.24638235569000247%2C51.34174337533625%2C-0.24190306663513184%2C51.34326135860498&amp;layer=mapnik&amp;marker=51.34250237325507%2C-0.24414271116256714" style="border: 1px solid black"></iframe><br/><small></small>
-            </center>
+                <center>
+                    <!-- <MAP>
+                    <div id="map"></div>
+                    <script>
+                        var map = L.map('map').setView([51.34240, -0.24415], 17);
+                        var marker = L.marker([51.34240, -0.24415]).addTo(map);
+                        marker.bindPopup("Pick-up Here");
+                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        maxZoom: 18,
+                        id: 'mapbox/streets-v11',
+                        tileSize: 512,
+                        zoomOffset: -1,
+                        accessToken: 'pk.eyJ1IjoiamFtaWVib3kyMyIsImEiOiJja3prazVyMTAyNWpnMnlucjYxanFuMjF3In0.nrmZyUW9kC5PGs2xPeh_Jw'
+                        }).addTo(map);
+                    </script>
+                        -->
+                </center>
             <center>
             <hr />
             <br />

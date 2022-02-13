@@ -80,7 +80,7 @@
           <Key>
             <PropertyRef Name="Account-ID-Number" />
           </Key>
-          <Property Name="Account-ID-Number" Type="int" Nullable="false" />
+          <Property Name="Account-ID-Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="First Name" Type="nvarchar" MaxLength="100" />
           <Property Name="Last Name" Type="nvarchar" MaxLength="100" />
           <Property Name="Username" Type="nvarchar" MaxLength="100" />
@@ -264,7 +264,7 @@
           <Key>
             <PropertyRef Name="Account_ID_Number" />
           </Key>
-          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" />
+          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Last_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
