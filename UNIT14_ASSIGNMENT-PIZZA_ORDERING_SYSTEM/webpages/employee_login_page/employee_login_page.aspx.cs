@@ -43,6 +43,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.employee_login_page
                 }
                 else
                 {
+                    lb_errorMessage.CssClass = "alert alert-danger";
                     lb_errorMessage.Text = "ERROR!!, Incorrect Username Or Password";
                 }
             }

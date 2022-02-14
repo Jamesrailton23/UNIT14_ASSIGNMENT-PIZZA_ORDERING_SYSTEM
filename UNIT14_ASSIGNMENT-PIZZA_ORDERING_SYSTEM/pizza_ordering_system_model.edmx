@@ -147,12 +147,6 @@
       <Schema Namespace="Pizza_order_system_databaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Pizza_order_system_databaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Pizza_order_system_databaseModel.Customer" />
-          <EntitySet Name="Customer_Accounts" EntityType="Pizza_order_system_databaseModel.Customer_Account" />
-          <EntitySet Name="Customer_Sessions" EntityType="Pizza_order_system_databaseModel.Customer_Session" />
-          <AssociationSet Name="FK_Customer_Session_Customer_Account" Association="Pizza_order_system_databaseModel.FK_Customer_Session_Customer_Account">
-            <End Role="Customer_Account" EntitySet="Customer_Accounts" />
-            <End Role="Customer_Session" EntitySet="Customer_Sessions" />
-          </AssociationSet>
           <EntitySet Name="Manager_Accounts" EntityType="Pizza_order_system_databaseModel.Manager_Account" />
           <EntitySet Name="Customer_Orders" EntityType="Pizza_order_system_databaseModel.Customer_Order" />
           <EntitySet Name="Employee_Sessions" EntityType="Pizza_order_system_databaseModel.Employee_Session" />
@@ -160,6 +154,12 @@
           <AssociationSet Name="FK_Employee_Session_KitchenStaffAccount" Association="Pizza_order_system_databaseModel.FK_Employee_Session_KitchenStaffAccount">
             <End Role="Kitchen_Staff_Account" EntitySet="Kitchen_Staff_Accounts" />
             <End Role="Employee_Session" EntitySet="Employee_Sessions" />
+          </AssociationSet>
+          <EntitySet Name="Customer_Accounts" EntityType="Pizza_order_system_databaseModel.Customer_Account" />
+          <EntitySet Name="Customer_Sessions" EntityType="Pizza_order_system_databaseModel.Customer_Session" />
+          <AssociationSet Name="FK_Customer_Session_Customer_Account" Association="Pizza_order_system_databaseModel.FK_Customer_Session_Customer_Account">
+            <End Role="Customer_Account" EntitySet="Customer_Accounts" />
+            <End Role="Customer_Session" EntitySet="Customer_Sessions" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Customer">
@@ -177,40 +177,6 @@
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Phone_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Customer_Account">
-          <Key>
-            <PropertyRef Name="Account_ID_Number" />
-          </Key>
-          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Last_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Customer_Session" Relationship="Pizza_order_system_databaseModel.FK_Customer_Session_Customer_Account" FromRole="Customer_Account" ToRole="Customer_Session" />
-        </EntityType>
-        <EntityType Name="Customer_Session">
-          <Key>
-            <PropertyRef Name="Session_ID" />
-          </Key>
-          <Property Name="Session_ID" Type="Guid" Nullable="false" />
-          <Property Name="Account_ID_Number" Type="Int32" />
-          <Property Name="Time_Of_Login" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="Customer_Account" Relationship="Pizza_order_system_databaseModel.FK_Customer_Session_Customer_Account" FromRole="Customer_Session" ToRole="Customer_Account" />
-        </EntityType>
-        <Association Name="FK_Customer_Session_Customer_Account">
-          <End Type="Pizza_order_system_databaseModel.Customer_Account" Role="Customer_Account" Multiplicity="0..1" />
-          <End Type="Pizza_order_system_databaseModel.Customer_Session" Role="Customer_Session" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer_Account">
-              <PropertyRef Name="Account_ID_Number" />
-            </Principal>
-            <Dependent Role="Customer_Session">
-              <PropertyRef Name="Account_ID_Number" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Manager_Account">
           <Key>
             <PropertyRef Name="Account_ID_Number" />
@@ -285,6 +251,40 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Customer_Account">
+          <Key>
+            <PropertyRef Name="Account_ID_Number" />
+          </Key>
+          <Property Name="Account_ID_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customer_Session" Relationship="Pizza_order_system_databaseModel.FK_Customer_Session_Customer_Account" FromRole="Customer_Account" ToRole="Customer_Session" />
+        </EntityType>
+        <EntityType Name="Customer_Session">
+          <Key>
+            <PropertyRef Name="Session_ID" />
+          </Key>
+          <Property Name="Session_ID" Type="Guid" Nullable="false" />
+          <Property Name="Account_ID_Number" Type="Int32" />
+          <Property Name="Time_Of_Login" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Customer_Account" Relationship="Pizza_order_system_databaseModel.FK_Customer_Session_Customer_Account" FromRole="Customer_Session" ToRole="Customer_Account" />
+        </EntityType>
+        <Association Name="FK_Customer_Session_Customer_Account">
+          <End Type="Pizza_order_system_databaseModel.Customer_Account" Role="Customer_Account" Multiplicity="0..1" />
+          <End Type="Pizza_order_system_databaseModel.Customer_Session" Role="Customer_Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_Account">
+              <PropertyRef Name="Account_ID_Number" />
+            </Principal>
+            <Dependent Role="Customer_Session">
+              <PropertyRef Name="Account_ID_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -304,28 +304,6 @@
                 <ScalarProperty Name="First_Name" ColumnName="First Name" />
                 <ScalarProperty Name="Total_order_cost" ColumnName="Total order cost" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Customer_Accounts">
-            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Customer_Account">
-              <MappingFragment StoreEntitySet="Customer Account">
-                <ScalarProperty Name="Phone_number" ColumnName="Phone number" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
-                <ScalarProperty Name="First_Name" ColumnName="First Name" />
-                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Customer_Sessions">
-            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Customer_Session">
-              <MappingFragment StoreEntitySet="Customer Session">
-                <ScalarProperty Name="Time_Of_Login" ColumnName="Time-Of-Login" />
-                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
-                <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -390,6 +368,28 @@
                 <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
                 <ScalarProperty Name="First_Name" ColumnName="First Name" />
                 <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_Accounts">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Customer_Account">
+              <MappingFragment StoreEntitySet="Customer Account">
+                <ScalarProperty Name="Phone_number" ColumnName="Phone number" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First Name" />
+                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_Sessions">
+            <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Customer_Session">
+              <MappingFragment StoreEntitySet="Customer Session">
+                <ScalarProperty Name="Time_Of_Login" ColumnName="Time-Of-Login" />
+                <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
+                <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -23,94 +23,93 @@
             </asp:ScriptManager>
             <asp:UpdatePanel ID="up_sides" runat="server">
                 <ContentTemplate>
-                     <h2>&nbsp; <span class="text-decoration-underline">Sides</span></h2>
-                     <h3>
-                         &nbsp;
-                         <asp:Image ID="im_nachobites" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_toppings/FC_PineappleChunks.png" Width="190px" />
-                         &nbsp;Nacho bites
-                         <asp:CheckBox ID="cb_nachoBites" runat="server" AutoPostBack="True" OnCheckedChanged="cb_nachoBites_CheckedChanged" />
-                     </h3>
-                     <p>
-                         &nbsp;</p>
-                     <h3>
-                         &nbsp;
-                         <asp:Image ID="im_mozzarella" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/mozzerella-sticks-156136-3.jpg" Width="190px" />
-                         &nbsp;Mozzarella Sticks
-                         <asp:CheckBox ID="cb_mozzarellaSticks" runat="server" AutoPostBack="True" OnCheckedChanged="cb_mozzarellaSticks_CheckedChanged" />
-                     </h3>
-                     <p>
-                         &nbsp;</p>
-                     <h3>
-                         &nbsp;
-                         <asp:Image ID="im_cookies" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/cookies.jpg" Width="190px" />
-                         &nbsp; Cookies (Chocolate Chip)<asp:CheckBox ID="cb_cookies" runat="server" AutoPostBack="True" OnCheckedChanged="cb_cookies_CheckedChanged" />
-                     </h3>
-                     <br />
+                    <h2>&nbsp; <span class="text-decoration-underline">Sides</span></h2>
+                    <h3>
+                        &nbsp;
+                        <asp:Image ID="im_nachobites" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_toppings/FC_PineappleChunks.png" Width="190px" />
+                        &nbsp;Nacho bites
+                        <asp:CheckBox ID="cb_nachoBites" runat="server" AutoPostBack="True" OnCheckedChanged="cb_nachoBites_CheckedChanged" />
+                    </h3>
+                    <p>
+                        &nbsp;</p>
+                    <h3>
+                        &nbsp;
+                        <asp:Image ID="im_mozzarella" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/mozzerella-sticks-156136-3.jpg" Width="190px" />
+                        &nbsp;Mozzarella Sticks
+                        <asp:CheckBox ID="cb_mozzarellaSticks" runat="server" AutoPostBack="True" OnCheckedChanged="cb_mozzarellaSticks_CheckedChanged" />
+                    </h3>
+                    <p>
+                        &nbsp;
+                    </p>
+                    <h3>
+                        &nbsp;
+                        <asp:Image ID="im_cookies" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/cookies.jpg" Width="190px" />
+                        &nbsp; Cookies (Chocolate Chip)<asp:CheckBox ID="cb_cookies" runat="server" AutoPostBack="True" OnCheckedChanged="cb_cookies_CheckedChanged" />
+                    </h3>
+                    <br />
                     <br />
                     <h2>&nbsp;<span class="text-decoration-underline">Drinks</span></h2>
-               
-                        <h3>
-                            &nbsp;
-                            <asp:Image ID="im_pespsi" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/pepsi.jpg" Width="190px" />
-                            &nbsp;Pepsi
-                            <asp:CheckBox ID="cb_pepsi" runat="server" AutoPostBack="True" OnCheckedChanged="cb_pepsi_CheckedChanged" />
-                     </h3>
-                     <p>
-                         &nbsp;</p>
-                     <h3>
-                         &nbsp;
-                         <asp:Image ID="im_water" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/water.jpg" Width="190px" />
-                         &nbsp; Water
-                         <asp:CheckBox ID="cb_water" runat="server" AutoPostBack="True" OnCheckedChanged="cb_water_CheckedChanged" />
-                     </h3>
-                     <p>
-                         &nbsp;</p>
-                     <h3>
-                         &nbsp;
-                         <asp:Image ID="im_cocacola" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/cocacola.jpg" Width="190px" />
-                         &nbsp;Coca Cola
-                         <asp:CheckBox ID="cb_cocaCola" runat="server" AutoPostBack="True" OnCheckedChanged="cb_cocaCola_CheckedChanged" />
-                     </h3>
+                    <h3>
+                        &nbsp;
+                        <asp:Image ID="im_pespsi" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/pepsi.jpg" Width="190px" />
+                        &nbsp;Pepsi
+                        <asp:CheckBox ID="cb_pepsi" runat="server" AutoPostBack="True" OnCheckedChanged="cb_pepsi_CheckedChanged" />
+                    </h3>
+                    <p>
+                        &nbsp;</p>
+                    <h3>
+                        &nbsp;
+                        <asp:Image ID="im_water" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/water.jpg" Width="190px" />
+                        &nbsp; Water
+                        <asp:CheckBox ID="cb_water" runat="server" AutoPostBack="True" OnCheckedChanged="cb_water_CheckedChanged" />
+                    </h3>
+                    <p>
+                        &nbsp;</p>
+                    <h3>
+                        &nbsp;
+                        <asp:Image ID="im_cocacola" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/cocacola.jpg" Width="190px" />
+                        &nbsp;Coca Cola
+                        <asp:CheckBox ID="cb_cocaCola" runat="server" AutoPostBack="True" OnCheckedChanged="cb_cocaCola_CheckedChanged" />
+                    </h3>
                     <br />
-                     <hr />
-                     <br />
-                     <br />
-                     <h2>&nbsp; <span class="text-decoration-underline">Your Basket</span></h2>
-                     &nbsp; Pepsi -
-                     <asp:Label ID="lb_pepsi" runat="server"></asp:Label>
-                     <br />
-                     <br />
-                     &nbsp;Water -
-                     <asp:Label ID="lb_water" runat="server"></asp:Label>
-                     <br />
-                     <br />
-                     &nbsp;Coca Cola -
-                     <asp:Label ID="lb_cocaCola" runat="server"></asp:Label>
-                     <br />
-                     <br />
-                     &nbsp;Nacho Bites -
-                     <asp:Label ID="lb_nachoBites" runat="server"></asp:Label>
-                     <br />
-                     <br />
-                     &nbsp;Mozzarella Sticks -
-                     <asp:Label ID="lb_mozzarellaSticks" runat="server"></asp:Label>
-                     <br />
-                     <br />
-                     &nbsp;Cookies -
-                     <asp:Label ID="lb_Cookies" runat="server"></asp:Label>
-                     <br />
-                     <br />
-                     &nbsp;Stage 3 Cost =
-                     <asp:Label ID="lb_cost3" runat="server"></asp:Label>
-                     <br />
-                     <br />
-                     <br />
-           </ContentTemplate>
-         </asp:UpdatePanel>
+                    <hr />
+                    <br />
+                    <br />
+                    <h2>&nbsp; <span class="text-decoration-underline">Your Basket</span></h2>
+                    &nbsp; Pepsi -
+                        <asp:Label ID="lb_pepsi" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    &nbsp;Water -
+                        <asp:Label ID="lb_water" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    &nbsp;Coca Cola -
+                        <asp:Label ID="lb_cocaCola" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    &nbsp;Nacho Bites -
+                        <asp:Label ID="lb_nachoBites" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    &nbsp;Mozzarella Sticks -
+                        <asp:Label ID="lb_mozzarellaSticks" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    &nbsp;Cookies -
+                        <asp:Label ID="lb_Cookies" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    &nbsp;Stage 3 Cost =
+                        <asp:Label ID="lb_cost3" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    <br />
+                </ContentTemplate>
+            </asp:UpdatePanel>
             <center>
-            <asp:Button ID="btn_continue" runat="server" Text="continue" OnClick="btn_continue_Click" Height="50px" Width="150px" />
+            <asp:Button ID="btn_continue" runat="server" Text="continue" OnClick="btn_continue_Click" Height="50px" Width="150px" CssClass="btn btn-dark" />
             </center>
-
         &nbsp;<br />
         </div>
     </form>

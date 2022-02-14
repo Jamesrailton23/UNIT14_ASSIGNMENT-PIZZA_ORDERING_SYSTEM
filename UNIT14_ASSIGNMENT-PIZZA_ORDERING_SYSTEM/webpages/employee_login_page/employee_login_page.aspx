@@ -15,35 +15,31 @@
 </head>
 <body>
     <form id="form1" runat="server">
-            <br />
-            <div>
+        <br />
+        <div>
             <h1 class="auto-style1"><strong>Employee Login</strong></h1>
             <br />
-                <center>
-                    <h3>Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Password</h3>
-            <asp:TextBox ID="tb_username" runat="server" MaxLength="100" BorderStyle="Solid"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="tb_password" runat="server" TextMode="Password" MaxLength="100" BorderStyle="Solid"></asp:TextBox>
+            <center>
+                <h3>Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Password</h3>
+                    <asp:TextBox ID="tb_username" runat="server" MaxLength="100" BorderStyle="Solid"></asp:TextBox>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="tb_password" runat="server" TextMode="Password" MaxLength="100" BorderStyle="Solid"></asp:TextBox>
                 <br />
                 <br />
                 <br />
-                <asp:Button ID="btn_login" runat="server" Text="Login" OnClick="btn_login_Click" CssClass="btn btn-dark" Height="50px" Width="150px" />
+                    <asp:Button ID="btn_login" runat="server" Text="Login" OnClick="btn_login_Click" CssClass="btn btn-dark" Height="50px" Width="150px" />
                 <br />
                 <br />
                 <br />                        
-                <asp:Label ID="lb_errorMessage" runat="server" CssClass="alert-danger" Font-Bold="True"></asp:Label>
-            </center>
-            
+                    <asp:Label ID="lb_errorMessage" runat="server" Font-Bold="True"></asp:Label>
+            </center>           
             <br />
             <br />
-
-                <div>
-                   <center>
-                       <asp:Button ID="btn_home" runat="server" OnClick="btn_home_Click" Text="Return Home" CssClass="btn btn-outline-dark" />
-                   </center> 
+            <div>
+                <center>
+                    <asp:Button ID="btn_home" runat="server" OnClick="btn_home_Click" Text="Return Home" CssClass="btn btn-outline-dark" />
+                </center> 
             </div>
-
-        </div>
-        
+        </div>      
     </form>
 </body>
 </html>

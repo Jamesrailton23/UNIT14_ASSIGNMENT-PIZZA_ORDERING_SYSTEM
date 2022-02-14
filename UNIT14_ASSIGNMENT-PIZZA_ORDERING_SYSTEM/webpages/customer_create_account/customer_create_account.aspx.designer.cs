@@ -78,6 +78,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_create_accou
         protected global::System.Web.UI.WebControls.TextBox tb_phone;
 
         /// <summary>
+        /// lb_message control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_message;
+
+        /// <summary>
         /// btn_create_account control.
         /// </summary>
         /// <remarks>

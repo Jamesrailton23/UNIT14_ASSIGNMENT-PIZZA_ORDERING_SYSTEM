@@ -18,7 +18,7 @@
     <form id="form1" runat="server">
         <div>
             <h1 class="auto-style1">Your Portal</h1>
-            <center><asp:Button ID="btn_logout" runat="server" OnClick="btn_logout_Click" Text="LOGOUT" /></center>
+            <center><asp:Button ID="btn_logout" runat="server" OnClick="btn_logout_Click" Text="Logout" CssClass="btn btn-dark" Height="50px" Width="150px" /></center>
             <br />
             <hr />
             <br />
@@ -51,48 +51,38 @@
                         <asp:BoundField DataField="Cookies" HeaderText="Cookies (Chocolate Chip)" SortExpression="Cookies" />
                         <asp:BoundField DataField="Mozzarella_Sticks" HeaderText="Mozzarella Sticks" SortExpression="Mozzarella_Sticks" />
                     </Columns>
+                </asp:GridView>              
+                <asp:SqlDataSource ID="sql_orders" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Time Created] AS Time_Created, [OrderID], [Pizza From Menu] AS Pizza_From_Menu, [Pizza Size] AS Pizza_Size, [Crust Type] AS Crust_Type, [Cheese Type] AS Cheese_Type, [Dough Type] AS Dough_Type, [Pepperoni], [Green Onions] AS Green_Onions, [Red Onions] AS Red_Onions, [Ancovies], [Mushrooms], [Black Olives] AS Black_Olives, [Ham], [Pineapple], [Coca Cola] AS Coca_Cola, [Pepsi], [Water], [Nacho Bites] AS Nacho_Bites, [Cookies], [Mozzarella Sticks] AS Mozzarella_Sticks FROM [Customer Order]">
+                </asp:SqlDataSource> 
+            <br />
+            <br />
+            <h2>&nbsp; <span class="text-decoration-underline">Customers</span></h2>            
+                <asp:GridView ID="gv_customers" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerID" DataSourceID="sql_customers" CssClass="table table-bordered table-dark">
+                    <Columns>
+                        <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" InsertVisible="False" ReadOnly="True" SortExpression="CustomerID" />
+                        <asp:BoundField DataField="Total order cost" HeaderText="Total order cost" SortExpression="Total order cost" />
+                        <asp:BoundField DataField="First Name" HeaderText="First Name" SortExpression="First Name" />
+                        <asp:BoundField DataField="Last Name" HeaderText="Last Name" SortExpression="Last Name" />
+                        <asp:BoundField DataField="Address Line 1" HeaderText="Address Line 1" SortExpression="Address Line 1" />
+                        <asp:BoundField DataField="Address Line 2" HeaderText="Address Line 2" SortExpression="Address Line 2" />
+                        <asp:BoundField DataField="Address Line 3" HeaderText="Address Line 3" SortExpression="Address Line 3" />
+                        <asp:BoundField DataField="Post code" HeaderText="Post code" SortExpression="Post code" />
+                        <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                        <asp:BoundField DataField="Phone Number" HeaderText="Phone Number" SortExpression="Phone Number" />
+                    </Columns>
                 </asp:GridView>
-              
-              <asp:SqlDataSource ID="sql_orders" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Time Created] AS Time_Created, [OrderID], [Pizza From Menu] AS Pizza_From_Menu, [Pizza Size] AS Pizza_Size, [Crust Type] AS Crust_Type, [Cheese Type] AS Cheese_Type, [Dough Type] AS Dough_Type, [Pepperoni], [Green Onions] AS Green_Onions, [Red Onions] AS Red_Onions, [Ancovies], [Mushrooms], [Black Olives] AS Black_Olives, [Ham], [Pineapple], [Coca Cola] AS Coca_Cola, [Pepsi], [Water], [Nacho Bites] AS Nacho_Bites, [Cookies], [Mozzarella Sticks] AS Mozzarella_Sticks FROM [Customer Order]">
-            </asp:SqlDataSource>
-              
-              
-              <br />
-           
-
-              <br />
-              <h2>&nbsp; <span class="text-decoration-underline">Customers</span></h2>
-              
-                  <asp:GridView ID="gv_customers" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerID" DataSourceID="sql_customers" CssClass="table table-bordered table-dark">
-                      <Columns>
-                          <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" InsertVisible="False" ReadOnly="True" SortExpression="CustomerID" />
-                          <asp:BoundField DataField="Total order cost" HeaderText="Total order cost" SortExpression="Total order cost" />
-                          <asp:BoundField DataField="First Name" HeaderText="First Name" SortExpression="First Name" />
-                          <asp:BoundField DataField="Last Name" HeaderText="Last Name" SortExpression="Last Name" />
-                          <asp:BoundField DataField="Address Line 1" HeaderText="Address Line 1" SortExpression="Address Line 1" />
-                          <asp:BoundField DataField="Address Line 2" HeaderText="Address Line 2" SortExpression="Address Line 2" />
-                          <asp:BoundField DataField="Address Line 3" HeaderText="Address Line 3" SortExpression="Address Line 3" />
-                          <asp:BoundField DataField="Post code" HeaderText="Post code" SortExpression="Post code" />
-                          <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                          <asp:BoundField DataField="Phone Number" HeaderText="Phone Number" SortExpression="Phone Number" />
-                      </Columns>
-                  </asp:GridView>
-              
-              
-              <asp:SqlDataSource ID="sql_customers" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>
-              <br />
-              <hr />
-              <br />
-             <h2 class="auto-style1">Delete Order / Customer</h2>
+                <asp:SqlDataSource ID="sql_customers" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>
+                <br />
+                <hr />
+                <br />
+                <h2 class="auto-style1">Delete Order / Customer</h2>
             <center><p>Order / Customer Number -
                 <asp:TextBox ID="tb_delete" runat="server"></asp:TextBox>
                 </p>
                 <p>
-                    <asp:Button ID="btn_deleteOrder" runat="server" Text="Delete" Height="50px" Width="150px" />
+                    <asp:Button ID="btn_deleteOrder" runat="server" Text="Delete" Height="50px" Width="150px" CssClass="btn btn-danger" />
                 </p>
-&nbsp;
-             
-              
+            </center>             
         </div>
     </form>
 </body>
