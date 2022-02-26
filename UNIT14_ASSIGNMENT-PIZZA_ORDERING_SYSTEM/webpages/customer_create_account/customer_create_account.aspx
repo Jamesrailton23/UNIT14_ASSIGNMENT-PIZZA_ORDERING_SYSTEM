@@ -18,6 +18,9 @@
         <div>
             <h1>&nbsp;</h1>
             <h1 class="auto-style1">Create Your Customer Account</h1>
+            <p class="text-center"> 
+                <asp:Button ID="btn_home" runat="server" Height="50px" OnClick="btn_home_Click" Text="Return Home" Width="150px" CssClass="btn btn-outline-dark" />
+            </p>
             <br />
             <hr />
             <br />

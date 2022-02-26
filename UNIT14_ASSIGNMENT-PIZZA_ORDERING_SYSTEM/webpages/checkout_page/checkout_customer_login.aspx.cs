@@ -40,10 +40,9 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.checkout_page
 
         protected void btn_goBack_Click(object sender, EventArgs e)
         {
-             Response.Redirect("~/webpages/checkout_page/checkout_page.aspx",false);
-             Session["loggedIn"] = false;
-             Session["AccountIDNumber"] = "";
-             Session["Username"] = "";
+            Response.Redirect("~/webpages/checkout_page/checkout_page.aspx",false);
+            Session["loggedIn"] = false;
+            Session["Username"] = "";
         }
     }
 }

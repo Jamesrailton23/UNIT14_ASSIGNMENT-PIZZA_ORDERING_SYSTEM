@@ -20,6 +20,10 @@
         <br />
         <br />
         <h1 class="text-center">&nbsp; Basket &amp; Checkout</h1>
+        <p class="text-center">Checkout For Your Order Here</p>
+        <p class="text-center">
+            <asp:Button ID="btn_home" runat="server" Height="50px" OnClick="btn_home_Click" Text="Return Home" Width="150px" CssClass="btn btn-outline-dark" />
+        </p>
         <hr />
         <br />
        
@@ -65,8 +69,8 @@
             <asp:Label ID="lb_redOnions" runat="server"></asp:Label>
         <br />
         <br />
-            &nbsp;Pepporni -
-            <asp:Label ID="lb_pepporni" runat="server"></asp:Label>
+            &nbsp;Pepperoni -
+            <asp:Label ID="lb_pepperoni" runat="server"></asp:Label>
         <br />
         <br />
             &nbsp;Mushrooms -
@@ -138,7 +142,7 @@
             <asp:Button ID="btn_login" runat="server" OnClick="btn_login_Click" Text="Login" CssClass="btn btn-dark" Height="50px" Width="150px" />
         <br />
         <br />
-        <asp:Label ID="lb_signin" runat="server" CssClass="alert-success"></asp:Label>
+        <asp:Label ID="lb_signin" runat="server"></asp:Label>
         </div>
         <br />
         <hr />

@@ -24,6 +24,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// btn_home control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_home;
+
+        /// <summary>
         /// lb_size control.
         /// </summary>
         /// <remarks>
@@ -105,13 +114,13 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.Label lb_redOnions;
 
         /// <summary>
-        /// lb_pepporni control.
+        /// lb_pepperoni control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_pepporni;
+        protected global::System.Web.UI.WebControls.Label lb_pepperoni;
 
         /// <summary>
         /// lb_mushrooms control.

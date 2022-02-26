@@ -25,11 +25,9 @@
             <h1 class="text-center">&nbsp; Thank Your For Your Order</h1>
             <h2 class="text-center">&nbsp;For the colletion of your order, please go to the address shown below</h2>
             <br />
-            <hr />
-            
+            <hr />        
             <br />
-                <center>
-                    <!-- <MAP>
+                <center>               
                     <div id="map"></div>
                     <script>
                         var map = L.map('map').setView([51.34240, -0.24415], 17);
@@ -44,15 +42,13 @@
                         accessToken: 'pk.eyJ1IjoiamFtaWVib3kyMyIsImEiOiJja3prazVyMTAyNWpnMnlucjYxanFuMjF3In0.nrmZyUW9kC5PGs2xPeh_Jw'
                         }).addTo(map);
                     </script>
-                        -->
                 </center>
             <center>
-            <hr />
-            <br />
-            <asp:Button ID="btn_home" runat="server" OnClick="btn_home_Click" Text="Return Home" />
+                <hr />
+                <br />
+                    <asp:Button ID="btn_home" runat="server" OnClick="btn_home_Click" Text="Return Home" CssClass="btn btn-dark" Height="50px" Width="150px" />
             </center>
-            <br />
-            
+            <br />           
         </div>
     </form>
 </body>

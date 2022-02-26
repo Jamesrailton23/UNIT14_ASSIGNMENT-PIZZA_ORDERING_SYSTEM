@@ -20,7 +20,7 @@
         <div>
             <br />
             <h1 class="auto-style1">Big Sal's Pizza Co</h1>
-            <h3 class="auto-style1"><em>The best pizza this side of the atlantic: EST 2021</em></h3>
+            <h3 class="auto-style1"><em>"The best pizza this side of the atlantic"</em>: EST: 2021</h3>
             <br />
             <center>
             <div id="clockdate">   
@@ -33,7 +33,7 @@
             <br />
             <br />         
             <center>
-                <iframe></iframe>
+                <asp:Image ID="im_bigSal" runat="server" Height="300px" ImageUrl="~/webpages/default/pizzaman.jpg" Width="300px" AlternateText="BIG SAL" />
             </center>
             <br />
             <hr />
@@ -46,8 +46,7 @@
                 <asp:ImageButton ID="ibtn_start_new_order" runat="server" Height="104px" Width="329px" OnClick="ibtn_start_new_order_Click" ImageUrl="~/webpages/default/starorder.png" BorderStyle="None" />&nbsp;
             </center>
             <br />
-            <h3 class="auto-style1"><strong>Click the button above to start your order</strong></h3>
-            <br />
+            <h3 class="auto-style1"><strong>Click the button above to begin your order</strong></h3>
             <br />
             <br />
             <br />
@@ -61,8 +60,11 @@
             <br />
             <br />
             <br />
-            <center><asp:Button ID="btn_employee_login" runat="server" Text="Employee Login" Height="50px" Width="150px" OnClick="btn_employee_login_Click" CssClass="btn btn-warning" /></center>
             <br />
+            <br />         
+            <br />
+            <br />          
+            <center><asp:Button ID="btn_employee_login" runat="server" Text="Employee Login" Height="50px" Width="150px" OnClick="btn_employee_login_Click" CssClass="btn btn-outline-warning" /></center>
             <br />
         </div>
     </form>

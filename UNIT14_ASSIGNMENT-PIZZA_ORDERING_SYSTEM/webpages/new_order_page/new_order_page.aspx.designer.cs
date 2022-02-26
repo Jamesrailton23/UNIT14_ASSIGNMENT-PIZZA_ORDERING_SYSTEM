@@ -33,13 +33,13 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.ImageButton ibtn_custom_pizza;
 
         /// <summary>
-        /// ibtn_pizza_Pepporni control.
+        /// ibtn_pizza_Pepperoni control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ibtn_pizza_Pepporni;
+        protected global::System.Web.UI.WebControls.ImageButton ibtn_pizza_Pepperoni;
 
         /// <summary>
         /// ibtn_pizza_Margherita control.

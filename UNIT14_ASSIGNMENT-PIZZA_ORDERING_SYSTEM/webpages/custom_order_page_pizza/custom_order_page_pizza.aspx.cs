@@ -15,7 +15,11 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            lb_size.Text = "Personal (2 Slices)";
+            lb_crust.Text = "Normal";
+            lb_dough.Text = "Normal";
+            lb_cheese.Text = "American";
+            lb_cost1.Text = String.Format("{0:C}",6.20m);
         }
         #region
         protected void rbl_pizza_size_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,6 +43,38 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             first_stage_custom_order();
         }
 
+        protected void btn_home_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/webpages/default/default.aspx", false);
+            Session["PresetPizza"] = "";
+            Session["doughType"] = "";
+            Session["cheeseType"] = "";
+            Session["crustType"] = "";
+            Session["pizzaSize"] = "";
+            Session["firstStageCost"] = 0.00;
+
+            Session["Pinapple"] = "";
+            Session["Ham"] = "";
+            Session["BlackOlives"] = "";
+            Session["GreenOnions"] = "";
+            Session["RedOnions"] = "";
+            Session["Pepperoni"] = "";
+            Session["Mushrooms"] = "";
+            Session["Ancovies"] = "";
+            Session["secondStageCost"] = 0.00;
+
+            Session["cocaCola"] = "";
+            Session["pepsi"] = "";
+            Session["water"] = "";
+            Session["nachoBites"] = "";
+            Session["mozzarellaSicks"] = "";
+            Session["cookies"] = "";
+            Session["thirdStageCost"] = 0.00;
+
+            Session["LoggedIn"] = false;
+            Session["Username"] = "";
+        }
+
         protected void rbl_cheese_type_SelectedIndexChanged(object sender, EventArgs e)
         {
             basket();
@@ -51,22 +87,22 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             switch (rbl_pizza_size.SelectedIndex)
             {
                 case 0:
-                    firstStageCost += 2.50m;
+                    firstStageCost += 1.00m;
                     lb_size.Text = "Personal (2 Slices)";
                     break;
 
                 case 1:
-                    firstStageCost += 4.50m;
+                    firstStageCost += 2.00m;
                     lb_size.Text = "Duo (4 slices)";
                     break;
 
                 case 2:
-                    firstStageCost += 8.50m;                    
+                    firstStageCost += 5.50m;                    
                     lb_size.Text = "10 Inch";
                     break;
 
                 case 3:
-                    firstStageCost += 10.75m;
+                    firstStageCost += 7.75m;
                     lb_size.Text = "13 Inch";
                     break;
 
@@ -74,12 +110,12 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             switch (rbl_dough_type.SelectedIndex)
             {
                 case 0:
-                    firstStageCost += 3.10m;
+                    firstStageCost += 2.10m;
                     lb_dough.Text = "Normal";
                     break;
 
                 case 1:
-                    firstStageCost += 3.20m;
+                    firstStageCost += 2.20m;
                     lb_dough.Text = "Gluten Free";
                     break;
 
@@ -88,17 +124,17 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             switch (rbl_crust_type.SelectedIndex)
             {
                 case 0:
-                    firstStageCost += 3.50m;
+                    firstStageCost += 2.10m;
                     lb_crust.Text = "Normal";
                     break;
 
                 case 1:
-                    firstStageCost += 5.55m;;
+                    firstStageCost += 3.55m;;
                     lb_crust.Text = "Stuffed";
                     break;
 
                 case 2:
-                    firstStageCost += 7.47m;
+                    firstStageCost += 4.47m;
                     lb_crust.Text = "Deep Dish";
                     break;
 
@@ -107,17 +143,17 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             switch (rbl_cheese_type.SelectedIndex)
             {
                 case 0:
-                    firstStageCost += 3.00m;
+                    firstStageCost += 1.00m;
                     lb_cheese.Text = "American";
                     break;
 
                 case 1:
-                    firstStageCost += 3.00m;
+                    firstStageCost += 1.00m;
                     lb_cheese.Text = "Chedder";
                     break;
 
                 case 2:
-                    firstStageCost += 3.00m;
+                    firstStageCost += 1.35m;
                     lb_cheese.Text = "Mozzarella";
                     break;
 
@@ -130,22 +166,22 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             switch (rbl_pizza_size.SelectedIndex)
             {
                 case 0: 
-                        firstStageCost += 2.50m;
+                        firstStageCost += 1.00m;
                         pizzaSize = "Personal (2 Slices)";                       
                         break;
                     
                 case 1: 
-                        firstStageCost += 4.50m;
+                        firstStageCost += 2.00m;
                         pizzaSize = "Duo (4 slices)";
                         break;
                     
                 case 2:
-                        firstStageCost += 8.50m;
+                        firstStageCost += 5.50m;
                         pizzaSize = "10 Inch";
                         break;
 
                 case 3:
-                        firstStageCost += 10.75m;
+                        firstStageCost += 7.75m;
                         pizzaSize = "13 Inch";
                         break;
 
@@ -153,12 +189,12 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             switch (rbl_dough_type.SelectedIndex)
             {
                 case 0:
-                        firstStageCost += 3.10m;
+                        firstStageCost += 2.10m;
                         doughType = "Normal";
                         break;
 
                 case 1:
-                        firstStageCost += 3.20m;
+                        firstStageCost += 2.20m;
                         doughType = "Gluten Free";
                         break;
 
@@ -167,17 +203,17 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             switch (rbl_crust_type.SelectedIndex)
             {
                 case 0:
-                        firstStageCost += 3.50m;
+                        firstStageCost += 2.10m;
                         crustType = "Normal";
                         break;
 
                 case 1:
-                        firstStageCost += 5.55m;
+                        firstStageCost += 3.55m;
                         crustType = "Stuffed";
                         break;
 
                 case 2:
-                        firstStageCost += 7.47m;
+                        firstStageCost += 4.47m;
                         crustType = "Deep Dish";
                         break;
 
@@ -186,17 +222,17 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             switch (rbl_cheese_type.SelectedIndex)
             {
                 case 0:
-                        firstStageCost += 3.00m;
+                        firstStageCost += 1.00m;
                         cheeseType = "American";                   
                         break;
 
                 case 1:
-                        firstStageCost += 3.00m;
+                        firstStageCost += 1.00m;
                         cheeseType = "Chedder";
                         break;
 
                 case 2:
-                        firstStageCost += 3.00m;
+                        firstStageCost += 1.35m;
                         cheeseType = "Mozzarella";
                         break;
                

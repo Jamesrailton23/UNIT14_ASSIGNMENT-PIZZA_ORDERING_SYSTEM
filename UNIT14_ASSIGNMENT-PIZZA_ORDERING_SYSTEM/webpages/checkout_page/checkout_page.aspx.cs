@@ -12,8 +12,8 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         decimal costStage1, costStage2, costStage3, finalCost, vat;
         string pizzaSize, cheeseType, doughType, crustType, Pinapple, Ham, BlackOlives, GreenOnions, RedOnions, Pepperoni, Mushrooms, Ancovies, cocaCola, pepsi, water, nachoBites, mozzarellaSicks, cookies, PresetPizza, Username;
         bool LoggedIn;
-        
 
+      
         protected void Page_Load(object sender, EventArgs e)
         {
             #region
@@ -27,7 +27,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             BlackOlives = (string)Session["BlackOlives"];
             GreenOnions = (string)Session["GreenOnions"];
             RedOnions = (string)Session["RedOnions"];
-            Pepperoni = (string)Session["Pepproni"];
+            Pepperoni = (string)Session["Pepperoni"];
             Mushrooms = (string)Session["Mushrooms"];
             Ancovies = (string)Session["Ancovies"];
             cocaCola = (string)Session["cocaCola"];
@@ -60,7 +60,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             lb_mushrooms.Text = Mushrooms;
             lb_redOnions.Text = RedOnions;
             lb_pineapple.Text = Pinapple;
-            lb_pepporni.Text = Pepperoni;
+            lb_pepperoni.Text = Pepperoni;
 
 
             //third
@@ -86,19 +86,48 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             if(LoggedIn == true)
             {
                 btn_login.Enabled = false;
+                lb_signin.CssClass = "alert alert-success";
                 lb_signin.Text = String.Format("SIGN IN SUCESSFULL!!, HELLO {0}", Username);
             }
-           
-
-
         }
+
+        protected void btn_home_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/webpages/default/default.aspx", false);
+            Session["doughType"] = "";
+            Session["cheeseType"] = "";
+            Session["crustType"] = "";
+            Session["pizzaSize"] = "";
+            Session["firstStageCost"] = 0.00;
+
+            Session["Pinapple"] = "";
+            Session["Ham"] = "";
+            Session["BlackOlives"] = "";
+            Session["GreenOnions"] = "";
+            Session["RedOnions"] = "";
+            Session["Pepperoni"] = "";
+            Session["Mushrooms"] = "";
+            Session["Ancovies"] = "";
+            Session["secondStageCost"] = 0.00;
+
+            Session["cocaCola"] = "";
+            Session["pepsi"] = "";
+            Session["water"] = "";
+            Session["nachoBites"] = "";
+            Session["mozzarellaSicks"] = "";
+            Session["thirdStageCost"] = 0.00;
+
+            Session["LoggedIn"] = false;
+            Session["Username"] = "";
+        }
+
         protected void btn_login_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/webpages/checkout_page/checkout_customer_login.aspx", false);
         }
         protected void btn_checkout_Click(object sender, EventArgs e)
         {
-            if (cb_confirm.Checked && tb_firstName != null && tb_lastName != null && tb_line1 != null && tb_line2 != null && tb_phone != null && tb_postCode != null)
+            if (cb_confirm.Checked && tb_firstName.Text != "" && tb_lastName.Text != "" && tb_line1.Text != "" && tb_line2.Text != "" && tb_phone.Text != "" && tb_postCode.Text != "")
             {
                 add_new_customer();
                 add_new_order();
@@ -106,7 +135,8 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             }
             else
             {
-                lb_errorMessage.Text = "ERROR!!, Incorrect Username Or Password";
+                lb_errorMessage.Text = "alert alert-danger";
+                lb_errorMessage.Text = "ERROR!!, Please fill in all required fields";
             }
 
         }
@@ -176,7 +206,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             BlackOlives = (string)Session["BlackOlives"];
             GreenOnions = (string)Session["GreenOnions"];
             RedOnions = (string)Session["RedOnions"];
-            Pepperoni = (string)Session["Pepproni"];
+            Pepperoni = (string)Session["Pepperoni"];
             Mushrooms = (string)Session["Mushrooms"];
             Ancovies = (string)Session["Ancovies"];
             //_____________________________________________________________

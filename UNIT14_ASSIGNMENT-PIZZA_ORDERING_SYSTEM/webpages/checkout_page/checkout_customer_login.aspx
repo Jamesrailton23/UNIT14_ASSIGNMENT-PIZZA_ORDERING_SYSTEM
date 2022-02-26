@@ -37,7 +37,7 @@
             <br />
                 <div>
                     <center>
-                        <asp:Button ID="btn_goBack" runat="server" OnClick="btn_goBack_Click" Text="Return Back" CssClass="btn btn-outline-dark" />
+                        <asp:Button ID="btn_goBack" runat="server" OnClick="btn_goBack_Click" Text="Return Back" CssClass="btn btn-outline-dark" Height="50px" Width="150px" />
                     </center>     
                 </div>
         </div>

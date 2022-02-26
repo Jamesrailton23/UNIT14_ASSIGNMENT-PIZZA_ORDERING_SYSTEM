@@ -13,31 +13,47 @@
             <br />     
             <h1 class="text-center">&nbsp;Select a Pizza</h1>
             <hr />
-            <h3 class="text-center">&nbsp;Custom Pizza</h3>
+            <h3 class="text-center">&nbsp;<span class="text-decoration-underline">Custom Pizza</span></h3>
             <br />
             <center>
-                <asp:ImageButton ID="ibtn_custom_pizza" runat="server" Height="166px" Width="194px" OnClick="ibtn_custom_pizza_Click" ImageUrl="~/webpages/new_order_page/customPizza.jpg" />
+                <asp:ImageButton ID="ibtn_custom_pizza" runat="server" Height="200px" Width="200px" OnClick="ibtn_custom_pizza_Click" ImageUrl="~/webpages/new_order_page/customPizza.jpg" BorderStyle="Solid" />
             </center>
             <br />
             <br />
             <hr />
             <br />
             <br />
-            <h3 class="text-center">&nbsp;&nbsp;Pepporni&nbsp;&nbsp;&nbsp; Margherita&nbsp; Hawaiian&nbsp; &nbsp; Ham &amp; Mushroom</h3>
             <br />
-            <center>
-                <asp:ImageButton ID="ibtn_pizza_Pepporni" runat="server" Height="100px" Width="100px" OnClick="ibtn_pizza_Pepporni_Click" ImageUrl="~/webpages/new_order_page/pepporniPizza.jpg" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:ImageButton ID="ibtn_pizza_Margherita" runat="server" Height="100px" Width="100px" OnClick="ibtn_pizza_Margherita_Click" ImageUrl="~/webpages/new_order_page/MargheritaPizza.jpg" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:ImageButton ID="ibtn_pizza_Hawaiian" runat="server" Height="100px" Width="100px" OnClick="ibtn_pizza_Hawaiian_Click" ImageUrl="~/webpages/new_order_page/hawaiianPizza.jpg" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:ImageButton ID="ibtn_pizza_hamAndMushroom" runat="server" Height="100px" Width="100px" OnClick="ibtn_pizza_Ham_Click" ImageUrl="~/webpages/new_order_page/mushroomandham.png" />
+            <div class ="container" style='height: 300px'>
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-decoration-underline">Pepperoni</h3>
+                        <asp:ImageButton ID="ibtn_pizza_Pepperoni" runat="server" Height="200px" Width="200px" OnClick="ibtn_pizza_Pepperoni_Click" ImageUrl="~/webpages/new_order_page/pepporni.png" BorderStyle="Solid" />
+                        <h3>Cost = £19.26</h3>
+                    </div>
+                    <div class="col">
+                        <h3  class="text-decoration-underline">Marhertia</h3>
+                        <asp:ImageButton ID="ibtn_pizza_Margherita" runat="server" Height="200px" Width="200px" OnClick="ibtn_pizza_Margherita_Click" ImageUrl="~/webpages/new_order_page/MargheritaPizza.png" BorderStyle="Solid" />
+                        <h3>Cost = £16.31</h3>
+                    </div>
+                    <div class="col">
+                        <h3  class="text-decoration-underline">Hawaiian</h3>
+                        <asp:ImageButton ID="ibtn_pizza_Hawaiian" runat="server" Height="200px" Width="200px" OnClick="ibtn_pizza_Hawaiian_Click" ImageUrl="~/webpages/new_order_page/hawaiian.png" BorderStyle="Solid" />
+                        <h3>Cost = £18.70</h3>
+                    </div>
+                    <div class="col">
+                        <h3  class="text-decoration-underline">Ham & Mushroom</h3>
+                        <asp:ImageButton ID="ibtn_pizza_hamAndMushroom" runat="server" Height="200px" Width="200px" OnClick="ibtn_pizza_Ham_Click" ImageUrl="~/webpages/new_order_page/hamandmush.jpg" BorderStyle="Solid" />
+                        <h3>Cost = £17.56</h3>
+                    </div>
+                </div>
+            </div>
                 <br />
+                <hr />
                 <br />
-                <br />
-                <asp:Button ID="btn_back" runat="server" OnClick="btn_back_Click" Text="Return Back" />
-            </center>
+            <div class="text-center">
+                <asp:Button ID="btn_back" runat="server" OnClick="btn_back_Click" Text="Return Back" CssClass="btn btn-outline-dark" Height="50px" Width="150px" />    
+            </div>
             <br />
         </div>
     </form>

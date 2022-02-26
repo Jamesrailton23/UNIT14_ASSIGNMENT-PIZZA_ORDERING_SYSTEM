@@ -12,7 +12,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         decimal firstStageCost, secondStageCost;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Pepperoni
         }
 
         protected void ibtn_custom_pizza_Click(object sender, ImageClickEventArgs e)
@@ -23,31 +23,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         {
             Response.Redirect("~/webpages/default/default.aspx");
         }
-        protected void ibtn_pizza_Pepporni_Click(object sender, ImageClickEventArgs e)
-        {
-            Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx",false);
-            Session["PresetPizza"] = "Pepporni";
-            //first Stage
-            firstStageCost = 17.76m;
-            Session["doughType"] = "Normal";
-            Session["cheeseType"] = "Mozzarella";
-            Session["crustType"] = "Normal";
-            Session["pizzaSize"] = "10 Inch";
-            Session["firstStageCost"] = (decimal)firstStageCost;
-            
-
-            //SecondStage
-            secondStageCost = 1.50m;
-            Session["Pinapple"] = "";
-            Session["Ham"] = "Normal";
-            Session["BlackOlives"] = "";
-            Session["GreenOnions"] = "";
-            Session["RedOnions"] = "";
-            Session["Pepproni"] = "Normal";
-            Session["Mushrooms"] = "";
-            Session["Ancovies"] = "";
-            Session["secondStageCost"] = (decimal)secondStageCost;
-        }
+       
 
        
 
@@ -70,7 +46,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Session["BlackOlives"] = "";
             Session["GreenOnions"] = "";
             Session["RedOnions"] = "";
-            Session["Pepproni"] = "";
+            Session["Pepperoni"] = "";
             Session["Mushrooms"] = "Normal";
             Session["Ancovies"] = "";
             Session["secondStageCost"] = (decimal)secondStageCost;
@@ -95,13 +71,38 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Session["BlackOlives"] = "";
             Session["GreenOnions"] = "";
             Session["RedOnions"] = "";
-            Session["Pepproni"] = "";
+            Session["Pepperoni"] = "";
             Session["Mushrooms"] = "Normal";
             Session["Ancovies"] = "";
             Session["secondStageCost"] = (decimal)secondStageCost;
         }
 
-       
+        protected void ibtn_pizza_Pepperoni_Click(object sender, ImageClickEventArgs e)
+        {
+                Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx", false);
+                Session["PresetPizza"] = "Pepperoni";
+                //first Stage
+                firstStageCost = 17.76m;
+                Session["doughType"] = "Normal";
+                Session["cheeseType"] = "Mozzarella";
+                Session["crustType"] = "Normal";
+                Session["pizzaSize"] = "10 Inch";
+                Session["firstStageCost"] = (decimal)firstStageCost;
+
+
+                //SecondStage
+                secondStageCost = 1.50m;
+                Session["Pinapple"] = "";
+                Session["Ham"] = "Normal";
+                Session["BlackOlives"] = "";
+                Session["GreenOnions"] = "";
+                Session["RedOnions"] = "";
+                Session["Pepperoni"] = "Normal";
+                Session["Mushrooms"] = "";
+                Session["Ancovies"] = "";
+                Session["secondStageCost"] = (decimal)secondStageCost;
+        }
+
         protected void ibtn_pizza_Margherita_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("~/webpages/custom_order_page_sides_and_drinks/custom_order_page_sides_and_drinks.aspx", false);
@@ -121,7 +122,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Session["BlackOlives"] = "";
             Session["GreenOnions"] = "";
             Session["RedOnions"] = "";
-            Session["Pepproni"] = "";
+            Session["Pepperoni"] = "";
             Session["Mushrooms"] = "";
             Session["Ancovies"] = "";
             Session["secondStageCost"] = (decimal)secondStageCost;

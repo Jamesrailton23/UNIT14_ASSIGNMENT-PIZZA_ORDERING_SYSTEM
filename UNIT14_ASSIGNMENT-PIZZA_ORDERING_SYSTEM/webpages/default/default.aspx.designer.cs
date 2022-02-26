@@ -24,6 +24,15 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// im_bigSal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image im_bigSal;
+
+        /// <summary>
         /// ibtn_start_new_order control.
         /// </summary>
         /// <remarks>

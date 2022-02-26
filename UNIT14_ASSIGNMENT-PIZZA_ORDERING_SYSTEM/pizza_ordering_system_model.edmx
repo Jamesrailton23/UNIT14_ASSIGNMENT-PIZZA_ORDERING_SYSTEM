@@ -65,6 +65,7 @@
           </Key>
           <Property Name="Session_ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Account-ID-Number" Type="int" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" />
           <Property Name="Time-Of-Login" Type="datetime2" Precision="7" />
         </EntityType>
         <EntityType Name="Employee Session">
@@ -270,6 +271,7 @@
           </Key>
           <Property Name="Session_ID" Type="Guid" Nullable="false" />
           <Property Name="Account_ID_Number" Type="Int32" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Time_Of_Login" Type="DateTime" Precision="7" />
           <NavigationProperty Name="Customer_Account" Relationship="Pizza_order_system_databaseModel.FK_Customer_Session_Customer_Account" FromRole="Customer_Session" ToRole="Customer_Account" />
         </EntityType>
@@ -388,6 +390,7 @@
             <EntityTypeMapping TypeName="Pizza_order_system_databaseModel.Customer_Session">
               <MappingFragment StoreEntitySet="Customer Session">
                 <ScalarProperty Name="Time_Of_Login" ColumnName="Time-Of-Login" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Account_ID_Number" ColumnName="Account-ID-Number" />
                 <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
               </MappingFragment>

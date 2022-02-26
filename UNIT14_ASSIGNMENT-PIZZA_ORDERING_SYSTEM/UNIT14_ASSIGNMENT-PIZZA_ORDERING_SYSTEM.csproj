@@ -105,8 +105,9 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="webpages\customer_create_account\customer_create_account.aspx" />
-    <Content Include="webpages\customer_login\customer_login.aspx" />
-    <Content Include="webpages\customer_portal\customer_portal.aspx" />
+    <Content Include="webpages\custom_order_page_toppings\pepperoni-png-2.png" />
+    <Content Include="webpages\logins\customer_login.aspx" />
+    <Content Include="webpages\portals\customer_portal.aspx" />
     <Content Include="webpages\custom_order_page_pizza\custom_order_page_pizza.aspx" />
     <Content Include="webpages\custom_order_page_pizza\different-cheeses.jpg" />
     <Content Include="webpages\custom_order_page_pizza\Different-Types-of-Pizza-Crust.png" />
@@ -127,20 +128,20 @@
     <Content Include="webpages\custom_order_page_toppings\FC_PineappleChunks.png" />
     <Content Include="webpages\custom_order_page_toppings\green onions.jpg" />
     <Content Include="webpages\custom_order_page_toppings\olives.jpg" />
-    <Content Include="webpages\custom_order_page_toppings\pepporni.jpg" />
     <Content Include="webpages\default\default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="webpages\default\default.js" />
+    <Content Include="webpages\default\pizzaman.jpg" />
     <Content Include="webpages\default\starorder.png" />
-    <Content Include="webpages\employee_portals\kitchen_staff_portal.aspx" />
-    <Content Include="webpages\employee_portals\manager_portal.aspx" />
-    <Content Include="webpages\employee_login_page\employee_login_page.aspx" />
+    <Content Include="webpages\portals\kitchen_staff_portal.aspx" />
+    <Content Include="webpages\portals\manager_portal.aspx" />
+    <Content Include="webpages\logins\employee_login_page.aspx" />
     <Content Include="webpages\new_order_page\customPizza.jpg" />
-    <Content Include="webpages\new_order_page\hawaiianPizza.jpg" />
-    <Content Include="webpages\new_order_page\MargheritaPizza.jpg" />
-    <Content Include="webpages\new_order_page\mushroomandham.png" />
+    <Content Include="webpages\new_order_page\hamandmush.jpg" />
+    <Content Include="webpages\new_order_page\hawaiian.png" />
+    <Content Include="webpages\new_order_page\MargheritaPizza.png" />
     <Content Include="webpages\new_order_page\new_order_page.aspx" />
-    <Content Include="webpages\new_order_page\pepporniPizza.jpg" />
+    <Content Include="webpages\new_order_page\pepporni.png" />
     <Content Include="webpages\order_complete_page\order_complete_page.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -209,18 +210,18 @@
     <Compile Include="webpages\customer_create_account\customer_create_account.aspx.designer.cs">
       <DependentUpon>customer_create_account.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webpages\customer_login\customer_login.aspx.cs">
+    <Compile Include="webpages\logins\customer_login.aspx.cs">
       <DependentUpon>customer_login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="webpages\customer_login\customer_login.aspx.designer.cs">
+    <Compile Include="webpages\logins\customer_login.aspx.designer.cs">
       <DependentUpon>customer_login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webpages\customer_portal\customer_portal.aspx.cs">
+    <Compile Include="webpages\portals\customer_portal.aspx.cs">
       <DependentUpon>customer_portal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="webpages\customer_portal\customer_portal.aspx.designer.cs">
+    <Compile Include="webpages\portals\customer_portal.aspx.designer.cs">
       <DependentUpon>customer_portal.aspx</DependentUpon>
     </Compile>
     <Compile Include="webpages\custom_order_page_pizza\custom_order_page_pizza.aspx.cs">
@@ -254,25 +255,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="webpages\employee_portals\kitchen_staff_portal.aspx.cs">
+    <Compile Include="webpages\portals\kitchen_staff_portal.aspx.cs">
       <DependentUpon>kitchen_staff_portal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="webpages\employee_portals\kitchen_staff_portal.aspx.designer.cs">
+    <Compile Include="webpages\portals\kitchen_staff_portal.aspx.designer.cs">
       <DependentUpon>kitchen_staff_portal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webpages\employee_portals\manager_portal.aspx.cs">
+    <Compile Include="webpages\portals\manager_portal.aspx.cs">
       <DependentUpon>manager_portal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="webpages\employee_portals\manager_portal.aspx.designer.cs">
+    <Compile Include="webpages\portals\manager_portal.aspx.designer.cs">
       <DependentUpon>manager_portal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webpages\employee_login_page\employee_login_page.aspx.cs">
+    <Compile Include="webpages\logins\employee_login_page.aspx.cs">
       <DependentUpon>employee_login_page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="webpages\employee_login_page\employee_login_page.aspx.designer.cs">
+    <Compile Include="webpages\logins\employee_login_page.aspx.designer.cs">
       <DependentUpon>employee_login_page.aspx</DependentUpon>
     </Compile>
     <Compile Include="webpages\new_order_page\new_order_page.aspx.cs">

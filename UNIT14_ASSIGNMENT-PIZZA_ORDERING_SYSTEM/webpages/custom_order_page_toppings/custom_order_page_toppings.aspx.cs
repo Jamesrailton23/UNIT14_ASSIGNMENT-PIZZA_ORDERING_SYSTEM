@@ -14,7 +14,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
 
         protected void Page_Load(object sender, EventArgs e)
         {
-    
+            lb_cost2.Text = String.Format("{0:C}", 0.00m);
         }
         protected void btn_continue_Click(object sender, EventArgs e)
         {
@@ -37,6 +37,39 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             basket();
         }
 
+        protected void btn_home_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/webpages/default/default.aspx", false);
+            Session["PresetPizza"] = "";
+            Session["doughType"] = "";
+            Session["cheeseType"] = "";
+            Session["crustType"] = "";
+            Session["pizzaSize"] = "";
+            Session["firstStageCost"] = 0.00;
+
+            Session["Pinapple"] = "";
+            Session["Ham"] = "";
+            Session["BlackOlives"] = "";
+            Session["GreenOnions"] = "";
+            Session["RedOnions"] = "";
+            Session["Pepperoni"] = "";
+            Session["Mushrooms"] = "";
+            Session["Ancovies"] = "";
+            Session["secondStageCost"] = 0.00;
+
+            Session["cocaCola"] = "";
+            Session["pepsi"] = "";
+            Session["water"] = "";
+            Session["nachoBites"] = "";
+            Session["mozzarellaSicks"] = "";
+            Session["cookies"] = "";
+            Session["thirdStageCost"] = 0.00;
+
+            Session["LoggedIn"] = false;
+            Session["Username"] = "";
+        }
+
+      
         protected void rbl_mushrooms_SelectedIndexChanged(object sender, EventArgs e)
         {
             basket();
@@ -346,7 +379,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Session["BlackOlives"] = (string)BlackOlives;
             Session["GreenOnions"] = (string)GreenOnions;
             Session["RedOnions"] = (string)RedOnions;
-            Session["Pepproni"] = (string)Pepperoni;
+            Session["Pepperoni"] = (string)Pepperoni;
             Session["Mushrooms"] = (string)Mushrooms;
             Session["Ancovies"] = (string)Ancovies;
             Session["secondStageCost"] = (decimal)secondStageCost;

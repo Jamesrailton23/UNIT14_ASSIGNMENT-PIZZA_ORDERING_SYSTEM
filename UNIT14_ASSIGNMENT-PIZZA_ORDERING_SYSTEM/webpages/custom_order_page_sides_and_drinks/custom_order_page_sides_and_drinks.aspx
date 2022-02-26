@@ -18,6 +18,12 @@
         <div>
             <h1 class="auto-style1">Customise Sides and Drinks</h1>
             <h3 class="text-center">Select your sides and drinks here</h3>
+            <br />
+            <br />
+            <p class="text-center">
+                <asp:Button ID="btn_home" runat="server" Height="50px" OnClick="btn_home_Click" Text="Return Home" Width="150px" CssClass="btn btn-outline-dark" />
+            </p>
+            <br />
             <hr />
             <asp:ScriptManager ID="sm_sides" runat="server">
             </asp:ScriptManager>
@@ -26,7 +32,7 @@
                     <h2>&nbsp; <span class="text-decoration-underline">Sides</span></h2>
                     <h3>
                         &nbsp;
-                        <asp:Image ID="im_nachobites" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_toppings/FC_PineappleChunks.png" Width="190px" />
+                        <asp:Image ID="im_nachobites" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/chicken-bites.jpg" Width="190px" />
                         &nbsp;Nacho bites
                         <asp:CheckBox ID="cb_nachoBites" runat="server" AutoPostBack="True" OnCheckedChanged="cb_nachoBites_CheckedChanged" />
                     </h3>
@@ -44,7 +50,7 @@
                     <h3>
                         &nbsp;
                         <asp:Image ID="im_cookies" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/cookies.jpg" Width="190px" />
-                        &nbsp; Cookies (Chocolate Chip)<asp:CheckBox ID="cb_cookies" runat="server" AutoPostBack="True" OnCheckedChanged="cb_cookies_CheckedChanged" />
+                        &nbsp;Cookies (Chocolate Chip)<asp:CheckBox ID="cb_cookies" runat="server" AutoPostBack="True" OnCheckedChanged="cb_cookies_CheckedChanged" />
                     </h3>
                     <br />
                     <br />
@@ -60,7 +66,7 @@
                     <h3>
                         &nbsp;
                         <asp:Image ID="im_water" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/water.jpg" Width="190px" />
-                        &nbsp; Water
+                        &nbsp;Water
                         <asp:CheckBox ID="cb_water" runat="server" AutoPostBack="True" OnCheckedChanged="cb_water_CheckedChanged" />
                     </h3>
                     <p>

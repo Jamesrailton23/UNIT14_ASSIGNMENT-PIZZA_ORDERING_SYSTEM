@@ -88,6 +88,11 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM.webpages.customer_create_accou
             pizza_db.SaveChanges();
         }
 
+        protected void btn_home_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/webpages/default/default.aspx",false);
+        }
+
         protected void tm_to_default_Tick(object sender, EventArgs e)
         {
             Response.Redirect("~/webpages/default/default.aspx");

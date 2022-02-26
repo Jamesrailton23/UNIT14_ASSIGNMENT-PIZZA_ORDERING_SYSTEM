@@ -11,6 +11,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["PresetPizza"] = "";
             Session["doughType"] = "";
             Session["cheeseType"] = "";
             Session["crustType"] = "";
@@ -22,7 +23,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Session["BlackOlives"] = "";
             Session["GreenOnions"] = "";
             Session["RedOnions"] = "";
-            Session["Pepproni"] = "";
+            Session["Pepperoni"] = "";
             Session["Mushrooms"] = "";
             Session["Ancovies"] = "";
             Session["secondStageCost"] = 0.00;
@@ -32,6 +33,7 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
             Session["water"] = "";
             Session["nachoBites"] = "";
             Session["mozzarellaSicks"] = "";
+            Session["cookies"] = "";
             Session["thirdStageCost"] = 0.00;
 
             Session["LoggedIn"] = false;

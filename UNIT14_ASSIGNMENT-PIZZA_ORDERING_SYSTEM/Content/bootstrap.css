@@ -85,11 +85,13 @@ body {
 }
 
 hr {
-  margin: 1rem 0;
-  color: inherit;
-  background-color: currentColor;
-  border: 0;
-  opacity: 0.25;
+  border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    color: inherit;
+    background-color: currentColor;
+    opacity: 0.25;
+    height: 0px;
 }
 
 hr:not([size]) {
@@ -636,7 +638,7 @@ progress {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
-    height: 516px;
+    height: 377px;
 }
 
 @media (min-width: 576px) {
