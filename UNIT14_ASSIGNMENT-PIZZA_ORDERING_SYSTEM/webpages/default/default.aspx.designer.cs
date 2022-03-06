@@ -60,6 +60,42 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         protected global::System.Web.UI.WebControls.Button btn_create_account;
 
         /// <summary>
+        /// ib_facebook control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ib_facebook;
+
+        /// <summary>
+        /// ib_twitter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ib_twitter;
+
+        /// <summary>
+        /// ib_instagram control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ib_instagram;
+
+        /// <summary>
+        /// ib_linkedin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ib_linkedin;
+
+        /// <summary>
         /// btn_employee_login control.
         /// </summary>
         /// <remarks>

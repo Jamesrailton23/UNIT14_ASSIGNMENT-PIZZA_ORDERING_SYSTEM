@@ -17,6 +17,11 @@
         <form id="form1" runat="server">
             <h1 class="auto-style1">Cusomise Toppings</h1>
             <h3 class="text-center"> Add Diffrent toppings to your pizza</h3>
+            <div class="progress" style="">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="48" class="progress-bar" role="progressbar" style="width: 48%;">
+                    STAGE 2</div>
+            </div>
+            <p class="text-center"> &nbsp;</p>
             <br />
             <br />
             <p class="text-center"> 
@@ -90,7 +95,7 @@
                            
                                 
                     <br />
-                    <div class="row" style='height: 400px'>
+                    <div class="row" style='height: 600px'>
                         <div class="col">
                     <h3>&nbsp; <span class="text-decoration-underline">Red Onions</span></h3>
                     <p>

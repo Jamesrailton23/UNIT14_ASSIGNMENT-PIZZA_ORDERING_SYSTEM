@@ -11,6 +11,14 @@
             text-align: center;
             text-decoration: underline;
         }
+        .auto-style2 {
+            color: #000099;
+            font-weight: bold;
+        }
+        .auto-style3 {
+            color: #FFFF00;
+            font-weight: bold;
+        }
     </style>
 
     
@@ -19,7 +27,7 @@
     <form id="form1" runat="server">
         <div>
             <br />
-            <h1 class="auto-style1">Big Sal's Pizza Co</h1>
+            <h1 class="auto-style1"><span class="auto-style2">Big Sal's</span> <span class="auto-style3">Pizza Co</span></h1>
             <h3 class="auto-style1"><em>"The best pizza this side of the atlantic"</em>: EST: 2021</h3>
             <br />
             <center>
@@ -57,11 +65,23 @@
                 &nbsp;<asp:Button ID="btn_create_account" runat="server" Text="Create Account" OnClick="btn_create_account_Click" Height="50px" Width="150px" CssClass="btn btn-dark" />&nbsp;
             </center>
             <br />
+            <hr />
             <br />
+            <center>
+
+                <asp:ImageButton ID="ib_facebook" runat="server" CssClass="fab fa-facebook-f" Height="40px" ImageUrl="~/webpages/default/1200px-Facebook_Logo_(2019).png" OnClick="ib_facebook_Click" Width="40px" />
+&nbsp;<asp:ImageButton ID="ib_twitter" runat="server" Height="40px" ImageUrl="~/webpages/default/OIP.jpg" OnClick="ib_twitter_Click" Width="40px" />
+&nbsp;<asp:ImageButton ID="ib_instagram" runat="server" Height="40px" ImageUrl="~/webpages/default/logo-instagram-1080p-5.png" OnClick="ib_instagram_Click" Width="40px" />
+&nbsp;<asp:ImageButton ID="ib_linkedin" runat="server" Height="40px" ImageUrl="~/webpages/default/linkedin.jpg" OnClick="ib_linkedin_Click" Width="40px" />
+
+            </center>
             <br />
-            <br />
-            <br />
+            <center>
+
+            </center>
             <br />         
+            <br />
+            <br />
             <br />
             <br />          
             <center><asp:Button ID="btn_employee_login" runat="server" Text="Employee Login" Height="50px" Width="150px" OnClick="btn_employee_login_Click" CssClass="btn btn-outline-warning" /></center>

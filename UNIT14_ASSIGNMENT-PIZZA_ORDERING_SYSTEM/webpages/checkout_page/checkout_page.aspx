@@ -21,6 +21,11 @@
         <br />
         <h1 class="text-center">&nbsp; Basket &amp; Checkout</h1>
         <p class="text-center">Checkout For Your Order Here</p>
+        <div class="progress" style="">
+            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="progress-bar" role="progressbar" style="width: 80%;">
+                CHECKOUT</div>
+        </div>
+        <p class="text-center">&nbsp;</p>
         <p class="text-center">
             <asp:Button ID="btn_home" runat="server" Height="50px" OnClick="btn_home_Click" Text="Return Home" Width="150px" CssClass="btn btn-outline-dark" />
         </p>

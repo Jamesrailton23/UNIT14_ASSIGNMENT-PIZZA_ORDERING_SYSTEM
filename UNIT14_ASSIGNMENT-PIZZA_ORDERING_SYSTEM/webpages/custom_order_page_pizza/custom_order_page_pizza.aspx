@@ -13,6 +13,11 @@
         <br />
         <h1 class="text-decoration-underline">Customise Your Pizza</h1>
         <h3>Customise your pizza to the way that you want it to be</h3>
+        <div class="progress" style="">
+            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="32" class="progress-bar" role="progressbar" style="width: 32%;">
+                STAGE 1</div>
+        </div>
+        <p>&nbsp;</p>
         <p>
         <asp:Button ID="btn_home" runat="server" Height="50px" OnClick="btn_home_Click" Text="Return Home" Width="150px" CssClass="btn btn-outline-dark" />
         </p>

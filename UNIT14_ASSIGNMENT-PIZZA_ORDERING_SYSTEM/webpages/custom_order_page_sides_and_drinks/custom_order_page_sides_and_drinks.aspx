@@ -18,6 +18,11 @@
         <div>
             <h1 class="auto-style1">Customise Sides and Drinks</h1>
             <h3 class="text-center">Select your sides and drinks here</h3>
+            <div class="progress" style="">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="64" class="progress-bar" role="progressbar" style="width: 64%;">
+                    STAGE 3</div>
+            </div>
+            <p class="text-center">&nbsp;</p>
             <br />
             <br />
             <p class="text-center">
@@ -33,7 +38,7 @@
                     <h3>
                         &nbsp;
                         <asp:Image ID="im_nachobites" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/chicken-bites.jpg" Width="190px" />
-                        &nbsp;Nacho bites
+                        &nbsp;Nacho bites (£5.00)
                         <asp:CheckBox ID="cb_nachoBites" runat="server" AutoPostBack="True" OnCheckedChanged="cb_nachoBites_CheckedChanged" />
                     </h3>
                     <p>
@@ -41,7 +46,7 @@
                     <h3>
                         &nbsp;
                         <asp:Image ID="im_mozzarella" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/mozzerella-sticks-156136-3.jpg" Width="190px" />
-                        &nbsp;Mozzarella Sticks
+                        &nbsp;Mozzarella Sticks (£4.50)
                         <asp:CheckBox ID="cb_mozzarellaSticks" runat="server" AutoPostBack="True" OnCheckedChanged="cb_mozzarellaSticks_CheckedChanged" />
                     </h3>
                     <p>
@@ -50,7 +55,7 @@
                     <h3>
                         &nbsp;
                         <asp:Image ID="im_cookies" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/cookies.jpg" Width="190px" />
-                        &nbsp;Cookies (Chocolate Chip)<asp:CheckBox ID="cb_cookies" runat="server" AutoPostBack="True" OnCheckedChanged="cb_cookies_CheckedChanged" />
+                        &nbsp;Cookies (Chocolate Chip) (£0.99)<asp:CheckBox ID="cb_cookies" runat="server" AutoPostBack="True" OnCheckedChanged="cb_cookies_CheckedChanged" />
                     </h3>
                     <br />
                     <br />
@@ -58,7 +63,7 @@
                     <h3>
                         &nbsp;
                         <asp:Image ID="im_pespsi" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/pepsi.jpg" Width="190px" />
-                        &nbsp;Pepsi
+                        &nbsp;Pepsi (£3.00)
                         <asp:CheckBox ID="cb_pepsi" runat="server" AutoPostBack="True" OnCheckedChanged="cb_pepsi_CheckedChanged" />
                     </h3>
                     <p>
@@ -66,7 +71,7 @@
                     <h3>
                         &nbsp;
                         <asp:Image ID="im_water" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/water.jpg" Width="190px" />
-                        &nbsp;Water
+                        &nbsp;Water (£1.00)
                         <asp:CheckBox ID="cb_water" runat="server" AutoPostBack="True" OnCheckedChanged="cb_water_CheckedChanged" />
                     </h3>
                     <p>
@@ -74,7 +79,7 @@
                     <h3>
                         &nbsp;
                         <asp:Image ID="im_cocacola" runat="server" Height="100px" ImageUrl="~/webpages/custom_order_page_sides_and_drinks/cocacola.jpg" Width="190px" />
-                        &nbsp;Coca Cola
+                        &nbsp;Coca Cola (£3.00)
                         <asp:CheckBox ID="cb_cocaCola" runat="server" AutoPostBack="True" OnCheckedChanged="cb_cocaCola_CheckedChanged" />
                     </h3>
                     <br />

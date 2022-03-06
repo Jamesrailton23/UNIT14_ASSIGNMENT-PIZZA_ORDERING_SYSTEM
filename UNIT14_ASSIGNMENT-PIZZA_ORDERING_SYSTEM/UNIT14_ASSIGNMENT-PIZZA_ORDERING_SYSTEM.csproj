@@ -106,7 +106,12 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="webpages\customer_create_account\customer_create_account.aspx" />
     <Content Include="webpages\custom_order_page_toppings\pepperoni-png-2.png" />
+    <Content Include="webpages\default\1200px-Facebook_Logo_%282019%29.png" />
+    <Content Include="webpages\default\linkedin.jpg" />
+    <Content Include="webpages\default\logo-instagram-1080p-5.png" />
+    <Content Include="webpages\default\OIP.jpg" />
     <Content Include="webpages\logins\customer_login.aspx" />
+    <Content Include="webpages\order_complete_page\Screenshot 2022-03-05 175358.png" />
     <Content Include="webpages\portals\customer_portal.aspx" />
     <Content Include="webpages\custom_order_page_pizza\custom_order_page_pizza.aspx" />
     <Content Include="webpages\custom_order_page_pizza\different-cheeses.jpg" />

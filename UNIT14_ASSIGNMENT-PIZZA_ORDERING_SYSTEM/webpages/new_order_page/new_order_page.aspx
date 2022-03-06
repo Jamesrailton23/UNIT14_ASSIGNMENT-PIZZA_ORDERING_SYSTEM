@@ -12,6 +12,9 @@
         <div>
             <br />     
             <h1 class="text-center">&nbsp;Select a Pizza</h1>
+            <div class="progress" style="">
+                <div class="progress-bar" role="progressbar" aria-valuenow="16" style="width: 16%;" aria-valuemin="0" aria-valuemax="100">NEW ORDER</div>
+            </div>
             <hr />
             <h3 class="text-center">&nbsp;<span class="text-decoration-underline">Custom Pizza</span></h3>
             <br />

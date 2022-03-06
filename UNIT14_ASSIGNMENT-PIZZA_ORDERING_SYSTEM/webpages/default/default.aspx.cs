@@ -35,5 +35,27 @@ namespace UNIT14_ASSIGNMENT_PIZZA_ORDERING_SYSTEM
         {
             Response.Redirect("~/webpages/logins/employee_login_page.aspx");
         }
+
+        protected void ib_facebook_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("https://en-gb.facebook.com/");
+        }
+
+        protected void ib_twitter_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("https://twitter.com/?lang=en-gb");
+        }
+
+        protected void ib_instagram_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("https://www.instagram.com/");
+        }
+
+        protected void ib_linkedin_Click(object sender, ImageClickEventArgs e)
+        {
+             Response.Redirect("https://gb.linkedin.com/");
+        }
+
+        
     }
 }

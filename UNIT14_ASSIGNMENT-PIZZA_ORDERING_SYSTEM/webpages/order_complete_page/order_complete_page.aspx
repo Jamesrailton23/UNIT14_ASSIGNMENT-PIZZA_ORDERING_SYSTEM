@@ -23,6 +23,11 @@
         <div>
             <br />
             <h1 class="text-center">&nbsp; Thank Your For Your Order</h1>
+            <div class="progress" style="">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="progress-bar" role="progressbar" style="width: 100%;">
+                    ORDER COMPLETE</div>
+            </div>
+            <p class="text-center">&nbsp;</p>
             <h2 class="text-center">&nbsp;For the colletion of your order, please go to the address shown below</h2>
             <br />
             <hr />        
