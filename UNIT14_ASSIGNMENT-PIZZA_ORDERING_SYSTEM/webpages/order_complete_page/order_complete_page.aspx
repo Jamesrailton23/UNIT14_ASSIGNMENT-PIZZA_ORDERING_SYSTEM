@@ -17,6 +17,12 @@
         crossorigin="">
     </script>
     <link href="order_complete_page.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+            font-size: large;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -29,6 +35,7 @@
             </div>
             <p class="text-center">&nbsp;</p>
             <h2 class="text-center">&nbsp;For the colletion of your order, please go to the address shown below</h2>
+            <p class="auto-style1">Please note that payment is collected on collection of the order</p>
             <br />
             <hr />        
             <br />
